@@ -20,14 +20,14 @@
       </Label>
       <Separator layoutX="19.0" layoutY="55.0" prefHeight="2.0" prefWidth="955.0" />
       <Label layoutX="20.0" layoutY="73.0" text="Item Id :" />
-      <TextField disable="true" editable="false" layoutX="124.0" layoutY="71.0" promptText="I 001" />
+      <TextField fx:id="txtItemId" disable="true" editable="false" layoutX="124.0" layoutY="71.0" promptText="I 001" />
       <Label layoutX="20.0" layoutY="105.0" text="Item Name :" />
       <TextField fx:id="txtItemName" layoutX="125.0" layoutY="103.0" promptText="Item Name" />
       <Separator layoutX="20.0" layoutY="177.0" prefHeight="2.0" prefWidth="955.0" />
       <Label layoutX="363.0" layoutY="74.0" text="Batch No." />
       <TextField fx:id="txtBatchNumber" layoutX="467.0" layoutY="72.0" promptText="Batch Number" />
       <Label layoutX="363.0" layoutY="106.0" text="Price :" />
-      <TextField fx:id="txtPrice" layoutX="467.0" layoutY="104.0" promptText="Price (Rs)" />
+      <TextField fx:id="txtItemPrice" layoutX="467.0" layoutY="104.0" promptText="Price (Rs)" />
       <Label layoutX="719.0" layoutY="74.0" text="Qty :" />
       <TextField fx:id="txtQtyOnHand" layoutX="824.0" layoutY="72.0" promptText="Quntaty On Hand" />
       <Label layoutX="19.0" layoutY="138.0" text="Supplier :" />
