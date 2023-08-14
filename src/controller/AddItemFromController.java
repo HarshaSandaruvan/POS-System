@@ -34,6 +34,14 @@ public class AddItemFromController {
     public TextField txtItemId;
     public TextField txtItemPrice;
 
+    public void initialize(){
+        generateAndSetItemId();
+    }
+
+    private void generateAndSetItemId() {
+        txtItemId.setText(itemBO.getNextId());
+    }
+
     ItemBo itemBO = (ItemBo) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.ITEM);
     public void clearBtnOnAction(ActionEvent actionEvent) {
     }
@@ -59,8 +67,10 @@ public class AddItemFromController {
         Alert alert;
         if (Boolean.TRUE.equals(isSave)){
              alert=new Alert(Alert.AlertType.INFORMATION,"Item Saved");
+
         }else {
              alert=new Alert(Alert.AlertType.ERROR,"Something Wrong");
         }
+        alert.show();
     }
 }

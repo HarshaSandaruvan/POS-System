@@ -7,9 +7,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="jfoenix-8.0.7" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.49" level="project" />
     <orderEntry type="library" name="lombok" level="project" />
+    <orderEntry type="library" name="jfoenix-8.0.7" level="project" />
   </component>
   <component name="SonarLintModuleSettings">
     <option name="uniqueId" value="5e20f649-6199-40ec-87be-ccb761055911" />

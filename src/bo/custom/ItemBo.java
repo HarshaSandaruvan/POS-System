@@ -6,4 +6,5 @@ import dto.ItemDTO;
 
 public interface ItemBo extends SuperBO {
     public Boolean saveItem(ItemDTO itemDTO);
+    public String getNextId();
 }
