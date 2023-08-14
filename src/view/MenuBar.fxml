@@ -12,11 +12,11 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="576.0" prefWidth="999.0" stylesheets="@../../../../POS-system/src/view/style/MenuBar.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuBarController">
+<AnchorPane prefHeight="576.0" prefWidth="999.0" stylesheets="@style/MenuBar.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuBarController">
    <children>
       <AnchorPane prefHeight="76.0" prefWidth="1000.0" style="-fx-background-color: #071952;">
          <children>
-            <Label layoutX="74.0" layoutY="4.0" prefHeight="58.0" prefWidth="210.0" text="Harsha Sandaruwan" textFill="#f8f8f8" wrapText="true">
+            <Label fx:id="userNameLbl" layoutX="74.0" layoutY="4.0" prefHeight="58.0" prefWidth="210.0" text="Harsha Sandaruwan" textFill="#f8f8f8" wrapText="true">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -33,7 +33,7 @@
                   <String fx:value="btn" />
                </styleClass>
             </JFXButton>
-            <MenuButton id="menuOrdersBtn" layoutX="434.0" layoutY="15.0" mnemonicParsing="false" prefHeight="45.0" stylesheets="@style/MenuBar.css" text="Orders" textFill="#fbfafa">
+            <MenuButton id="menuOrdersBtn" fx:id="menuOrdersBtn" layoutX="434.0" layoutY="15.0" mnemonicParsing="false" prefHeight="45.0" stylesheets="@style/MenuBar.css" text="Orders" textFill="#fbfafa">
               <items>
                 <MenuItem mnemonicParsing="false" text="Action 1" />
                 <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -49,7 +49,7 @@
                   <String fx:value="btn" />
                </styleClass>
             </MenuButton>
-            <MenuButton id="menuCustomerBtn" layoutX="518.0" layoutY="15.0" mnemonicParsing="false" prefHeight="45.0" stylesheets="@style/MenuBar.css" text="Customers" textFill="#fbfafa">
+            <MenuButton id="menuCustomerBtn" fx:id="menuCustomersBtn" layoutX="518.0" layoutY="15.0" mnemonicParsing="false" prefHeight="45.0" stylesheets="@style/MenuBar.css" text="Customers" textFill="#fbfafa">
                <items>
                   <MenuItem mnemonicParsing="false" text="Action 1" />
                   <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -65,7 +65,7 @@
                   <String fx:value="btn" />
                </styleClass>
             </MenuButton>
-            <MenuButton id="menuItemBtn" layoutX="627.0" layoutY="15.0" mnemonicParsing="false" prefHeight="45.0" stylesheets="@style/MenuBar.css" text="Items" textFill="#fbfafa">
+            <MenuButton id="menuItemBtn" fx:id="menuItemsBtn" layoutX="627.0" layoutY="15.0" mnemonicParsing="false" prefHeight="45.0" stylesheets="@style/MenuBar.css" text="Items" textFill="#fbfafa">
                <items>
                   <MenuItem mnemonicParsing="false" text="Action 1" />
                   <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -81,17 +81,17 @@
                   <String fx:value="btn" />
                </styleClass>
             </MenuButton>
-            <Label layoutX="823.0" layoutY="15.0" prefHeight="20.0" prefWidth="84.0" text="20th August" textAlignment="RIGHT" textFill="#f8f2f2">
+            <Label fx:id="dateLbl" layoutX="823.0" layoutY="15.0" prefHeight="20.0" prefWidth="84.0" text="20th August" textAlignment="RIGHT" textFill="#f8f2f2">
                <font>
                   <Font name="System Bold Italic" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="833.0" layoutY="34.0" text="12:20 am" textAlignment="RIGHT" textFill="#f8f2f2">
+            <Label fx:id="timeLbl" layoutX="833.0" layoutY="34.0" text="12:20 am" textAlignment="RIGHT" textFill="#f8f2f2">
                <font>
                   <Font name="System Bold Italic" size="16.0" />
                </font>
             </Label>
-            <JFXButton id="menuLogoutBtn" fx:id="menuDashboardBtn1" layoutX="913.0" layoutY="16.0" prefHeight="40.0" prefWidth="76.0" styleClass="menuBtn" stylesheets="@style/MenuBar.css" text="Logout" textFill="#fdfbfb">
+            <JFXButton id="menuLogoutBtn" fx:id="menuLogoutBtn" layoutX="913.0" layoutY="16.0" prefHeight="40.0" prefWidth="76.0" styleClass="menuBtn" stylesheets="@style/MenuBar.css" text="Logout" textFill="#fdfbfb">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -101,7 +101,7 @@
             </JFXButton>
          </children>
       </AnchorPane>
-      <AnchorPane id="menuDashboardBtn" fx:id="playGroundAnchorPane" layoutY="76.0" prefHeight="500.0" prefWidth="1000.0" style="-fx-background-color: white;" styleClass="menuBtn" stylesheets="@../../../../POS-system/src/view/style/MenuBar.css" />
+      <AnchorPane id="menuDashboardBtn" fx:id="playGroundAnchorPane" layoutX="2.0" layoutY="72.0" prefHeight="500.0" prefWidth="1000.0" style="-fx-background-color: white;" styleClass="menuBtn" stylesheets="@style/MenuBar.css" />
       <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="11.0">
          <image>
             <Image url="@assets/images/img-profile.png" />
