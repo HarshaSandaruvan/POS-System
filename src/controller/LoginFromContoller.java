@@ -25,7 +25,7 @@ public class LoginFromContoller {
         Stage stage=new Stage();
         stage.setScene(scene);
         stage.show();
-        System.out.println("Login on action call !");
+
         Stage loginStage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
         loginStage.close();
     }

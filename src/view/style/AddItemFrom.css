@@ -1,0 +1,30 @@
+#saveBtn{
+    -fx-background-color: #1abc9c;
+}
+#saveBtn:hover{
+    -fx-background-color: #16a085;
+}
+#clearBtn{
+    -fx-background-color: #e67e22;
+}
+#clearBtn:hover{
+    -fx-background-color: #d35400;
+}
+#itemTbl{
+    -fx-background-color: #f1f2f6;
+}
+
+#deleteBtn{
+    -fx-background-color: rgba(246, 7, 5, 0.73);
+}
+#deleteBtn:hover{
+    -fx-background-color: #d63031;
+}
+
+#editBtn{
+    -fx-background-color: #fdea6e;
+}
+
+#editBtn:hover{
+    -fx-background-color: #fdcb6e;
+}

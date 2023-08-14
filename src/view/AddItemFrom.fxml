@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="addItemAnchorPane" prefHeight="500.0" prefWidth="1000.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddItemFromController">
+   <children>
+      <Label layoutX="19.0" layoutY="17.0" text="Item Details">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Separator layoutX="19.0" layoutY="55.0" prefHeight="2.0" prefWidth="955.0" />
+      <Label layoutX="20.0" layoutY="73.0" text="Item Id :" />
+      <TextField disable="true" editable="false" layoutX="124.0" layoutY="71.0" promptText="I 001" />
+      <Label layoutX="20.0" layoutY="105.0" text="Item Name :" />
+      <TextField fx:id="txtItemName" layoutX="125.0" layoutY="103.0" promptText="Item Name" />
+      <Separator layoutX="20.0" layoutY="177.0" prefHeight="2.0" prefWidth="955.0" />
+      <Label layoutX="363.0" layoutY="74.0" text="Batch No." />
+      <TextField fx:id="txtBatchNumber" layoutX="467.0" layoutY="72.0" promptText="Batch Number" />
+      <Label layoutX="363.0" layoutY="106.0" text="Price :" />
+      <TextField fx:id="txtPrice" layoutX="467.0" layoutY="104.0" promptText="Price (Rs)" />
+      <Label layoutX="719.0" layoutY="74.0" text="Qty :" />
+      <TextField fx:id="txtQtyOnHand" layoutX="824.0" layoutY="72.0" promptText="Quantity On Hand" />
+      <Label layoutX="19.0" layoutY="138.0" text="Supplier :" />
+      <TextField fx:id="txtSupplier" layoutX="125.0" layoutY="136.0" promptText="Supplier " />
+      <DatePicker fx:id="datePicker" layoutX="824.0" layoutY="103.0" prefHeight="25.0" prefWidth="149.0" promptText="13-05-2024" />
+      <Label layoutX="719.0" layoutY="107.0" text="Exp. Date :" />
+      <JFXButton id="saveBtn" fx:id="btnSave" layoutX="910.0" layoutY="140.0" onAction="#saveBtnOnAction" prefHeight="29.0" prefWidth="64.0" stylesheets="@style/AddItemFrom.css" text="Save" textFill="#0b0a0a">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <TableView id="itemTbl" fx:id="itemsTbl" layoutX="20.0" layoutY="194.0" prefHeight="226.0" prefWidth="955.0" stylesheets="@style/AddItemFrom.css">
+        <columns>
+          <TableColumn fx:id="colItemId" prefWidth="75.0" text="Item Id" />
+          <TableColumn fx:id="colItemName" prefWidth="203.33334350585938" text="Item Name" />
+            <TableColumn fx:id="colSupplier" prefWidth="202.66668701171875" text="Supplier" />
+            <TableColumn fx:id="colBatchNumber" prefWidth="141.33328247070312" text="Batch no." />
+            <TableColumn fx:id="colPrice" prefWidth="141.33334350585938" text="Price" />
+            <TableColumn fx:id="colQty" prefWidth="96.6666259765625" text="Qty" />
+            <TableColumn fx:id="colDate" prefWidth="95.99996948242188" text="Exp. Date" />
+        </columns>
+      </TableView>
+      <JFXButton id="clearBtn" fx:id="btnClear" layoutX="823.0" layoutY="140.0" onAction="#clearBtnOnAction" prefHeight="29.0" prefWidth="64.0" stylesheets="@style/AddItemFrom.css" text="Clear" textFill="#222121">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton id="editBtn" fx:id="btnEdit" layoutX="912.0" layoutY="449.0" onAction="#editBtnOnAction" prefHeight="29.0" prefWidth="64.0" stylesheets="@style/AddItemFrom.css" text="Edit" textFill="#0b0a0a">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton id="deleteBtn" fx:id="btnDelete" layoutX="830.0" layoutY="448.0" onAction="#deleteBtnOnAction" prefHeight="29.0" prefWidth="64.0" stylesheets="@style/AddItemFrom.css" text="Delete" textFill="#222121">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>
