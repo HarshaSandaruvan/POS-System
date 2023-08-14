@@ -11,10 +11,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="576.0" prefWidth="999.0" stylesheets="@style/MenuBar.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuBarController">
+<AnchorPane prefHeight="576.0" prefWidth="1001.0" stylesheets="@style/MenuBar.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuBarController">
    <children>
-      <AnchorPane prefHeight="76.0" prefWidth="1000.0" style="-fx-background-color: #071952;">
+      <AnchorPane layoutX="1.0" prefHeight="76.0" prefWidth="1000.0" style="-fx-background-color: #071952;">
          <children>
             <Label fx:id="userNameLbl" layoutX="74.0" layoutY="4.0" prefHeight="58.0" prefWidth="210.0" text="Harsha Sandaruwan" textFill="#f8f8f8" wrapText="true">
                <font>
@@ -101,7 +100,7 @@
             </JFXButton>
          </children>
       </AnchorPane>
-      <AnchorPane id="menuDashboardBtn" fx:id="playGroundAnchorPane" layoutX="2.0" layoutY="72.0" prefHeight="500.0" prefWidth="1000.0" style="-fx-background-color: white;" styleClass="menuBtn" stylesheets="@style/MenuBar.css" />
+      <AnchorPane fx:id="playGroundAnchorPane" layoutX="1.0" layoutY="76.0" prefHeight="500.0" prefWidth="1000.0" style="-fx-background-color: white;" />
       <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="11.0">
          <image>
             <Image url="@assets/images/img-profile.png" />
