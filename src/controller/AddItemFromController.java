@@ -2,10 +2,13 @@ package controller;
 
 import bo.BOFactory;
 import bo.custom.ItemBo;
+
 import com.jfoenix.controls.JFXButton;
 import dto.ItemDTO;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
 import java.sql.Date;
@@ -33,17 +36,35 @@ public class AddItemFromController {
     public JFXButton btnDelete;
     public TextField txtItemId;
     public TextField txtItemPrice;
+    private ObservableList<ItemDTO> allItems;
+    private int selectedIndex = -1;
 
-    public void initialize(){
-        generateAndSetItemId();
+    public void initialize (){
+       generateAndSetItemId();
     }
 
     private void generateAndSetItemId() {
         txtItemId.setText(itemBO.getNextId());
+
+        colItemId.setCellValueFactory(new PropertyValueFactory<>("itemID"));
+        colItemName.setCellValueFactory(new PropertyValueFactory<>("itemName"));
+        colBatchNumber.setCellValueFactory(new PropertyValueFactory<>("batchNumber"));
+        colPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+        colDate.setCellValueFactory(new PropertyValueFactory<>("expireDate"));
+        colSupplier.setCellValueFactory(new PropertyValueFactory<>("supplier"));
+
+        setDataToTable();
+
     }
 
     ItemBo itemBO = (ItemBo) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.ITEM);
     public void clearBtnOnAction(ActionEvent actionEvent) {
+        txtBatchNumber.clear();
+        txtItemName.clear();
+        txtItemPrice.clear();
+        txtSupplier.clear();
+        txtQtyOnHand.clear();
+        datePicker.getEditor().clear();
     }
 
     public void editBtnOnAction(ActionEvent actionEvent) {
@@ -68,9 +89,32 @@ public class AddItemFromController {
         if (Boolean.TRUE.equals(isSave)){
              alert=new Alert(Alert.AlertType.INFORMATION,"Item Saved");
 
+            //Clear Fields
+             clearFields();
+
+            //Generate Next Item Id
+             generateAndSetItemId();
+
+             //Reload the Table
+             setDataToTable();
+
         }else {
              alert=new Alert(Alert.AlertType.ERROR,"Something Wrong");
         }
         alert.show();
+    }
+
+    private void clearFields() {
+        txtBatchNumber.clear();
+        txtItemName.clear();
+        txtItemPrice.clear();
+        txtSupplier.clear();
+        txtQtyOnHand.clear();
+        datePicker.getEditor().clear();
+    }
+
+    private void setDataToTable() {
+        allItems = itemBO.getAllItem();
+        itemsTbl.setItems(allItems);
     }
 }

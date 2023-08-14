@@ -44,13 +44,13 @@
       </JFXButton>
       <TableView id="itemTbl" fx:id="itemsTbl" layoutX="20.0" layoutY="194.0" prefHeight="226.0" prefWidth="955.0" stylesheets="@style/AddItemFrom.css">
         <columns>
-          <TableColumn fx:id="colItemId" prefWidth="75.0" text="Item Id" />
-          <TableColumn fx:id="colItemName" prefWidth="203.33334350585938" text="Item Name" />
-            <TableColumn fx:id="colSupplier" prefWidth="202.66668701171875" text="Supplier" />
-            <TableColumn fx:id="colBatchNumber" prefWidth="141.33328247070312" text="Batch no." />
-            <TableColumn fx:id="colPrice" prefWidth="141.33334350585938" text="Price" />
-            <TableColumn fx:id="colQty" prefWidth="96.6666259765625" text="Qty" />
-            <TableColumn fx:id="colDate" prefWidth="95.99996948242188" text="Exp. Date" />
+          <TableColumn fx:id="colItemId" prefWidth="75.0" resizable="false" text="Item Id" />
+          <TableColumn fx:id="colItemName" prefWidth="203.33334350585938" resizable="false" text="Item Name" />
+            <TableColumn fx:id="colSupplier" editable="false" prefWidth="202.66668701171875" resizable="false" text="Supplier" />
+            <TableColumn fx:id="colBatchNumber" prefWidth="141.33328247070312" resizable="false" text="Batch no." />
+            <TableColumn fx:id="colPrice" prefWidth="141.33334350585938" resizable="false" text="Price" />
+            <TableColumn fx:id="colQty" prefWidth="96.6666259765625" resizable="false" text="Qty" />
+            <TableColumn fx:id="colDate" prefWidth="95.99996948242188" resizable="false" text="Exp. Date" />
         </columns>
       </TableView>
       <JFXButton id="clearBtn" fx:id="btnClear" layoutX="823.0" layoutY="140.0" onAction="#clearBtnOnAction" prefHeight="29.0" prefWidth="64.0" stylesheets="@style/AddItemFrom.css" text="Clear" textFill="#222121">
