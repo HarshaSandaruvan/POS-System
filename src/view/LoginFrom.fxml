@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="loginFromAnchorPane" prefHeight="337.0" prefWidth="240.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFromContoller">
+   <children>
+      <Label layoutX="81.0" layoutY="82.0" text="Welcome" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="userNameTxt" layoutX="46.0" layoutY="158.0" prefHeight="25.0" prefWidth="150.0" promptText="User Name">
+         <font>
+            <Font name="System Italic" size="11.0" />
+         </font>
+      </TextField>
+      <JFXButton id="LoginBtn" fx:id="loginBtn" layoutX="45.0" layoutY="234.0" onAction="#loginOnAction" prefHeight="31.0" prefWidth="150.0" stylesheets="@style/LoginFrom.css" text="Login" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="36.0" layoutY="115.0" prefHeight="38.0" prefWidth="173.0" text="Please enter your User Name and Password." textFill="#0000008b" wrapText="true">
+         <font>
+            <Font name="System Italic" size="11.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="57.0" fitWidth="53.0" layoutX="95.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/images/male-profile-img.png" />
+         </image>
+      </ImageView>
+      <PasswordField fx:id="passwordTxt" layoutX="45.0" layoutY="201.0" promptText="password" />
+      <ImageView fitHeight="200.0" fitWidth="281.0" layoutX="-41.0" layoutY="138.0">
+         <image>
+            <Image url="@assets/images/broderimg.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
