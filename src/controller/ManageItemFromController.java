@@ -7,22 +7,15 @@ import com.jfoenix.controls.JFXButton;
 import dto.ItemDTO;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 
 
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.sql.Date;
 import java.time.LocalDate;
 
-public class AddItemFromController {
+public class ManageItemFromController {
     public AnchorPane addItemAnchorPane;
     public TextField txtItemName;
     public TextField txtBatchNumber;

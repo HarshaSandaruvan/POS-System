@@ -5,8 +5,6 @@ N
 src/view/style/AddItemFrom.css,0\3\033fd0e6268faba1637bdb2be620db30b071f37b
 J
 src/view/style/MenuBar.css,0\a\0ac77ca3dcdabc7ad567426fa15f3fd5b1680da3
-D
-src/entity/Item.java,6\6\661fe644ad70125447825c9142ac99e7d97add7c
 H
 src/db/DbConnection.java,8\e\8e2efd5556e1055de49628692613d2236e3e330d
 C

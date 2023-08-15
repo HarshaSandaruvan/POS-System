@@ -9,8 +9,6 @@ H
 src/db/DbConnection.java,8\e\8e2efd5556e1055de49628692613d2236e3e330d
 C
 src/bo/SuperBO.java,9\b\9b5348fcc3e83e041069796e9d3abc0dc750b27c
-D
-src/entity/Item.java,6\6\661fe644ad70125447825c9142ac99e7d97add7c
 E
 src/dao/SuperDAO.java,b\b\bb39ba42a14676c3db6f9d3b913c28a6b55aeef6
 >

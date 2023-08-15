@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="manageCustomerPane" prefHeight="500.0" prefWidth="1000.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageCustomerFormController">
+   <children>
+      <Label layoutX="19.0" layoutY="17.0" text="Customer Details">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Separator layoutX="19.0" layoutY="55.0" prefHeight="2.0" prefWidth="955.0" />
+      <Label layoutX="20.0" layoutY="73.0" text="Customer Id :" />
+      <TextField fx:id="txtCustomer" disable="true" editable="false" layoutX="124.0" layoutY="71.0" promptText="C0001" />
+      <Label layoutX="361.0" layoutY="73.0" text="First Name :" />
+      <TextField fx:id="txtFirstName" layoutX="466.0" layoutY="71.0" promptText="First Name" />
+      <Separator layoutX="20.0" layoutY="177.0" prefHeight="2.0" prefWidth="955.0" />
+      <Label layoutX="720.0" layoutY="73.0" text="Nic Number :" />
+      <TextField fx:id="txtNicNumber" layoutX="824.0" layoutY="71.0" promptText="NIc Number" />
+      <Label layoutX="720.0" layoutY="105.0" text="Address :" />
+      <TextField fx:id="txtAddress" layoutX="824.0" layoutY="103.0" promptText="Address" />
+      <Label layoutX="21.0" layoutY="106.0" text="Contact No. :" />
+      <TextField fx:id="txtContactNo" layoutX="124.0" layoutY="104.0" promptText="Contact No." />
+      <Label layoutX="361.0" layoutY="106.0" text="Last Name :" />
+      <TextField fx:id="txtLastName" layoutX="466.0" layoutY="104.0" promptText="Last Name" />
+      <JFXButton id="saveBtn" fx:id="btnSave" layoutX="895.0" layoutY="140.0" onAction="#saveBtnOnAction" prefHeight="29.0" prefWidth="79.0" stylesheets="@style/AddItemFrom.css" text="Save" textFill="#0b0a0a">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <TableView id="itemTbl" fx:id="tblCustomer" layoutX="20.0" layoutY="194.0" prefHeight="244.0" prefWidth="955.0" stylesheets="@style/AddItemFrom.css">
+        <columns>
+          <TableColumn fx:id="colCustomerId" prefWidth="75.0" resizable="false" text="Customer Id" />
+          <TableColumn fx:id="colContactNo" prefWidth="131.99996185302734" resizable="false" text="Contact No." />
+            <TableColumn fx:id="colFirstName" editable="false" prefWidth="200.0" resizable="false" text="First Name" />
+            <TableColumn fx:id="colLastName" prefWidth="200.0" resizable="false" text="Last Name" />
+            <TableColumn fx:id="colNicNumber" prefWidth="118.0" resizable="false" text="Nic Number" />
+            <TableColumn fx:id="colAddress" prefWidth="228.66668701171875" resizable="false" text="Address" />
+        </columns>
+      </TableView>
+      <JFXButton id="clearBtn" fx:id="btnClear" layoutX="819.0" layoutY="140.0" onAction="#clearBtnOnAction" prefHeight="29.0" prefWidth="64.0" stylesheets="@style/AddItemFrom.css" text="Clear" textFill="#222121">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton id="editBtn" fx:id="btnEdit" layoutX="912.0" layoutY="449.0" onAction="#editBtnOnAction" prefHeight="29.0" prefWidth="64.0" stylesheets="@style/AddItemFrom.css" text="Edit" textFill="#0b0a0a">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton id="deleteBtn" fx:id="btnDelete" layoutX="830.0" layoutY="448.0" onAction="#deleteBtnOnAction" prefHeight="29.0" prefWidth="64.0" stylesheets="@style/AddItemFrom.css" text="Delete" textFill="#222121">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>
