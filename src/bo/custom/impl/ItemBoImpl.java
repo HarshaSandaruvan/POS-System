@@ -55,5 +55,35 @@ public class ItemBoImpl implements ItemBo {
         return allItemsForTable;
     }
 
+    @Override
+    public ItemDTO getItemById(String itemID) {
+        Item itemById = itemDAO.getItemByID(itemID);
+        if(itemById != null){
+            return new ItemDTO(
+                    itemById.getItemID(),
+                    itemById.getItemName(),
+                    itemById.getBatchNumber(),
+                    itemById.getPrice(),
+                    itemById.getQty(),
+                    itemById.getSupplier(),
+                    itemById.getExpireDate()
+            );
+        }
+        return null;
+    }
+
+    @Override
+    public Boolean updateItem(ItemDTO itemDTO) {
+        return itemDAO.updateItem(new Item(
+                itemDTO.getItemID(),
+                itemDTO.getItemName(),
+                itemDTO.getBatchNumber(),
+                itemDTO.getPrice(),
+                itemDTO.getQty(),
+                itemDTO.getSupplier(),
+                itemDTO.getExpireDate()
+        ));
+    }
+
 
 }

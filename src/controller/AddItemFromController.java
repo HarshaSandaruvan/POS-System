@@ -38,6 +38,7 @@ public class AddItemFromController {
     public TextField txtItemPrice;
     private ObservableList<ItemDTO> allItems;
     private int selectedIndex = -1;
+    private boolean isEdit = false;
 
     public void initialize (){
        generateAndSetItemId();
@@ -73,6 +74,8 @@ public class AddItemFromController {
 
     public void editBtnOnAction(ActionEvent actionEvent) {
     }
+
+
 
     public void deleteBtnOnAction(ActionEvent actionEvent) {
     }
