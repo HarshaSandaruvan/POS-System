@@ -1,5 +1,6 @@
 package dao;
 
+import dao.custom.impl.CustomerDAOImpl;
 import dao.custom.impl.ItemDAOImpl;
 import dao.custom.impl.LoginDAOImpl;
 
@@ -8,7 +9,7 @@ import static bo.BOFactory.BoTypes.LOGIN;
 public class DAOFactory {
     private static DAOFactory daoFactory;
     public enum DAOTypes{
-        ITEM, LOGIN
+        ITEM, LOGIN, CUSTOMER
     }
     public static DAOFactory getDaoFactory(){
         if(daoFactory == null){
@@ -23,6 +24,8 @@ public class DAOFactory {
                 return new LoginDAOImpl();
             case ITEM:
                 return new ItemDAOImpl();
+            case CUSTOMER:
+                return new CustomerDAOImpl();
             default:
                 return null;
         }

@@ -15,8 +15,6 @@ E
 src/script.sql,8\f\8fabe3755e1ead5799c15bb382666c6712f45baa
 L
 src/dao/custom/LoginDAO.java,f\4\f47bf3b04a5ffbc9523b21eec5261b0577324049
-G
-src/dao/DAOFactory.java,9\f\9f9767f330c3d674b64b13bf8d78355a1bc26128
 U
 %src/dao/custom/impl/LoginDAOImpl.java,d\8\d8702fe775049e85bc28906a12ab4991c62f970a
 S

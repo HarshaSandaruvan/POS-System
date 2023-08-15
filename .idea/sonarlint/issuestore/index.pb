@@ -13,8 +13,6 @@ E
 src/dao/SuperDAO.java,b\b\bb39ba42a14676c3db6f9d3b913c28a6b55aeef6
 >
 src/script.sql,8\f\8fabe3755e1ead5799c15bb382666c6712f45baa
-G
-src/dao/DAOFactory.java,9\f\9f9767f330c3d674b64b13bf8d78355a1bc26128
 L
 src/dao/custom/LoginDAO.java,f\4\f47bf3b04a5ffbc9523b21eec5261b0577324049
 U
