@@ -73,9 +73,29 @@ public class AddItemFromController {
     }
 
     public void editBtnOnAction(ActionEvent actionEvent) {
+        if(selectedIndex != -1){
+            loadItemDataToFields(allItems.get(selectedIndex));
+            btnSave.setText("UPDATE");
+            btnSave.setStyle("-fx-background-color:  #f1c40f");
+            isEdit = true;
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR,"Please select item first.");
+            alert.show();
+        }
+
     }
 
+    private void loadItemDataToFields(ItemDTO selectedItem) {
+        ItemDTO selectedItemDetails = itemBO.getItemById(selectedItem.getItemID());
+        txtSupplier.setText(selectedItemDetails.getSupplier());
+        txtBatchNumber.setText(selectedItemDetails.getBatchNumber());
+        txtItemId.setText(selectedItemDetails.getItemID());
+        txtItemPrice.setText(String.format("%.2f",selectedItemDetails.getPrice()));
+        datePicker.getEditor().setText(String.valueOf(selectedItemDetails.getExpireDate()));
+        txtItemName.setText(selectedItemDetails.getItemName());
+        txtQtyOnHand.setText(String.format("%.2f",selectedItemDetails.getQty()));
 
+    }
 
     public void deleteBtnOnAction(ActionEvent actionEvent) {
     }
