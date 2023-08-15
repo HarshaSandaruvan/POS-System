@@ -7,10 +7,16 @@ import com.jfoenix.controls.JFXButton;
 import dto.ItemDTO;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.Date;
 import java.time.LocalDate;
 
@@ -39,6 +45,7 @@ public class AddItemFromController {
     private ObservableList<ItemDTO> allItems;
     private int selectedIndex = -1;
     private boolean isEdit = false;
+
 
     public void initialize (){
        generateAndSetItemId();
@@ -98,37 +105,108 @@ public class AddItemFromController {
     }
 
     public void deleteBtnOnAction(ActionEvent actionEvent) {
+
+        ButtonType YES=new ButtonType("Yes");
+        ButtonType NO=new ButtonType("No");
+
+
+        Alert alert =new Alert(Alert.AlertType.CONFIRMATION,"",YES,NO);
+        alert.setHeaderText("Do you want Delete this Item ?");
+        alert.showAndWait().ifPresent(response ->{
+            if (response==YES){
+                Alert alert1;
+                if(selectedIndex != -1){
+                    ItemDTO selectedItem = allItems.get(selectedIndex);
+                    ItemDTO itemById = itemBO.getItemById(selectedItem.getItemID());
+                    Boolean isDeleted = itemBO.deleteItem(itemById.getItemID());
+                    //Reload the table
+                    setDataToTable();
+
+
+                    if (isDeleted){
+                          alert1 = new Alert(Alert.AlertType.INFORMATION, "Item Deleted !");
+                        alert1.show();
+                    }else {
+                         alert1 = new Alert(Alert.AlertType.ERROR, "Item Not Deleted !");
+                    }
+                    alert1.show();
+
+
+                }else{
+                    Alert alert2 = new Alert(Alert.AlertType.ERROR,"Please select item first.");
+                    alert2.show();
+                }
+            }
+        });
+
+
+
+
+
     }
 
     public void saveBtnOnAction(ActionEvent actionEvent) {
-        ItemDTO itemDTO=new ItemDTO(
-                txtItemId.getText(),
-                txtItemName.getText(),
-                txtBatchNumber.getText(),
-                Double.parseDouble(txtItemPrice.getText()),
-                Double.parseDouble(txtQtyOnHand.getText()),
-                txtSupplier.getText(),
-                Date.valueOf(LocalDate.now())
-        );
-        Boolean isSave = itemBO.saveItem(itemDTO);
+        if(!isEdit){
+            ItemDTO itemDTO = new ItemDTO(
+                    txtItemId.getText(),
+                    txtItemName.getText(),
+                    txtBatchNumber.getText(),
+                    Double.parseDouble(txtItemPrice.getText()),
+                    Double.parseDouble(txtQtyOnHand.getText()),
+                    txtSupplier.getText(),
+                    Date.valueOf(LocalDate.now())
+            );
 
-        Alert alert;
-        if (Boolean.TRUE.equals(isSave)){
-             alert=new Alert(Alert.AlertType.INFORMATION,"Item Saved");
+            boolean b = itemBO.saveItem(itemDTO);
 
-            //Clear Fields
-             clearFields();
+            if(b){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Save Item ");
+                alert.setHeaderText("Item Saved !");
+                alert.show();
 
-            //Generate Next Item Id
-             generateAndSetItemId();
+                // Clear Fields
+                clearFields();
 
-             //Reload the Table
-             setDataToTable();
+                // Generate Next ItemID
+                generateAndSetItemId();
 
+                //Reload the table
+                setDataToTable();
+            }
         }else {
-             alert=new Alert(Alert.AlertType.ERROR,"Something Wrong");
+            // Item Update method
+            boolean updateResult = itemBO.updateItem(new ItemDTO(
+                    txtItemId.getText(),
+                    txtItemName.getText(),
+                    txtBatchNumber.getText(),
+                    Double.parseDouble(txtItemPrice.getText()),
+                    Double.parseDouble(txtQtyOnHand.getText()),
+                    txtSupplier.getText(),
+                    Date.valueOf(LocalDate.now())
+            ));
+
+            if(updateResult){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Item Update");
+                alert.setHeaderText("Item Successfully Updated !");
+                alert.show();
+
+                clearFields();
+
+                initialize();
+
+                // Restoring ADD button
+                btnSave.setText("ADD");
+                btnSave.setStyle("-fx-background-color:  #1abc9c");
+                isEdit = false;
+            }else{
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Item Update");
+                alert.setHeaderText("Item Not Updated !");
+                alert.show();
+            }
         }
-        alert.show();
     }
 
     private void clearFields() {

@@ -63,7 +63,7 @@ public class MenuBarController {
 
 
         Alert alert =new Alert(Alert.AlertType.CONFIRMATION,"",YES,NO);
-        alert.setHeaderText("Do you want Exit !");
+        alert.setHeaderText("Do you want Exit ?");
         alert.showAndWait().ifPresent(response ->{
             if (response==YES){
                 Parent parent = null;

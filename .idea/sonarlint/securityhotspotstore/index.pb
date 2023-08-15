@@ -13,8 +13,6 @@ C
 src/bo/SuperBO.java,9\b\9b5348fcc3e83e041069796e9d3abc0dc750b27c
 E
 src/dao/SuperDAO.java,b\b\bb39ba42a14676c3db6f9d3b913c28a6b55aeef6
-E
-src/dao/CrudUtil.java,5\1\51ef932cd0902cea63ec682bc6851548809628a8
 >
 src/script.sql,8\f\8fabe3755e1ead5799c15bb382666c6712f45baa
 L
@@ -23,8 +21,6 @@ G
 src/dao/DAOFactory.java,9\f\9f9767f330c3d674b64b13bf8d78355a1bc26128
 U
 %src/dao/custom/impl/LoginDAOImpl.java,d\8\d8702fe775049e85bc28906a12ab4991c62f970a
-J
-src/bo/custom/LoginBo.java,2\e\2e78e6bdafa8d2c3b6f500be73db05b0bf6c59bb
 S
 #src/bo/custom/impl/LoginBoImpl.java,f\5\f50bab4271fb658eb0e8e6bc51161ff925d1f705
 E

@@ -85,5 +85,9 @@ public class ItemBoImpl implements ItemBo {
         ));
     }
 
-
+    @Override
+    public Boolean deleteItem(String itemId) {
+        Boolean isDelete = itemDAO.deleteItem(itemId);
+        return isDelete;
+    }
 }

@@ -17,4 +17,6 @@ public interface ItemBo extends SuperBO {
 
     public Boolean updateItem(ItemDTO itemDTO);
 
+    public Boolean deleteItem(String itemId);
+
 }

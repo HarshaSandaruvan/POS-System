@@ -34,7 +34,7 @@
       <TextField fx:id="txtSupplier" layoutX="125.0" layoutY="136.0" promptText="Supplier " />
       <DatePicker fx:id="datePicker" layoutX="824.0" layoutY="103.0" prefHeight="25.0" prefWidth="149.0" promptText="13-05-2024" />
       <Label layoutX="719.0" layoutY="107.0" text="Exp. Date :" />
-      <JFXButton id="saveBtn" fx:id="btnSave" layoutX="910.0" layoutY="140.0" onAction="#saveBtnOnAction" prefHeight="29.0" prefWidth="64.0" stylesheets="@style/AddItemFrom.css" text="Save" textFill="#0b0a0a">
+      <JFXButton id="saveBtn" fx:id="btnSave" layoutX="895.0" layoutY="140.0" onAction="#saveBtnOnAction" prefHeight="29.0" prefWidth="79.0" stylesheets="@style/AddItemFrom.css" text="Save" textFill="#0b0a0a">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -53,7 +53,7 @@
             <TableColumn fx:id="colDate" prefWidth="95.99996948242188" resizable="false" text="Exp. Date" />
         </columns>
       </TableView>
-      <JFXButton id="clearBtn" fx:id="btnClear" layoutX="823.0" layoutY="140.0" onAction="#clearBtnOnAction" prefHeight="29.0" prefWidth="64.0" stylesheets="@style/AddItemFrom.css" text="Clear" textFill="#222121">
+      <JFXButton id="clearBtn" fx:id="btnClear" layoutX="819.0" layoutY="140.0" onAction="#clearBtnOnAction" prefHeight="29.0" prefWidth="64.0" stylesheets="@style/AddItemFrom.css" text="Clear" textFill="#222121">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
