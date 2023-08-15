@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 public class AppInitializer extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent parent = FXMLLoader.load(this.getClass().getResource("./view/AddItemFrom.fxml"));
+        Parent parent = FXMLLoader.load(this.getClass().getResource("./view/MenuBar.fxml"));
         Scene scene=new Scene(parent);
         primaryStage.setScene(scene);
         primaryStage.show();

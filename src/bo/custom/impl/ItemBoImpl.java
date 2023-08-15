@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class ItemBoImpl implements ItemBo {
     ItemDAO itemDAO = (ItemDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.ITEM);
     @Override
-    public Boolean saveItem(ItemDTO itemDTO) {
+    public boolean saveItem(ItemDTO itemDTO) {
         Item item = new Item(
                 itemDTO.getItemID(),
                 itemDTO.getItemName(),
@@ -73,7 +73,7 @@ public class ItemBoImpl implements ItemBo {
     }
 
     @Override
-    public Boolean updateItem(ItemDTO itemDTO) {
+    public boolean updateItem(ItemDTO itemDTO) {
         return itemDAO.updateItem(new Item(
                 itemDTO.getItemID(),
                 itemDTO.getItemName(),
@@ -86,7 +86,7 @@ public class ItemBoImpl implements ItemBo {
     }
 
     @Override
-    public Boolean deleteItem(String itemId) {
+    public boolean deleteItem(String itemId) {
         Boolean isDelete = itemDAO.deleteItem(itemId);
         return isDelete;
     }

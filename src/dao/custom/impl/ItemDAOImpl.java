@@ -88,7 +88,7 @@ public class ItemDAOImpl implements ItemDAO {
     }
 
     @Override
-    public Boolean updateItem(Item item) {
+    public boolean updateItem(Item item) {
         try {
             return CrudUtil.executeUpdate("UPDATE item SET itemName=?, batchNumber=?, price=?, " +
                             "qty=?, supplier=?, expireDate=? WHERE itemID=?",
@@ -108,7 +108,7 @@ public class ItemDAOImpl implements ItemDAO {
     }
 
     @Override
-    public Boolean deleteItem(String itemId) {
+    public boolean deleteItem(String itemId) {
         try {
             boolean b;
             if (CrudUtil.executeUpdate("DELETE FROM item WHERE itemId=?", itemId)) {

@@ -11,6 +11,6 @@ public interface ItemDAO extends SuperDAO {
     public ArrayList<Item> getAllItems();
     public Item getItemByID(String itemID);
 
-    public Boolean updateItem(Item item);
-    public Boolean deleteItem(String itemId);
+    public boolean updateItem(Item item);
+    public boolean deleteItem(String itemId);
 }

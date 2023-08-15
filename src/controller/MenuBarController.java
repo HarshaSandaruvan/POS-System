@@ -51,7 +51,7 @@ public class MenuBarController {
     }
 
     public void itemMangerOnAction(ActionEvent actionEvent) throws IOException {
-        URL resource = getClass().getResource("/view/AddItemFrom.fxml");
+        URL resource = getClass().getResource("/view/ManageItemForm.fxml.fxml");
         Parent load = FXMLLoader.load(resource);
         playGroundAnchorPane.getChildren().clear();
         playGroundAnchorPane.getChildren().add(load);
@@ -87,5 +87,12 @@ public class MenuBarController {
         });
 
 
+    }
+
+    public void manageCustomerOnAction(ActionEvent actionEvent) throws IOException {
+        URL resource = getClass().getResource("/view/ManageCustomerForm.fxml");
+        Parent load = FXMLLoader.load(resource);
+        playGroundAnchorPane.getChildren().clear();
+        playGroundAnchorPane.getChildren().add(load);
     }
 }

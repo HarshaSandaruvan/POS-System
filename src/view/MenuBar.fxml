@@ -50,8 +50,7 @@
             </MenuButton>
             <MenuButton id="menuCustomerBtn" fx:id="menuCustomersBtn" layoutX="518.0" layoutY="15.0" mnemonicParsing="false" prefHeight="45.0" stylesheets="@style/MenuBar.css" text="Customers" textFill="#fbfafa">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Action 1" />
-                  <MenuItem mnemonicParsing="false" text="Action 2" />
+                  <MenuItem mnemonicParsing="false" onAction="#manageCustomerOnAction" text="Manage Customer" />
                </items>
                <font>
                   <Font name="System Bold" size="14.0" />
@@ -67,7 +66,6 @@
             <MenuButton id="menuItemBtn" fx:id="menuItemsBtn" layoutX="627.0" layoutY="15.0" mnemonicParsing="false" prefHeight="45.0" stylesheets="@style/MenuBar.css" text="Items" textFill="#fbfafa">
                <items>
                   <MenuItem fx:id="BtnItemManager" mnemonicParsing="false" onAction="#itemMangerOnAction" text="Mange Item" />
-                  <MenuItem mnemonicParsing="false" text="Action 2" />
                </items>
                <font>
                   <Font name="System Bold" size="14.0" />

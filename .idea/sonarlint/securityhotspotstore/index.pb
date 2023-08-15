@@ -13,9 +13,5 @@ E
 src/dao/SuperDAO.java,b\b\bb39ba42a14676c3db6f9d3b913c28a6b55aeef6
 >
 src/script.sql,8\f\8fabe3755e1ead5799c15bb382666c6712f45baa
-L
-src/dao/custom/LoginDAO.java,f\4\f47bf3b04a5ffbc9523b21eec5261b0577324049
-U
-%src/dao/custom/impl/LoginDAOImpl.java,d\8\d8702fe775049e85bc28906a12ab4991c62f970a
 S
 #src/bo/custom/impl/LoginBoImpl.java,f\5\f50bab4271fb658eb0e8e6bc51161ff925d1f705

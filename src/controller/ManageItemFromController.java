@@ -41,7 +41,7 @@ public class ManageItemFromController {
     private int selectedIndex = -1;
     private boolean isEdit = false;
 
-
+    ItemBo itemBO = (ItemBo) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.ITEM);
 
     public void initialize (){
        generateAndSetItemId();
@@ -66,7 +66,7 @@ public class ManageItemFromController {
         });
     }
 
-    ItemBo itemBO = (ItemBo) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.ITEM);
+
     public void clearBtnOnAction(ActionEvent actionEvent) {
         txtBatchNumber.clear();
         txtItemName.clear();
