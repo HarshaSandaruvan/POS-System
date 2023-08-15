@@ -55,6 +55,10 @@ public class AddItemFromController {
 
         setDataToTable();
 
+        // Set listener to the table
+        itemsTbl.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
+            selectedIndex = (int) newValue;
+        });
     }
 
     ItemBo itemBO = (ItemBo) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.ITEM);

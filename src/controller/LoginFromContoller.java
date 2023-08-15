@@ -43,16 +43,22 @@ public class LoginFromContoller {
                 Stage loginStage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
                 loginStage.close();
             }else {
-                Alert alert=new Alert(Alert.AlertType.ERROR,"Please check your User name and Password !");
-                alert.show();
+                Alert alert=new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error Alert");
+                alert.setHeaderText("Please check your User name and Password !");
+                alert.showAndWait();
+
+
             }
         }
 
     }
     private boolean fieldValidation(){
         if(userNameTxt.getText().isEmpty() && passwordTxt.getText().isEmpty()){
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Please Enter User Name and Password !");
-            alert.show();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Alert");
+            alert.setHeaderText("Please Enter User Name and Password !");
+            alert.showAndWait();
             return false;
         }else {
             return true;

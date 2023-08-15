@@ -10,19 +10,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="loginFromAnchorPane" prefHeight="337.0" prefWidth="240.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFromContoller">
+<AnchorPane fx:id="loginFromAnchorPane" prefHeight="367.0" prefWidth="280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFromContoller">
    <children>
-      <Label layoutX="81.0" layoutY="82.0" text="Welcome" textAlignment="CENTER">
+      <Label layoutX="98.0" layoutY="85.0" text="Welcome" textAlignment="CENTER">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="userNameTxt" layoutX="46.0" layoutY="158.0" prefHeight="25.0" prefWidth="150.0" promptText="User Name">
+      <TextField fx:id="userNameTxt" layoutX="63.0" layoutY="161.0" prefHeight="25.0" prefWidth="150.0" promptText="User Name">
          <font>
             <Font name="System Italic" size="11.0" />
          </font>
       </TextField>
-      <JFXButton id="LoginBtn" fx:id="loginBtn" layoutX="45.0" layoutY="234.0" onAction="#loginOnAction" prefHeight="31.0" prefWidth="150.0" stylesheets="@style/LoginFrom.css" text="Login" textFill="WHITE">
+      <JFXButton id="LoginBtn" fx:id="loginBtn" layoutX="62.0" layoutY="237.0" onAction="#loginOnAction" prefHeight="31.0" prefWidth="150.0" stylesheets="@style/LoginFrom.css" text="Login" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -30,18 +30,18 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <Label layoutX="36.0" layoutY="115.0" prefHeight="38.0" prefWidth="173.0" text="Please enter your User Name and Password." textFill="#0000008b" wrapText="true">
+      <Label layoutX="53.0" layoutY="118.0" prefHeight="38.0" prefWidth="173.0" text="Please enter your User Name and Password." textFill="#0000008b" wrapText="true">
          <font>
             <Font name="System Italic" size="11.0" />
          </font>
       </Label>
-      <ImageView fitHeight="57.0" fitWidth="53.0" layoutX="95.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="57.0" fitWidth="53.0" layoutX="112.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@assets/images/male-profile-img.png" />
          </image>
       </ImageView>
-      <PasswordField fx:id="passwordTxt" layoutX="45.0" layoutY="201.0" promptText="password" />
-      <ImageView fitHeight="200.0" fitWidth="281.0" layoutX="-38.0" layoutY="141.0">
+      <PasswordField fx:id="passwordTxt" layoutX="62.0" layoutY="204.0" promptText="password" />
+      <ImageView fitHeight="244.0" fitWidth="314.0" layoutX="-34.0" layoutY="130.0">
          <image>
             <Image url="@assets/images/broderimg.png" />
          </image>

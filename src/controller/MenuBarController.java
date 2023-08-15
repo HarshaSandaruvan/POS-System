@@ -6,11 +6,14 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -54,5 +57,20 @@ public class MenuBarController {
         Parent load = FXMLLoader.load(resource);
         playGroundAnchorPane.getChildren().clear();
         playGroundAnchorPane.getChildren().add(load);
+    }
+
+    public void logoutOnAction(ActionEvent actionEvent) throws IOException {
+
+
+        Alert alert =new Alert(Alert.AlertType.CONFIRMATION);
+        Stage DashboardStage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
+        DashboardStage.close();
+
+        URL resource = getClass().getResource("/view/LoginFrom.fxml");
+        Parent load = FXMLLoader.load(resource);
+        playGroundAnchorPane.getChildren().clear();
+        playGroundAnchorPane.getChildren().add(load);
+
+
     }
 }

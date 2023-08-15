@@ -29,7 +29,7 @@
       <Label layoutX="363.0" layoutY="106.0" text="Price :" />
       <TextField fx:id="txtItemPrice" layoutX="467.0" layoutY="104.0" promptText="Price (Rs)" />
       <Label layoutX="719.0" layoutY="74.0" text="Qty :" />
-      <TextField fx:id="txtQtyOnHand" layoutX="824.0" layoutY="72.0" promptText="Quntaty On Hand" />
+      <TextField fx:id="txtQtyOnHand" layoutX="824.0" layoutY="72.0" promptText="Quantity On Hand" />
       <Label layoutX="19.0" layoutY="138.0" text="Supplier :" />
       <TextField fx:id="txtSupplier" layoutX="125.0" layoutY="136.0" promptText="Supplier " />
       <DatePicker fx:id="datePicker" layoutX="824.0" layoutY="103.0" prefHeight="25.0" prefWidth="149.0" promptText="13-05-2024" />
