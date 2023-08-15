@@ -8,10 +8,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -60,16 +58,33 @@ public class MenuBarController {
     }
 
     public void logoutOnAction(ActionEvent actionEvent) throws IOException {
+        ButtonType YES=new ButtonType("Yes");
+        ButtonType NO=new ButtonType("No");
 
 
-        Alert alert =new Alert(Alert.AlertType.CONFIRMATION);
-        Stage DashboardStage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
-        DashboardStage.close();
+        Alert alert =new Alert(Alert.AlertType.CONFIRMATION,"",YES,NO);
+        alert.setHeaderText("Do you want Exit !");
+        alert.showAndWait().ifPresent(response ->{
+            if (response==YES){
+                Parent parent = null;
+                try {
+                    parent = FXMLLoader.load(this.getClass().getResource("../view/LoginFrom.fxml"));
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                Scene scene=new Scene(parent);
+                Stage stage=new Stage();
+                stage.setScene(scene);
 
-        URL resource = getClass().getResource("/view/LoginFrom.fxml");
-        Parent load = FXMLLoader.load(resource);
-        playGroundAnchorPane.getChildren().clear();
-        playGroundAnchorPane.getChildren().add(load);
+                stage.setTitle("Login From");
+                stage.show();
+
+                Stage dashboardStage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
+                dashboardStage.close();
+            }else {
+                System.out.println("No");
+            }
+        });
 
 
     }
