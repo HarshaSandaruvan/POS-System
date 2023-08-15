@@ -23,5 +23,3 @@ U
 %src/dao/custom/impl/LoginDAOImpl.java,d\8\d8702fe775049e85bc28906a12ab4991c62f970a
 S
 #src/bo/custom/impl/LoginBoImpl.java,f\5\f50bab4271fb658eb0e8e6bc51161ff925d1f705
-E
-src/bo/BOFactory.java,5\8\585c440c7082b46076f342a118f2ad4c9a3024ab

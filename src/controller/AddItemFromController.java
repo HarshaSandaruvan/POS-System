@@ -16,7 +16,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.sql.Date;
 import java.time.LocalDate;
 
@@ -47,6 +49,7 @@ public class AddItemFromController {
     private boolean isEdit = false;
 
 
+
     public void initialize (){
        generateAndSetItemId();
     }
@@ -60,6 +63,7 @@ public class AddItemFromController {
         colPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
         colDate.setCellValueFactory(new PropertyValueFactory<>("expireDate"));
         colSupplier.setCellValueFactory(new PropertyValueFactory<>("supplier"));
+        colQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
 
         setDataToTable();
 
@@ -146,6 +150,7 @@ public class AddItemFromController {
     }
 
     public void saveBtnOnAction(ActionEvent actionEvent) {
+
         if(!isEdit){
             ItemDTO itemDTO = new ItemDTO(
                     txtItemId.getText(),
@@ -222,4 +227,11 @@ public class AddItemFromController {
         allItems = itemBO.getAllItem();
         itemsTbl.setItems(allItems);
     }
+
+
+
+
+
+
+
 }
