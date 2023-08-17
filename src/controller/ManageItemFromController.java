@@ -115,7 +115,7 @@ public class ManageItemFromController {
                 if(selectedIndex != -1){
                     ItemDTO selectedItem = allItems.get(selectedIndex);
                     ItemDTO itemById = itemBO.getItemById(selectedItem.getItemID());
-                    Boolean isDeleted = itemBO.deleteItem(itemById.getItemID());
+                    boolean isDeleted = itemBO.deleteItem(itemById.getItemID());
                     //Reload the table
                     setDataToTable();
 
@@ -135,10 +135,6 @@ public class ManageItemFromController {
                 }
             }
         });
-
-
-
-
 
     }
 

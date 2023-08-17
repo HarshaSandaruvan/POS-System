@@ -1,5 +1,6 @@
 package dao;
 
+
 import dao.custom.impl.CustomerDAOImpl;
 import dao.custom.impl.ItemDAOImpl;
 import dao.custom.impl.LoginDAOImpl;
@@ -26,6 +27,8 @@ public class DAOFactory {
                 return new ItemDAOImpl();
             case CUSTOMER:
                 return new CustomerDAOImpl();
+
+
             default:
                 return null;
         }

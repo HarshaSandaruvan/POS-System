@@ -51,7 +51,7 @@ public class MenuBarController {
     }
 
     public void itemMangerOnAction(ActionEvent actionEvent) throws IOException {
-        URL resource = getClass().getResource("/view/ManageItemForm.fxml.fxml");
+        URL resource = getClass().getResource("/view/ManageItemForm.fxml");
         Parent load = FXMLLoader.load(resource);
         playGroundAnchorPane.getChildren().clear();
         playGroundAnchorPane.getChildren().add(load);
@@ -68,16 +68,17 @@ public class MenuBarController {
             if (response==YES){
                 Parent parent = null;
                 try {
-                    parent = FXMLLoader.load(this.getClass().getResource("../view/LoginFrom.fxml"));
+                    parent = FXMLLoader.load(this.getClass().getResource("../view/LoginForm.fxml"));
+                    Scene scene=new Scene(parent);
+                    Stage stage=new Stage();
+                    stage.setScene(scene);
+
+                    stage.setTitle("Login From");
+                    stage.show();
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
-                Scene scene=new Scene(parent);
-                Stage stage=new Stage();
-                stage.setScene(scene);
 
-                stage.setTitle("Login From");
-                stage.show();
 
                 Stage dashboardStage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
                 dashboardStage.close();

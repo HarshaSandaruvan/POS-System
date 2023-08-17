@@ -45,7 +45,7 @@ public class LoginFromContoller {
             }else {
                 Alert alert=new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error Alert");
-                alert.setHeaderText("Please check your User name and Password !");
+                alert.setHeaderText("Please check your User Name and Password !");
                 alert.showAndWait();
 
 

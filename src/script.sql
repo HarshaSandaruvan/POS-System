@@ -8,7 +8,7 @@ CREATE TABLE customer(
     lastName VARCHAR(255),
     nic VARCHAR(255),
     address VARCHAR(255),
-    contactNumber VARCHAR(255),
+    contactNumber INTEGER,
     CONSTRAINT PRIMARY KEY (customerID)
 );
 

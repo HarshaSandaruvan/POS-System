@@ -7,11 +7,11 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
-public class CustomerDTO {
+public class CustomerDTO extends ItemDTO {
     private String customerId;
     private String firstName;
     private String lastName;
     private String nic;
     private String address;
-    private String contactNo;
+    private int contactNo;
 }

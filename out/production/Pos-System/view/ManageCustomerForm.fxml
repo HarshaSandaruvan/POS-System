@@ -39,14 +39,15 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <TableView id="itemTbl" fx:id="tblCustomer" layoutX="20.0" layoutY="194.0" prefHeight="244.0" prefWidth="955.0" stylesheets="@style/AddItemFrom.css">
+      <TableView id="itemTbl" fx:id="tblCustomer" layoutX="20.0" layoutY="194.0" prefHeight="247.0" prefWidth="955.0" stylesheets="@style/AddItemFrom.css">
         <columns>
-          <TableColumn fx:id="colCustomerId" prefWidth="75.0" resizable="false" text="Customer Id" />
-          <TableColumn fx:id="colContactNo" prefWidth="131.99996185302734" resizable="false" text="Contact No." />
-            <TableColumn fx:id="colFirstName" editable="false" prefWidth="200.0" resizable="false" text="First Name" />
-            <TableColumn fx:id="colLastName" prefWidth="200.0" resizable="false" text="Last Name" />
-            <TableColumn fx:id="colNicNumber" prefWidth="118.0" resizable="false" text="Nic Number" />
-            <TableColumn fx:id="colAddress" prefWidth="228.66668701171875" resizable="false" text="Address" />
+          <TableColumn fx:id="colCustomerId" editable="false" prefWidth="75.0" resizable="false" text="Customer Id" />
+          <TableColumn fx:id="colContactNo" editable="false" prefWidth="177.9999771118164" resizable="false" text="Contact No." />
+            <TableColumn fx:id="colFirstName" editable="false" prefWidth="175.33331298828125" resizable="false" text="First Name" />
+            <TableColumn fx:id="colLastName" editable="false" prefWidth="172.00003051757812" resizable="false" text="Last Name" />
+            <TableColumn fx:id="colNicNumber" editable="false" prefWidth="167.3333740234375" resizable="false" text="Nic Number" />
+            <TableColumn fx:id="colAddress" editable="false" prefWidth="190.0" resizable="false" text="Address" />
+            
         </columns>
       </TableView>
       <JFXButton id="clearBtn" fx:id="btnClear" layoutX="819.0" layoutY="140.0" onAction="#clearBtnOnAction" prefHeight="29.0" prefWidth="64.0" stylesheets="@style/AddItemFrom.css" text="Clear" textFill="#222121">
