@@ -7,6 +7,7 @@ import entity.Item;
 import javafx.collections.ObservableList;
 import lombok.ToString;
 
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -42,7 +43,7 @@ public class CustomerDAOImpl implements CustomerDAO {
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
         }
-        return "I000";
+        return "C000";
     }
 
     @Override

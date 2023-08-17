@@ -45,10 +45,6 @@ public class ManageItemFromController {
 
     public void initialize (){
        generateAndSetItemId();
-    }
-
-    private void generateAndSetItemId() {
-        txtItemId.setText(itemBO.getNextId());
 
         colItemId.setCellValueFactory(new PropertyValueFactory<>("itemID"));
         colItemName.setCellValueFactory(new PropertyValueFactory<>("itemName"));
@@ -64,6 +60,11 @@ public class ManageItemFromController {
         itemsTbl.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
             selectedIndex = (int) newValue;
         });
+    }
+
+    private void generateAndSetItemId() {
+        txtItemId.setText(itemBO.getNextId());
+
     }
 
 

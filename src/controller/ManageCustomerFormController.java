@@ -5,6 +5,7 @@ import bo.custom.CustomerBO;
 import com.jfoenix.controls.JFXButton;
 import com.sun.org.apache.xpath.internal.operations.Or;
 import dto.CustomerDTO;
+import dto.ItemDTO;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
@@ -34,20 +35,16 @@ public class ManageCustomerFormController {
     public TableColumn colAddress;
     public TableColumn colCusID;
     public TableColumn colNumber;
+
+    private boolean isEdit=false;
     private int selectedIndex = -1;
 
     private ObservableList<CustomerDTO> allCustomers;
 
     CustomerBO customerBO = (CustomerBO) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.CUSTOMER);
 
-    public void initialize (){
+    public void initialize(){
         generateAndSetCustomerId();
-    }
-
-    private void generateAndSetCustomerId() {
-        txtCustomerId.setText( customerBO.getNextCustomerId());
-
-
 
         colCustomerId.setCellValueFactory(new PropertyValueFactory<>("customerId"));
         colContactNo.setCellValueFactory(new PropertyValueFactory<>("contactNo"));
@@ -55,16 +52,17 @@ public class ManageCustomerFormController {
         colLastName.setCellValueFactory(new PropertyValueFactory<>("lastName"));
         colNicNumber.setCellValueFactory(new PropertyValueFactory<>("nic"));
         colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
-
-
-
-
         setDataToTable();
 
 
         tblCustomer.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
             selectedIndex = (int) newValue;
         });
+    }
+
+    private void generateAndSetCustomerId() {
+        txtCustomerId.setText( customerBO.getNextCustomerId());
+
     }
 
     private void setDataToTable() {
@@ -99,6 +97,7 @@ public class ManageCustomerFormController {
 
         setDataToTable();
         generateAndSetCustomerId();
+        clear();
     }
 
     public void deleteBtnOnAction(ActionEvent actionEvent) {
@@ -144,15 +143,33 @@ public class ManageCustomerFormController {
     }
 
     public void editBtnOnAction(ActionEvent actionEvent) {
+        
     }
 
     public void clearBtnOnAction(ActionEvent actionEvent) {
+           clear();
+    }
+
+    public void clear(){
         txtCustomerId.clear();
         txtContactNo.clear();
         txtFirstName.clear();
         txtLastName.clear();
         txtNicNumber.clear();
         txtAddress.clear();
-        
+
+        generateAndSetCustomerId();
     }
+    public void loadCustomerDataToFields(ItemDTO selectedCustomer){
+        CustomerDTO selectedCustomerDetail = allCustomers.get(selectedIndex);
+        CustomerDTO customerById = customerBO.getCustomerById(selectedCustomerDetail.getCustomerId());
+
+        txtCustomerId.setText(customerById.getCustomerId());
+        txtContactNo.setText(String.valueOf(customerById.getContactNo()));
+        txtFirstName.setText(customerById.getFirstName());
+        txtLastName.setText(customerById.getLastName());
+        txtNicNumber.setText(customerById.getNic());
+        txtAddress.setText(customerById.getAddress());
+    }
+
 }

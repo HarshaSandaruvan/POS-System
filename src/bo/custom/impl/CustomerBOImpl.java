@@ -31,9 +31,9 @@ public class CustomerBOImpl implements CustomerBO {
 
     @Override
     public String getNextCustomerId() {
-        String lastItemId = customerDAO.getLastCustomerId();
-        int lastId = Integer.parseInt(lastItemId.substring(1));
-        return String.format("I%03d",++lastId);
+        String lastCustomerId = customerDAO.getLastCustomerId();
+        int lastId = Integer.parseInt(lastCustomerId.substring(1));
+        return String.format("C%03d",++lastId);
     }
 
     @Override
