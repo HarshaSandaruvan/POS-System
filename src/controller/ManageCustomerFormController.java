@@ -90,6 +90,7 @@ public class ManageCustomerFormController {
                 alert=new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setHeaderText("Customer Saved !");
                 alert.show();
+
             }else {
                 alert=new Alert(Alert.AlertType.ERROR);
                 alert.setHeaderText("Customer Not Saved !");
@@ -100,10 +101,37 @@ public class ManageCustomerFormController {
             generateAndSetCustomerId();
             clear();
         }else {
-            setDataToTable();
-            generateAndSetCustomerId();
-            clear();
+            boolean isUpdate = customerBO.updateCustomer(new CustomerDTO(
+                    txtCustomerId.getText(),
+                    txtFirstName.getText(),
+                    txtLastName.getText(),
+                    txtNicNumber.getText(),
+                    txtAddress.getText(),
+                    Integer.parseInt(txtContactNo.getText())
+
+            ));
+
+            Alert alert;
+           if (isUpdate){
+               alert=new Alert(Alert.AlertType.INFORMATION);
+               alert.setTitle("Customer Update !");
+               alert.setHeaderText("Update SuccessFull !");
+               alert.show();
+
+               btnSave.setText("Save");
+               btnSave.setStyle("-fx-background-color:  #16a085");
+               isEdit = false;
+           }else {
+               alert=new Alert(Alert.AlertType.ERROR);
+               alert.setTitle("Customer Update !");
+               alert.setHeaderText("Update Unsuccessful !");
+               alert.show();
+           }
+
         }
+        setDataToTable();
+        clear();
+        generateAndSetCustomerId();
 
     }
 
@@ -152,7 +180,7 @@ public class ManageCustomerFormController {
     public void editBtnOnAction(ActionEvent actionEvent) {
         if(selectedIndex != -1){
             loadCustomerDataToFields(allCustomers.get(selectedIndex));
-            btnSave.setText("UPDATE");
+            btnSave.setText("Update");
             btnSave.setStyle("-fx-background-color:  #f1c40f");
             isEdit = true;
         }else{
