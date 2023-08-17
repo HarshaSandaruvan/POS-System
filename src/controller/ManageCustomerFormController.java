@@ -147,5 +147,12 @@ public class ManageCustomerFormController {
     }
 
     public void clearBtnOnAction(ActionEvent actionEvent) {
+        txtCustomerId.clear();
+        txtContactNo.clear();
+        txtFirstName.clear();
+        txtLastName.clear();
+        txtNicNumber.clear();
+        txtAddress.clear();
+        
     }
 }
