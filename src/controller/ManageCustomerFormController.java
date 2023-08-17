@@ -75,29 +75,36 @@ public class ManageCustomerFormController {
 
 
     public void saveBtnOnAction(ActionEvent actionEvent) {
-        CustomerDTO customerDTO=new CustomerDTO(
-                txtCustomerId.getText(),
-                txtFirstName.getText(),
-                txtLastName.getText(),
-                txtNicNumber.getText(),
-                txtAddress.getText(),
-                Integer.parseInt(txtContactNo.getText())
-        );
-        boolean b = customerBO.saveCustomer(customerDTO);
-        Alert alert;
-        if(b){
-            alert=new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setHeaderText("Customer Saved !");
-            alert.show();
+        if(!isEdit){
+            CustomerDTO customerDTO=new CustomerDTO(
+                    txtCustomerId.getText(),
+                    txtFirstName.getText(),
+                    txtLastName.getText(),
+                    txtNicNumber.getText(),
+                    txtAddress.getText(),
+                    Integer.parseInt(txtContactNo.getText())
+            );
+            boolean b = customerBO.saveCustomer(customerDTO);
+            Alert alert;
+            if(b){
+                alert=new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setHeaderText("Customer Saved !");
+                alert.show();
+            }else {
+                alert=new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText("Customer Not Saved !");
+                alert.show();
+            }
+
+            setDataToTable();
+            generateAndSetCustomerId();
+            clear();
         }else {
-            alert=new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText("Customer Not Saved !");
-            alert.show();
+            setDataToTable();
+            generateAndSetCustomerId();
+            clear();
         }
 
-        setDataToTable();
-        generateAndSetCustomerId();
-        clear();
     }
 
     public void deleteBtnOnAction(ActionEvent actionEvent) {

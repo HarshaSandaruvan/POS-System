@@ -105,4 +105,23 @@ public class CustomerDAOImpl implements CustomerDAO {
 
         return null;
     }
+
+    @Override
+    public boolean updateCustomer(Customer customer) {
+        try {
+            return CrudUtil.executeUpdate("UPDATE customer SET customerID=?, firstName=?, lastName=?,nic=?," +
+                            "address=?,contactNumber=?",
+                    customer.getCustomerId(),
+                    customer.getFirstName(),
+                    customer.getLastName(),
+                    customer.getNic(),
+                    customer.getAddress(),
+                    customer.getContactNo()
+                    );
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

@@ -45,7 +45,5 @@ H
 src/dto/CustomerDTO.java,4\7\47335306aa543fd75295c1dca4058e52b5606dd1
 H
 src/entity/Customer.java,9\1\9130f402c4adfb75c7304ce743f9a91f05d3715b
-G
-src/dao/DAOFactory.java,9\f\9f9767f330c3d674b64b13bf8d78355a1bc26128
 E
 src/bo/BOFactory.java,5\8\585c440c7082b46076f342a118f2ad4c9a3024ab
