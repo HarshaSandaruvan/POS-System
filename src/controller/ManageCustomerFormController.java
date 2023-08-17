@@ -143,7 +143,15 @@ public class ManageCustomerFormController {
     }
 
     public void editBtnOnAction(ActionEvent actionEvent) {
-        
+        if(selectedIndex != -1){
+            loadCustomerDataToFields(allCustomers.get(selectedIndex));
+            btnSave.setText("UPDATE");
+            btnSave.setStyle("-fx-background-color:  #f1c40f");
+            isEdit = true;
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR,"Please select Customer first.");
+            alert.show();
+        }
     }
 
     public void clearBtnOnAction(ActionEvent actionEvent) {
