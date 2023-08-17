@@ -78,5 +78,19 @@ public class CustomerBOImpl implements CustomerBO {
 
     }
 
+    @Override
+    public boolean updateCustomer(CustomerDTO customerDTO) {
+        return customerDAO.updateCustomer(
+                new Customer(
+                        customerDTO.getCustomerId(),
+                        customerDTO.getFirstName(),
+                        customerDTO.getLastName(),
+                        customerDTO.getNic(),
+                        customerDTO.getAddress(),
+                        customerDTO.getContactNo()
+                )
+        );
+    }
+
 
 }

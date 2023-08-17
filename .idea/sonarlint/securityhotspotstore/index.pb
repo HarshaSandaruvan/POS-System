@@ -41,9 +41,5 @@ D
 src/dto/ItemDTO.java,3\f\3fffa2e587c320bb54a783e4241cd0f27a3da4fa
 E
 src/dao/SuperDAO.java,b\b\bb39ba42a14676c3db6f9d3b913c28a6b55aeef6
-H
-src/dto/CustomerDTO.java,4\7\47335306aa543fd75295c1dca4058e52b5606dd1
-H
-src/entity/Customer.java,9\1\9130f402c4adfb75c7304ce743f9a91f05d3715b
 E
 src/bo/BOFactory.java,5\8\585c440c7082b46076f342a118f2ad4c9a3024ab

@@ -14,4 +14,6 @@ public class Customer {
     private String nic;
     private String address;
     private int contactNo;
+
+
 }
