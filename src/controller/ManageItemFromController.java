@@ -37,6 +37,7 @@ public class ManageItemFromController {
     public JFXButton btnDelete;
     public TextField txtItemId;
     public TextField txtItemPrice;
+
     private ObservableList<ItemDTO> allItems;
     private int selectedIndex = -1;
     private boolean isEdit = false;
@@ -80,7 +81,7 @@ public class ManageItemFromController {
     public void editBtnOnAction(ActionEvent actionEvent) {
         if(selectedIndex != -1){
             loadItemDataToFields(allItems.get(selectedIndex));
-            btnSave.setText("UPDATE");
+            btnSave.setText("Update");
             btnSave.setStyle("-fx-background-color:  #f1c40f");
             isEdit = true;
         }else{
@@ -192,7 +193,7 @@ public class ManageItemFromController {
                 initialize();
 
                 // Restoring ADD button
-                btnSave.setText("ADD");
+                btnSave.setText("Save");
                 btnSave.setStyle("-fx-background-color:  #1abc9c");
                 isEdit = false;
             }else{
@@ -217,10 +218,6 @@ public class ManageItemFromController {
         allItems = itemBO.getAllItem();
         itemsTbl.setItems(allItems);
     }
-
-
-
-
 
 
 

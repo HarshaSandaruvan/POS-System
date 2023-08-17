@@ -31,7 +31,7 @@
       <TextField fx:id="txtContactNo" layoutX="124.0" layoutY="104.0" promptText="Contact No." />
       <Label layoutX="361.0" layoutY="106.0" text="Last Name :" />
       <TextField fx:id="txtLastName" layoutX="466.0" layoutY="104.0" promptText="Last Name" />
-      <JFXButton id="saveBtn" fx:id="btnSave" layoutX="895.0" layoutY="140.0" onAction="#saveBtnOnAction" prefHeight="29.0" prefWidth="79.0" stylesheets="@style/AddItemFrom.css" text="Save" textFill="#0b0a0a">
+      <JFXButton id="saveBtn" fx:id="btnSave" layoutX="895.0" layoutY="140.0" onAction="#saveBtnOnAction" prefHeight="29.0" prefWidth="79.0" stylesheets="@style/ManageCustomerFrom.css" text="Save" textFill="#0b0a0a">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -39,7 +39,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <TableView id="itemTbl" fx:id="tblCustomer" layoutX="20.0" layoutY="194.0" prefHeight="247.0" prefWidth="955.0" stylesheets="@style/AddItemFrom.css">
+      <TableView id="itemTbl" fx:id="tblCustomer" layoutX="20.0" layoutY="194.0" prefHeight="247.0" prefWidth="955.0" stylesheets="@style/ManageCustomerFrom.css">
         <columns>
           <TableColumn fx:id="colCustomerId" editable="false" prefWidth="75.0" resizable="false" text="Customer Id" />
           <TableColumn fx:id="colContactNo" editable="false" prefWidth="177.9999771118164" resizable="false" text="Contact No." />
@@ -50,7 +50,7 @@
             
         </columns>
       </TableView>
-      <JFXButton id="clearBtn" fx:id="btnClear" layoutX="819.0" layoutY="140.0" onAction="#clearBtnOnAction" prefHeight="29.0" prefWidth="64.0" stylesheets="@style/AddItemFrom.css" text="Clear" textFill="#222121">
+      <JFXButton id="clearBtn" fx:id="btnClear" layoutX="819.0" layoutY="140.0" onAction="#clearBtnOnAction" prefHeight="29.0" prefWidth="64.0" stylesheets="@style/ManageCustomerFrom.css" text="Clear" textFill="#222121">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -58,7 +58,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton id="editBtn" fx:id="btnEdit" layoutX="912.0" layoutY="449.0" onAction="#editBtnOnAction" prefHeight="29.0" prefWidth="64.0" stylesheets="@style/AddItemFrom.css" text="Edit" textFill="#0b0a0a">
+      <JFXButton id="editBtn" fx:id="btnEdit" layoutX="912.0" layoutY="449.0" onAction="#editBtnOnAction" prefHeight="29.0" prefWidth="64.0" stylesheets="@style/ManageCustomerFrom.css" text="Edit" textFill="#0b0a0a">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -66,7 +66,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton id="deleteBtn" fx:id="btnDelete" layoutX="830.0" layoutY="448.0" onAction="#deleteBtnOnAction" prefHeight="29.0" prefWidth="64.0" stylesheets="@style/AddItemFrom.css" text="Delete" textFill="#222121">
+      <JFXButton id="deleteBtn" fx:id="btnDelete" layoutX="830.0" layoutY="448.0" onAction="#deleteBtnOnAction" prefHeight="29.0" prefWidth="64.0" stylesheets="@style/ManageCustomerFrom.css" text="Delete" textFill="#222121">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

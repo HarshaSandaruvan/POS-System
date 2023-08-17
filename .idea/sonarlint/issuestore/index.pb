@@ -1,8 +1,6 @@
 
 L
 src/view/style/LoginFrom.css,e\e\ee28321e249688a53cfdc88af23c77b4d1ac1f7b
-J
-src/view/style/MenuBar.css,0\a\0ac77ca3dcdabc7ad567426fa15f3fd5b1680da3
 H
 src/db/DbConnection.java,8\e\8e2efd5556e1055de49628692613d2236e3e330d
 C
@@ -23,10 +21,6 @@ L
 src/dao/custom/LoginDAO.java,f\4\f47bf3b04a5ffbc9523b21eec5261b0577324049
 G
 src/AppInitializer.java,5\8\580cc932433633b711bc392ae543e0f12b1bae87
-E
-src/view/MenuBar.fxml,9\7\97b280b1f6cb19ad5741510c1d911166b4034201
-U
-%src/controller/MenuBarController.java,f\3\f3533b44741a8c5615e68246cf4f0c69cf2b554f
 E
 src/dao/CrudUtil.java,5\1\51ef932cd0902cea63ec682bc6851548809628a8
 V

@@ -1,34 +1,0 @@
-
-g	java:S112O"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8µÉïÌŸ1
-m	java:S117="QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬§ëÎ8êÇáÌŸ1
-m	java:S117>"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(úÍÄÌ8”§ãÌŸ1
-y
-java:S1104"\Make menuDashboardBtn a static final constant or non-public and provide accessors if needed.(Åëÿ¡8êÇáÌŸ1
-‚
-java:S1104"`Make playGroundAnchorPane a static final constant or non-public and provide accessors if needed.(ã¹äıÿÿÿÿ8êÇáÌŸ1
-y
-java:S1104"WMake userNameLbl a static final constant or non-public and provide accessors if needed.(Á÷«ëıÿÿÿÿ8êÇáÌŸ1
-{
-java:S1104"YMake menuOrdersBtn a static final constant or non-public and provide accessors if needed.(Ï²ÉŞûÿÿÿÿ8êÇáÌŸ1
-y
-java:S1104"\Make menuCustomersBtn a static final constant or non-public and provide accessors if needed.(“Ù›—8êÇáÌŸ1
-u
-java:S1104"XMake menuItemsBtn a static final constant or non-public and provide accessors if needed.(ÛˆÓ¼8êÇáÌŸ1
-p
-java:S1104"SMake dateLbl a static final constant or non-public and provide accessors if needed.(²»Ã•8êÇáÌŸ1
-u
-java:S1104 "SMake timeLbl a static final constant or non-public and provide accessors if needed.(êàûÛûÿÿÿÿ8êÇáÌŸ1
-{
-java:S1104!"YMake menuLogoutBtn a static final constant or non-public and provide accessors if needed.(·¤ÜÏüÿÿÿÿ8êÇáÌŸ1
-y
-java:S1104""WMake currentTime a static final constant or non-public and provide accessors if needed.(‡ŸÂşÿÿÿÿ8êÇáÌŸ1
-w
-java:S1104#"ZMake BtnItemManager a static final constant or non-public and provide accessors if needed.(™ÓŞ†8êÇáÌŸ1
-u	java:S116#"YRename this field "BtnItemManager" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™ÓŞ†8úÇáÌŸ1
-N
-java:S11725"2Remove this unused method parameter "actionEvent".(Ìóâ8úÇáÌŸ1
-‰
-java:S1130<"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ƒªåÜ8å¡øÌŸ1
-Z	java:S106V"9Replace this use of System.out or System.err by a logger.(—˜ê€üÿÿÿÿ8ŠÈáÌŸ1
-T
-java:S1172]"2Remove this unused method parameter "actionEvent".(Ì¢¶êıÿÿÿÿ8œ—ÿÔŸ1

@@ -34,7 +34,7 @@
       <TextField fx:id="txtSupplier" layoutX="125.0" layoutY="136.0" promptText="Supplier " />
       <DatePicker fx:id="datePicker" layoutX="824.0" layoutY="103.0" prefHeight="25.0" prefWidth="149.0" promptText="13-05-2024" />
       <Label layoutX="719.0" layoutY="107.0" text="Exp. Date :" />
-      <JFXButton id="saveBtn" fx:id="btnSave" layoutX="895.0" layoutY="140.0" onAction="#saveBtnOnAction" prefHeight="29.0" prefWidth="79.0" stylesheets="@style/AddItemFrom.css" text="Save" textFill="#0b0a0a">
+      <JFXButton id="saveBtn" fx:id="btnSave" layoutX="895.0" layoutY="140.0" onAction="#saveBtnOnAction" prefHeight="29.0" prefWidth="79.0" stylesheets="@style/ManageItemFrom.css" text="Save" textFill="#0b0a0a">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -42,7 +42,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <TableView id="itemTbl" fx:id="itemsTbl" layoutX="20.0" layoutY="194.0" prefHeight="226.0" prefWidth="955.0" stylesheets="@style/AddItemFrom.css">
+      <TableView id="itemTbl" fx:id="itemsTbl" layoutX="20.0" layoutY="194.0" prefHeight="226.0" prefWidth="955.0" stylesheets="@style/ManageItemFrom.css">
         <columns>
           <TableColumn fx:id="colItemId" prefWidth="75.0" resizable="false" text="Item Id" />
           <TableColumn fx:id="colItemName" prefWidth="203.33334350585938" resizable="false" text="Item Name" />
@@ -53,7 +53,7 @@
             <TableColumn fx:id="colDate" prefWidth="95.99996948242188" resizable="false" text="Exp. Date" />
         </columns>
       </TableView>
-      <JFXButton id="clearBtn" fx:id="btnClear" layoutX="819.0" layoutY="140.0" onAction="#clearBtnOnAction" prefHeight="29.0" prefWidth="64.0" stylesheets="@style/AddItemFrom.css" text="Clear" textFill="#222121">
+      <JFXButton id="clearBtn" fx:id="btnClear" layoutX="819.0" layoutY="140.0" onAction="#clearBtnOnAction" prefHeight="29.0" prefWidth="64.0" stylesheets="@style/ManageItemFrom.css" text="Clear" textFill="#222121">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -61,7 +61,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton id="editBtn" fx:id="btnEdit" layoutX="912.0" layoutY="449.0" onAction="#editBtnOnAction" prefHeight="29.0" prefWidth="64.0" stylesheets="@style/AddItemFrom.css" text="Edit" textFill="#0b0a0a">
+      <JFXButton id="editBtn" fx:id="btnEdit" layoutX="912.0" layoutY="449.0" onAction="#editBtnOnAction" prefHeight="29.0" prefWidth="64.0" stylesheets="@style/ManageItemFrom.css" text="Edit" textFill="#0b0a0a">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -69,7 +69,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton id="deleteBtn" fx:id="btnDelete" layoutX="830.0" layoutY="448.0" onAction="#deleteBtnOnAction" prefHeight="29.0" prefWidth="64.0" stylesheets="@style/AddItemFrom.css" text="Delete" textFill="#222121">
+      <JFXButton id="deleteBtn" fx:id="btnDelete" layoutX="830.0" layoutY="448.0" onAction="#deleteBtnOnAction" prefHeight="29.0" prefWidth="64.0" stylesheets="@style/ManageItemFrom.css" text="Delete" textFill="#222121">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
