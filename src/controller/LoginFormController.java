@@ -3,8 +3,6 @@ package controller;
 import bo.BOFactory;
 import bo.custom.LoginBo;
 import com.jfoenix.controls.JFXButton;
-import dao.DAOFactory;
-import dao.custom.LoginDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -18,7 +16,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class LoginFromContoller {
+public class LoginFormController {
     public AnchorPane loginFromAnchorPane;
     public TextField userNameTxt;
     public JFXButton loginBtn;

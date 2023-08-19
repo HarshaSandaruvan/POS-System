@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.DropdownButton?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="1000.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardController">
+   <children>
+      <AnchorPane prefHeight="500.0" prefWidth="400.0" style="-fx-background-color: #0c2461;">
+         <children>
+            <Separator layoutX="26.0" layoutY="45.0" prefHeight="8.0" prefWidth="147.0" />
+            <Label layoutX="26.0" layoutY="22.0" prefHeight="19.0" prefWidth="144.0" text="Order Details" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TableView layoutX="18.0" layoutY="103.0" prefHeight="228.0" prefWidth="364.0">
+              <columns>
+                <TableColumn editable="false" prefWidth="75.0" text="Item Id" />
+                  <TableColumn editable="false" prefWidth="105.99998474121094" text="Name" />
+                <TableColumn editable="false" prefWidth="56.66668701171875" text="Qty" />
+                  <TableColumn editable="false" prefWidth="65.3333740234375" text="Unit Price" />
+                  <TableColumn editable="false" prefWidth="60.666656494140625" text="Price" />
+              </columns>
+            </TableView>
+            <Label layoutX="27.0" layoutY="62.0" text="Order Id :" textFill="WHITE" />
+            <Label layoutX="106.0" layoutY="62.0" text="O0001" textFill="#f2f2f2" />
+            <Label layoutX="40.0" layoutY="390.0" text="Sub Total : (Rs.)" textFill="#fbfbfb">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label layoutX="187.0" layoutY="390.0" text="00.00" textFill="#fbfbfb">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="419.0" text="Discounts : - (Rs.)" textFill="#fbfbfb">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="187.0" layoutY="419.0" text="00.00" textFill="#fbfbfb">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="41.0" layoutY="452.0" text="Total : (Rs.)" textFill="#fbfbfb">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="179.0" layoutY="453.0" prefHeight="30.0" prefWidth="88.0" text="00.00" textFill="#fbfbfb">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="289.0" layoutY="420.0" prefHeight="31.0" prefWidth="94.0" style="-fx-background-color: #e74c3c;" text="Clear Order" textFill="#e03232" />
+            <JFXButton layoutX="289.0" layoutY="457.0" prefHeight="31.0" prefWidth="94.0" style="-fx-background-color: #1abc9c;" text="Pay">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="320.0" layoutY="341.0" style="-fx-background-color: #e74c3c;" text="Remove" textFill="#e03232" />
+            <Label layoutX="40.0" layoutY="359.0" text="Number of Items :" textFill="#fbfbfb">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="187.0" layoutY="359.0" prefHeight="27.0" prefWidth="40.0" text="00" textFill="#fbfbfb">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TextField layoutX="674.0" layoutY="17.0" prefHeight="33.0" prefWidth="231.0" promptText="Customer Contact No." />
+      <JFXButton layoutX="914.0" layoutY="19.0" text="Find" />
+      <ImageView fitHeight="31.0" fitWidth="23.0" layoutX="646.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/images/adressImg.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="31.0" fitWidth="23.0" layoutX="432.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/images/imgId.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="31.0" fitWidth="23.0" layoutX="645.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/images/imgProfile.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="31.0" fitWidth="23.0" layoutX="428.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/images/imgMobilePhone.png" />
+         </image>
+      </ImageView>
+      <Separator layoutX="422.0" layoutY="168.0" prefHeight="8.0" prefWidth="147.0" />
+      <Label layoutX="469.0" layoutY="69.0" prefHeight="19.0" prefWidth="144.0" text="Customer Id" />
+      <Label layoutX="470.0" layoutY="105.0" prefHeight="19.0" prefWidth="144.0" text="Customer Contact No." />
+      <Label layoutX="687.0" layoutY="102.0" prefHeight="19.0" prefWidth="250.0" text="Customer Adress" />
+      <Label layoutX="687.0" layoutY="65.0" prefHeight="19.0" prefWidth="250.0" text="Customer Name" />
+      <Label layoutX="422.0" layoutY="145.0" prefHeight="19.0" prefWidth="144.0" text="Item Details">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <DropdownButton accessibleRole="CHECK_BOX" accessibleText="Item" layoutX="425.0" layoutY="191.0" prefHeight="27.0" prefWidth="150.0">
+          <items>
+              <MenuItem text="Choice 1" />
+              <MenuItem text="Choice 2" />
+              <MenuItem text="Choice 3" />
+          </items>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </DropdownButton>
+      <Label layoutX="427.0" layoutY="235.0" text="Item Id :" />
+      <Label layoutX="506.0" layoutY="235.0" text="I001" />
+      <Label layoutX="427.0" layoutY="313.0" text="Qty :" />
+      <Label layoutX="506.0" layoutY="313.0" text="00" />
+      <Label layoutX="427.0" layoutY="349.0" text="Unit Price :" />
+      <Label layoutX="506.0" layoutY="349.0" text="00.00" />
+      <Label layoutX="427.0" layoutY="384.0" text="Exp. Date :" />
+      <Label layoutX="506.0" layoutY="384.0" text="dd/mm/yyyy" />
+      <Label layoutX="427.0" layoutY="419.0" text="Suplier :" />
+      <Label layoutX="506.0" layoutY="419.0" prefHeight="18.0" prefWidth="76.0" />
+      <Label layoutX="427.0" layoutY="274.0" text="Batch No. :" />
+      <Label layoutX="506.0" layoutY="274.0" text="000000" />
+      <Separator layoutX="423.0" layoutY="52.0" prefHeight="5.0" prefWidth="151.0" />
+      <Label layoutX="422.0" layoutY="24.0" prefHeight="27.0" prefWidth="166.0" text="Customer Details">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="645.0" layoutY="235.0" text="Request Qty :" />
+      <TextField layoutX="733.0" layoutY="232.0" prefHeight="25.0" prefWidth="72.0" promptText="1" />
+      <Label layoutX="645.0" layoutY="280.0" text="Discounts :" />
+      <TextField layoutX="733.0" layoutY="277.0" prefHeight="25.0" prefWidth="72.0" promptText="10" />
+      <Label layoutX="815.0" layoutY="282.0" text="\%" />
+      <Label layoutX="645.0" layoutY="331.0" text="Discounts :" />
+      <Label layoutX="705.0" layoutY="408.0" text="Item Total : (Rs)">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="854.0" layoutY="408.0" text="00.00">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="779.0" layoutY="444.0" style="-fx-background-color: #e74c3c;" text="Clear" textFill="#e03232" />
+      <JFXButton layoutX="851.0" layoutY="444.0" style="-fx-background-color: #1abc9c;" text="Add" />
+      <JFXTextArea layoutX="720.0" layoutY="332.0" prefHeight="59.0" prefWidth="227.0" />
+   </children>
+</AnchorPane>
