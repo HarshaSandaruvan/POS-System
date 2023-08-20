@@ -82,7 +82,7 @@ public class ManageCustomerFormController {
                     txtLastName.getText(),
                     txtNicNumber.getText(),
                     txtAddress.getText(),
-                    Integer.parseInt(txtContactNo.getText())
+                    txtContactNo.getText()
             );
             boolean b = customerBO.saveCustomer(customerDTO);
             Alert alert;
@@ -107,7 +107,7 @@ public class ManageCustomerFormController {
                     txtLastName.getText(),
                     txtNicNumber.getText(),
                     txtAddress.getText(),
-                    Integer.parseInt(txtContactNo.getText())
+                    txtContactNo.getText()
 
             ));
 

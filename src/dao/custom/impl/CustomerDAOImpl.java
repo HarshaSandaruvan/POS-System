@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 import lombok.ToString;
 
 import java.io.IOException;
+import java.io.PrintStream;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -60,7 +61,7 @@ public class CustomerDAOImpl implements CustomerDAO {
                         resultSet.getString("lastName"),
                         resultSet.getString("nic"),
                         resultSet.getString("address"),
-                        resultSet.getInt("contactNumber")
+                        resultSet.getString("contactNumber")
                 ));
             }
         } catch (SQLException | ClassNotFoundException throwables) {
@@ -94,7 +95,7 @@ public class CustomerDAOImpl implements CustomerDAO {
                         resultSet.getString("lastName"),
                         resultSet.getString("nic"),
                         resultSet.getString("address"),
-                        resultSet.getInt("contactNumber")
+                        resultSet.getString("contactNumber")
                 );
             }
         } catch (SQLException e) {
@@ -122,5 +123,38 @@ public class CustomerDAOImpl implements CustomerDAO {
             throwables.printStackTrace();
         }
         return false;
+    }
+
+    @Override
+    public Customer getCustomerByContactNumber(String contactNo) {
+
+        try {
+            ResultSet selectCustomer = CrudUtil.executeQuery("SELECT * FROM customer WHERE contactNumber=?;",contactNo);
+
+
+
+            if (selectCustomer.first()){
+                return new Customer(
+                        selectCustomer.getString("customerID"),
+                        selectCustomer.getString("firstName"),
+                        selectCustomer.getString("lastName"),
+                        selectCustomer.getString("nic"),
+                        selectCustomer.getString("address"),
+                        selectCustomer.getString("contactNumber")
+                );
+            }
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+
+return null;
+
+
+
     }
 }

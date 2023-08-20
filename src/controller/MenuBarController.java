@@ -33,6 +33,7 @@ public class MenuBarController {
     public JFXButton menuLogoutBtn;
     public LocalTime currentTime;
     public MenuItem BtnItemManager;
+    public JFXButton btnMenuDashboard;
 
 
     public void initialize(){
@@ -92,6 +93,13 @@ public class MenuBarController {
 
     public void manageCustomerOnAction(ActionEvent actionEvent) throws IOException {
         URL resource = getClass().getResource("/view/ManageCustomerForm.fxml");
+        Parent load = FXMLLoader.load(resource);
+        playGroundAnchorPane.getChildren().clear();
+        playGroundAnchorPane.getChildren().add(load);
+    }
+
+    public void btnMenuDashboarOnAction(ActionEvent actionEvent) throws IOException {
+        URL resource = getClass().getResource("/view/Dashboard.fxml");
         Parent load = FXMLLoader.load(resource);
         playGroundAnchorPane.getChildren().clear();
         playGroundAnchorPane.getChildren().add(load);

@@ -13,7 +13,7 @@ public class Customer {
     private String lastName;
     private String nic;
     private String address;
-    private int contactNo;
+    private String contactNo;
 
 
 }

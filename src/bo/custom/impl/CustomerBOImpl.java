@@ -92,5 +92,27 @@ public class CustomerBOImpl implements CustomerBO {
         );
     }
 
+    @Override
+    public CustomerDTO getCustomerByContactNumber(String contactNumber) {
+        Customer customerByContactNumber=customerDAO.getCustomerByContactNumber(contactNumber);
+        System.out.print("ContactNumber :"+contactNumber);
+        System.out.println(customerByContactNumber);
+        if (customerByContactNumber!= null){
+            return new CustomerDTO(
+                    customerByContactNumber.getCustomerId(),
+                    customerByContactNumber.getFirstName(),
+                    customerByContactNumber.getLastName(),
+                    customerByContactNumber.getNic(),
+                    customerByContactNumber.getAddress(),
+                    customerByContactNumber.getContactNo()
+            );
+        }
+        return null;
+
+
+
+
+    }
+
 
 }

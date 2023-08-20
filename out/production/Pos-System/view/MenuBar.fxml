@@ -20,7 +20,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <JFXButton fx:id="menuDashboardBtn" layoutX="341.0" layoutY="15.0" prefHeight="46.0" prefWidth="91.0" stylesheets="@style/MenuBar.css" text="Dashboard" textFill="#fdfbfb">
+            <JFXButton fx:id="btnMenuDashboard" layoutX="341.0" layoutY="15.0" onAction="#btnMenuDashboarOnAction" prefHeight="46.0" prefWidth="91.0" stylesheets="@style/MenuBar.css" text="Dashboard" textFill="#fdfbfb">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

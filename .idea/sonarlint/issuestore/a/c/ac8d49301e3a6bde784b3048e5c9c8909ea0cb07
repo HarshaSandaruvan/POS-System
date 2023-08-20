@@ -1,7 +1,0 @@
-
-
-java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(‹×¯æ8¢…á¥ 1
-E
-java:S1128"(Remove this unused import 'entity.Item'.(ÏÂã8¥…á¥ 1
-`
-java:S1128">Remove this unused import 'javafx.collections.ObservableList'.(ÄÜ€éüÿÿÿÿ8¥…á¥ 1

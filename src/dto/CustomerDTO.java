@@ -13,5 +13,5 @@ public class CustomerDTO extends ItemDTO {
     private String lastName;
     private String nic;
     private String address;
-    private int contactNo;
+    private String contactNo;
 }

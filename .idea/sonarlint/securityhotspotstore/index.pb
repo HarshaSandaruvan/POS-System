@@ -29,14 +29,6 @@ E
 src/bo/BOFactory.java,5\8\585c440c7082b46076f342a118f2ad4c9a3024ab
 G
 src/dao/DAOFactory.java,9\f\9f9767f330c3d674b64b13bf8d78355a1bc26128
-H
-src/dto/CustomerDTO.java,4\7\47335306aa543fd75295c1dca4058e52b5606dd1
-H
-src/entity/Customer.java,9\1\9130f402c4adfb75c7304ce743f9a91f05d3715b
-M
-src/bo/custom/CustomerBO.java,a\2\a2bc389b11084d5cc14579dbd8bccee11fdf2a08
-V
-&src/bo/custom/impl/CustomerBOImpl.java,a\a\aad2c0275da0d2db7f885bf43a5ca1ac93fa0ab5
 I
 src/bo/custom/ItemBo.java,e\9\e9b101d558ce831bb28d89139e94c364e62523b6
 R
@@ -45,17 +37,11 @@ K
 src/dao/custom/ItemDAO.java,2\8\28948601150bf46a916489c2e915880ee710a9e0
 T
 $src/dao/custom/impl/ItemDAOImpl.java,6\8\68d5d42978325d0a8b8d2a00cad121cc3283f7ff
-O
-src/dao/custom/CustomerDAO.java,a\c\ac8d49301e3a6bde784b3048e5c9c8909ea0cb07
-X
-(src/dao/custom/impl/CustomerDAOImpl.java,6\f\6ff667c3a42b5f282f9c13f8fc5f7d30fec2b613
-`
-0src/controller/ManageCustomerFormController.java,d\6\d63beb35408438788e757dfda090c9198e413e5d
 J
 src/view/style/MenuBar.css,0\a\0ac77ca3dcdabc7ad567426fa15f3fd5b1680da3
 U
 %src/view/style/ManageCustomerFrom.css,a\0\a056faabb566403a85d7f4277c1e74440e85b9b9
-E
-src/view/MenuBar.fxml,9\7\97b280b1f6cb19ad5741510c1d911166b4034201
 Q
 !src/view/style/ManageItemFrom.css,d\9\d93411685f9ba4a32161be3f5dc39de4234397c6
+L
+src/view/ManageItemForm.fxml,2\5\2543c845232586f11bedd499ea660011fb16d54c
