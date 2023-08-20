@@ -1,0 +1,39 @@
+#ClearBtn{
+    -fx-background-radius: 5 5 5 5;
+    -fx-background-color:  #e74c3c;
+}
+#ClearBtn:hover{
+    -fx-background-color:#c0392b;
+}
+
+#FindBtn{
+    -fx-background-radius: 5 5 5 5;
+    -fx-background-color:  #3498db;
+}
+#FindBtn:hover{
+    -fx-background-color:#2980b9;
+}
+
+#AddToCartBtn{
+    -fx-background-radius: 5 5 5 5;
+    -fx-background-color:  #1abc9c;
+}
+#AddToCartBtn:hover{
+    -fx-background-color:#16a085;
+}
+
+#PayBtn{
+    -fx-background-radius: 5 5 5 5;
+    -fx-background-color:  #1abc9c;
+}
+#PayBtn:hover{
+    -fx-background-color:#16a085;
+}
+.TableView{
+    -fx-background-color:#16a085;
+    -fx-text-fill: white;
+}
+.TblColumn{
+    -fx-background-color:#16a085;
+    -fx-text-fill: white;
+}
