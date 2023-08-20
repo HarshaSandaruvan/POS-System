@@ -105,10 +105,6 @@
          </image>
       </ImageView>
       <Separator layoutX="422.0" layoutY="168.0" prefHeight="8.0" prefWidth="147.0" />
-      <Label fx:id="lblCustomerId" layoutX="469.0" layoutY="69.0" prefHeight="19.0" prefWidth="144.0" text="Customer Id" />
-      <Label fx:id="lblCustomerContactNo" layoutX="470.0" layoutY="105.0" prefHeight="19.0" prefWidth="144.0" text="Customer Contact No." />
-      <Label fx:id="lblCustomerAddress" layoutX="687.0" layoutY="102.0" prefHeight="19.0" prefWidth="250.0" text="Customer Adress" />
-      <Label fx:id="lblCustomerName" layoutX="687.0" layoutY="65.0" prefHeight="19.0" prefWidth="250.0" text="Customer Name" />
       <Label layoutX="422.0" layoutY="145.0" prefHeight="19.0" prefWidth="144.0" text="Item Details">
          <font>
             <Font name="System Bold" size="18.0" />
@@ -161,5 +157,10 @@
       <JFXButton fx:id="btnItemClear" layoutX="779.0" layoutY="444.0" onAction="#btnItemClearOnAction" style="-fx-background-color: #e74c3c;" text="Clear" textFill="WHITE" />
       <JFXButton fx:id="btnAdd" layoutX="851.0" layoutY="444.0" onAction="#btnAddOnAction" style="-fx-background-color: #1abc9c;" text="Add" />
       <TextField fx:id="txtDescription" layoutX="731.0" layoutY="328.0" />
+      <JFXButton fx:id="btnCustomerClear" layoutX="862.0" layoutY="137.0" onAction="#btnCustomerClearOnAction" style="-fx-background-color: #e74c3c;" text="Clear Customer" textFill="WHITE" />
+      <TextField fx:id="txtCustomerId" editable="false" layoutX="461.0" layoutY="63.0" promptText="Customer Id" />
+      <TextField fx:id="txtCustomerName" editable="false" layoutX="684.0" layoutY="63.0" prefHeight="25.0" prefWidth="227.0" promptText="Customer Name" />
+      <TextField fx:id="txtCustomerContNo" editable="false" layoutX="461.0" layoutY="99.0" promptText="Customer Contact No." />
+      <TextField fx:id="txtCustomerAddress" editable="false" layoutX="686.0" layoutY="99.0" prefHeight="25.0" prefWidth="227.0" promptText="Customer Address" />
    </children>
 </AnchorPane>

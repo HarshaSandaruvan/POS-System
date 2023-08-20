@@ -27,10 +27,7 @@ public class DashboardController {
     public Label lblUnitPrice;
     public Label lblQty;
     public Label lblItemId;
-    public Label lblCustomerId;
-    public Label lblCustomerContactNo;
-    public Label lblCustomerAddress;
-    public Label lblCustomerName;
+
     public TextField txtCustomerContactNo;
     public Label lblNumberOfItem;
     public Label LblTotal;
@@ -43,6 +40,11 @@ public class DashboardController {
     public TableColumn colItemQty;
     public TableColumn colItemUnitPrice;
     public TableColumn colItemPrice;
+    public JFXButton btnCustomerClear;
+    public TextField txtCustomerId;
+    public TextField txtCustomerName;
+    public TextField txtCustomerContNo;
+    public TextField txtCustomerAddress;
 
     CustomerBO customerBO = (CustomerBO) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.CUSTOMER);
 
@@ -63,10 +65,10 @@ public class DashboardController {
 
 
         if (customerByContactNumber!=null){
-            lblCustomerId.setText(customerByContactNumber.getCustomerId());
-            lblCustomerName.setText(customerByContactNumber.getFirstName()+" "+customerByContactNumber.getLastName());
-            lblCustomerAddress.setText(customerByContactNumber.getAddress());
-            lblCustomerContactNo.setText(customerByContactNumber.getContactNo());
+            txtCustomerId.setText(customerByContactNumber.getCustomerId());
+            txtCustomerName.setText(customerByContactNumber.getFirstName()+" "+customerByContactNumber.getLastName());
+            txtCustomerAddress.setText(customerByContactNumber.getAddress());
+            txtCustomerContNo.setText(customerByContactNumber.getContactNo());
 
         }else {
             Alert alert=new Alert(Alert.AlertType.WARNING);
@@ -82,5 +84,12 @@ public class DashboardController {
     }
 
     public void btnAddOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnCustomerClearOnAction(ActionEvent actionEvent) {
+        txtCustomerId.clear();
+        txtCustomerName.clear();
+        txtCustomerAddress.clear();
+        txtCustomerContNo.clear();
     }
 }
