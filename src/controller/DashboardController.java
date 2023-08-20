@@ -2,8 +2,10 @@ package controller;
 
 import bo.BOFactory;
 import bo.custom.CustomerBO;
+import bo.custom.ItemBo;
 import com.jfoenix.controls.JFXButton;
 import dto.CustomerDTO;
+import dto.ItemDTO;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
@@ -22,7 +24,7 @@ public class DashboardController {
     public TextField txtDiscounts;
     public TextField txtRequestQty;
     public Label lblBatchNo;
-    public Label LblSupplier;
+    public Label lblSupplier;
     public Label lblExpDate;
     public Label lblUnitPrice;
     public Label lblQty;
@@ -45,9 +47,11 @@ public class DashboardController {
     public TextField txtCustomerName;
     public TextField txtCustomerContNo;
     public TextField txtCustomerAddress;
+    public TextField txtItemName;
+    public JFXButton btnFindItem;
 
     CustomerBO customerBO = (CustomerBO) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.CUSTOMER);
-
+    ItemBo itemBo= (ItemBo) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.ITEM);
 
     public void btnPayOnAction(MouseEvent mouseEvent) {
     }
@@ -91,5 +95,21 @@ public class DashboardController {
         txtCustomerName.clear();
         txtCustomerAddress.clear();
         txtCustomerContNo.clear();
+    }
+
+    public void btnFindItemOnAction(ActionEvent actionEvent) {
+        ItemDTO itemByItemName = itemBo.getItemByItemName(txtItemName.getText());
+        if (itemByItemName != null) {
+            lblItemId.setText(itemByItemName.getItemID());
+            lblBatchNo.setText(itemByItemName.getBatchNumber());
+            lblQty.setText(String.valueOf(itemByItemName.getQty()));
+            lblUnitPrice.setText(String.valueOf(itemByItemName.getPrice()));
+            lblExpDate.setText(String.valueOf(itemByItemName.getExpireDate()));
+            lblSupplier.setText(itemByItemName.getSupplier());
+        }else {
+            Alert alert=new Alert(Alert.AlertType.WARNING);
+            alert.setHeaderText("Please Check Item Name !");
+            alert.show();
+        }
     }
 }

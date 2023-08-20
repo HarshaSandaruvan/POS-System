@@ -89,4 +89,21 @@ public class ItemBoImpl implements ItemBo {
     public boolean deleteItem(String itemId) {
         return itemDAO.deleteItem(itemId);
     }
+
+    @Override
+    public ItemDTO getItemByItemName(String itemName) {
+        Item itemByItemName = itemDAO.getItemByItemName(itemName);
+        if(itemByItemName != null){
+            return new ItemDTO(
+                    itemByItemName.getItemID(),
+                    itemByItemName.getItemName(),
+                    itemByItemName.getBatchNumber(),
+                    itemByItemName.getPrice(),
+                    itemByItemName.getQty(),
+                    itemByItemName.getSupplier(),
+                    itemByItemName.getExpireDate()
+            );
+        }
+        return null;
+    }
 }

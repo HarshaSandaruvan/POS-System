@@ -30,10 +30,20 @@
     -fx-background-color:#16a085;
 }
 .TableView{
-    -fx-background-color:#16a085;
+    -fx-background-color: #0c2461;
+    -fx-border-color: #0c2461;
+}
+.TableView .tableColumn{
+    -fx-background-color: #0c2461;
+    -fx-border-color: #0c2461;
+}
+.TableView .tableColumn .label{
     -fx-text-fill: white;
 }
-.TblColumn{
-    -fx-background-color:#16a085;
+
+.TableView.label{
     -fx-text-fill: white;
 }
+
+
+

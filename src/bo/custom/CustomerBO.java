@@ -17,4 +17,6 @@ public interface CustomerBO extends SuperBO {
     public boolean updateCustomer(CustomerDTO customerDTO);
 
     public CustomerDTO getCustomerByContactNumber(String contactNumber);
+
+
 }

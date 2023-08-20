@@ -2,6 +2,7 @@ package dao.custom.impl;
 
 import dao.CrudUtil;
 import dao.custom.ItemDAO;
+import entity.Customer;
 import entity.Item;
 
 import java.sql.ResultSet;
@@ -124,5 +125,33 @@ public class ItemDAOImpl implements ItemDAO {
             throw new RuntimeException(e);
         }
 
+    }
+
+    @Override
+    public Item getItemByItemName(String itemName) {
+
+        try {
+            ResultSet selectedItem = CrudUtil.executeQuery("SELECT * FROM item WHERE itemName=?;",itemName);
+            if (selectedItem.first()){
+                return new Item(
+                        selectedItem.getString("itemID"),
+                        selectedItem.getString("itemName"),
+                        selectedItem.getString("batchNumber"),
+                        selectedItem.getDouble("price"),
+                        selectedItem.getDouble("qty"),
+                        selectedItem.getString("supplier"),
+                        selectedItem.getDate("expireDate")
+
+                );
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+
+
+        return null;
     }
 }

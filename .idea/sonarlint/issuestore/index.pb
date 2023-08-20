@@ -29,14 +29,6 @@ E
 src/bo/BOFactory.java,5\8\585c440c7082b46076f342a118f2ad4c9a3024ab
 G
 src/dao/DAOFactory.java,9\f\9f9767f330c3d674b64b13bf8d78355a1bc26128
-R
-"src/bo/custom/impl/ItemBoImpl.java,4\8\48322e41eed8286f0deb3aaef3091030e35a85bf
-I
-src/bo/custom/ItemBo.java,e\9\e9b101d558ce831bb28d89139e94c364e62523b6
-K
-src/dao/custom/ItemDAO.java,2\8\28948601150bf46a916489c2e915880ee710a9e0
-T
-$src/dao/custom/impl/ItemDAOImpl.java,6\8\68d5d42978325d0a8b8d2a00cad121cc3283f7ff
 J
 src/view/style/MenuBar.css,0\a\0ac77ca3dcdabc7ad567426fa15f3fd5b1680da3
 U
