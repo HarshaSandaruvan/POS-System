@@ -47,8 +47,6 @@ S
 #src/bo/custom/impl/LoginBoImpl.java,f\5\f50bab4271fb658eb0e8e6bc51161ff925d1f705
 E
 src/bo/BOFactory.java,5\8\585c440c7082b46076f342a118f2ad4c9a3024ab
-G
-src/view/Dashboard.fxml,e\a\eae2cdc69777a5a9ddd8731353f917f398d5f804
 K
 src/dao/custom/ItemDAO.java,2\8\28948601150bf46a916489c2e915880ee710a9e0
 T

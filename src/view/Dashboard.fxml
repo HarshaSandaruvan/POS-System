@@ -58,7 +58,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label fx:id="LblTotal" layoutX="175.0" layoutY="442.0" prefHeight="30.0" prefWidth="88.0" text="00.00" textFill="#fbfbfb">
+            <Label fx:id="lblTotal" layoutX="175.0" layoutY="442.0" prefHeight="30.0" prefWidth="88.0" text="00.00" textFill="#fbfbfb">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -80,7 +80,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField id="txtDiscount" fx:id="txtDiscounts" layoutX="126.0" layoutY="306.0" prefHeight="25.0" prefWidth="50.0" promptText="10" stylesheets="@style/DashboardForm.css" />
+            <TextField id="txtDiscount" fx:id="txtDiscounts" layoutX="126.0" layoutY="306.0" prefHeight="25.0" prefWidth="50.0" promptText="10" stylesheets="@style/DashboardForm.css" text="0" />
             <Label layoutX="38.0" layoutY="308.0" text="Discounts :" textFill="#fbfbfb">
                <font>
                   <Font size="14.0" />

@@ -37,7 +37,7 @@ public class DashboardController {
 
     public TextField txtCustomerContactNo;
     public Label lblNumberOfItem;
-    public Label LblTotal;
+    public Label lblTotal;
     public Label lblDiscount;
     public Label lblSubTotal;
     public Label lblOrderId;
@@ -152,6 +152,7 @@ public class DashboardController {
 
     lblSubTotal.setText(String.valueOf(total));
     updateDiscount();
+       updateTotal();
    }
 
    public void updateDiscount(){
@@ -159,7 +160,10 @@ public class DashboardController {
             lblDiscount.setText(String.valueOf(Double.parseDouble(lblSubTotal.getText())*Double.parseDouble(txtDiscounts.getText())/100));
         }
    }
-    
+
+   public void updateTotal(){
+        lblTotal.setText(String.valueOf(Double.parseDouble(lblSubTotal.getText())-Double.parseDouble(lblDiscount.getText())));
+   }
 
     public void btnFindOnAction(ActionEvent actionEvent) {
         //Load Customer Details to Dashboard
