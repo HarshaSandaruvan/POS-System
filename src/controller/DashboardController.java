@@ -8,6 +8,7 @@ import com.jfoenix.controls.JFXButton;
 import dto.CustomerDTO;
 import dto.ItemDTO;
 import entity.OrderDetail;
+import entity.OrderDetailTemp;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -63,6 +64,7 @@ public class DashboardController {
     CustomerBO customerBO = (CustomerBO) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.CUSTOMER);
     ItemBo itemBo= (ItemBo) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.ITEM);
     ObservableList<OrderDetail> observableList= FXCollections.observableArrayList();
+    ObservableList<OrderDetailTemp> obtem=FXCollections.observableArrayList();
     OrderDetailBO orderDetailBO= (OrderDetailBO) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.ORDERDETAIL);
 
     public void initialize(){
@@ -109,6 +111,7 @@ public class DashboardController {
                 alert1.showAndWait();
             }
         });
+        updateSumOfTotal();
     }
 
     public void btnItemRemoveOnAction(ActionEvent actionEvent) {
@@ -133,14 +136,25 @@ public class DashboardController {
         }
 
         updateNumberOfItems();
+        updateSumOfTotal();
 
     }
 
-    private void updateNumberOfItems() {
+    public void updateNumberOfItems() {
 
         lblNumberOfItem.setText(String.valueOf(tblOrder.getItems().size()));
     }
 
+   public void updateSumOfTotal(){
+    double total=0.0;
+    for (OrderDetail orderDetail:observableList){
+        total+=orderDetail.getPrice();
+    }
+
+    lblSubTotal.setText(String.valueOf(total));
+
+
+   }
     public void btnFindOnAction(ActionEvent actionEvent) {
         //Load Customer Details to Dashboard
 
@@ -181,7 +195,10 @@ public class DashboardController {
     tblOrder.setItems(observableList);
 
     updateNumberOfItems();
+    updateSumOfTotal();
     //clearItemFields();
+
+
 
     }
 
