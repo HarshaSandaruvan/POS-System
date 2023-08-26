@@ -18,7 +18,7 @@ public class OrderDetailDAOImpl implements OrderDetailDAO {
                     orderDetail.getItemName(),
                     orderDetail.getQty(),
                     orderDetail.getUnitPrice(),
-                    orderDetail.getDiscountedAmount()
+                    orderDetail.getPrice()
             );
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);

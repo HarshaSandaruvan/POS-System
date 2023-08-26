@@ -16,7 +16,7 @@ public class OrderDetailBOImpl implements OrderDetailBO {
                 orderDetailDTO.getItemName(),
                 orderDetailDTO.getQty(),
                 orderDetailDTO.getUnitPrice(),
-                orderDetailDTO.getDiscountedAmount()
+                orderDetailDTO.getPrice()
         );
         return orderDetailDAO.saveOrderDetail(orderDetail);
     }

@@ -58,6 +58,7 @@ public class DashboardController {
     public TextField txtItemName;
     public JFXButton btnFindItem;
 
+
     CustomerBO customerBO = (CustomerBO) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.CUSTOMER);
     ItemBo itemBo= (ItemBo) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.ITEM);
     ObservableList<OrderDetail> observableList= FXCollections.observableArrayList();
@@ -70,6 +71,7 @@ public class DashboardController {
         colItemName.setCellValueFactory(new PropertyValueFactory<>("itemName"));
         colItemQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
         colItemPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+
 
     }
 
