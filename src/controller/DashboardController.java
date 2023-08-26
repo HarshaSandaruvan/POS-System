@@ -88,6 +88,12 @@ public class DashboardController {
     }
 
     public void btnClearOrderOnAction(ActionEvent actionEvent) {
+        clearItemTable();
+        updateNumberOfItems();
+
+    }
+
+    private void clearItemTable() {
         YES=new ButtonType("Yes");
         NO=new ButtonType("No");
 
@@ -103,10 +109,6 @@ public class DashboardController {
                 alert1.showAndWait();
             }
         });
-
-       
-        updateNumberOfItems();
-
     }
 
     public void btnItemRemoveOnAction(ActionEvent actionEvent) {
