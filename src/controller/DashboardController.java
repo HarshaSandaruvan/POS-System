@@ -58,6 +58,8 @@ public class DashboardController {
     public TextField txtItemName;
     public JFXButton btnFindItem;
 
+    private int selectedIndex = -1;
+
 
     CustomerBO customerBO = (CustomerBO) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.CUSTOMER);
     ItemBo itemBo= (ItemBo) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.ITEM);
@@ -72,7 +74,10 @@ public class DashboardController {
         colItemQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
         colItemPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
 
+        tblOrder.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
+            selectedIndex = (int) newValue;
 
+        });
     }
 
     private void generateAndSetOrderID() {
@@ -87,6 +92,22 @@ public class DashboardController {
     }
 
     public void btnItemRemoveOnAction(ActionEvent actionEvent) {
+        ButtonType YES=new ButtonType("Yes");
+        ButtonType NO=new ButtonType("No");
+
+
+        Alert alert =new Alert(Alert.AlertType.CONFIRMATION,"",YES,NO);
+        alert.setHeaderText("Do you want Delete this Item ?");
+        alert.showAndWait().ifPresent(response ->{
+            if (response==YES){
+                tblOrder.getItems().remove(selectedIndex);
+                Alert alert1=new Alert(Alert.AlertType.INFORMATION);
+                alert1.setHeaderText("Item is Deleted !");
+                alert1.showAndWait();
+            }
+                });
+
+
     }
 
     public void btnFindOnAction(ActionEvent actionEvent) {
