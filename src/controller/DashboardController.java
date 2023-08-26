@@ -151,10 +151,15 @@ public class DashboardController {
     }
 
     lblSubTotal.setText(String.valueOf(total));
-
-
+    updateDiscount();
    }
 
+   public void updateDiscount(){
+          if (txtDiscounts.getText()!=null){
+            lblDiscount.setText(String.valueOf(Double.parseDouble(lblSubTotal.getText())*Double.parseDouble(txtDiscounts.getText())/100));
+        }
+   }
+    
 
     public void btnFindOnAction(ActionEvent actionEvent) {
         //Load Customer Details to Dashboard
@@ -197,6 +202,7 @@ public class DashboardController {
 
     updateNumberOfItems();
     updateSumOfTotal();
+
     //clearItemFields();
 
     }
