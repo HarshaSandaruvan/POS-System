@@ -104,8 +104,8 @@ public class DashboardController {
             }
         });
 
-
-
+       
+        updateNumberOfItems();
 
     }
 
@@ -113,19 +113,30 @@ public class DashboardController {
        YES=new ButtonType("Yes");
        NO=new ButtonType("No");
 
-        Alert alert =new Alert(Alert.AlertType.CONFIRMATION,"",YES,NO);
-        alert.setHeaderText("Do you want Remove this Item ?");
+        if (selectedIndex<0){
+            Alert alert1 =new Alert(Alert.AlertType.WARNING);
+            alert1.setHeaderText("Please select the item first !");
+            alert1.showAndWait();
+        }else {
+            Alert alert =new Alert(Alert.AlertType.CONFIRMATION,"",YES,NO);
+            alert.setHeaderText("Do you want Remove this Item ?");
+            alert.showAndWait().ifPresent(response -> {
+                if (response == YES) {
+                    tblOrder.getItems().remove(selectedIndex);
+                    Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+                    alert1.setHeaderText("Item is Remove !");
+                    alert1.showAndWait();
+                }
+            });
+        }
 
-        alert.showAndWait().ifPresent(response ->{
-            if (response==YES){
-                tblOrder.getItems().remove(selectedIndex);
-                Alert alert1=new Alert(Alert.AlertType.INFORMATION);
-                alert1.setHeaderText("Item is Remove !");
-                alert1.showAndWait();
-            }
-                });
+        updateNumberOfItems();
 
+    }
 
+    private void updateNumberOfItems() {
+
+        lblNumberOfItem.setText(String.valueOf(tblOrder.getItems().size()));
     }
 
     public void btnFindOnAction(ActionEvent actionEvent) {
@@ -167,7 +178,9 @@ public class DashboardController {
 
     tblOrder.setItems(observableList);
 
-       clearItemFields();
+    updateNumberOfItems();
+    //clearItemFields();
+
     }
 
     public void btnCustomerClearOnAction(ActionEvent actionEvent) {
