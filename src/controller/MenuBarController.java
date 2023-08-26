@@ -38,6 +38,11 @@ public class MenuBarController {
 
     public void initialize(){
         startClock();
+        try {
+            loadDashboardForm();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
     private void startClock() {
@@ -99,6 +104,9 @@ public class MenuBarController {
     }
 
     public void btnMenuDashboarOnAction(ActionEvent actionEvent) throws IOException {
+        loadDashboardForm();
+    }
+    public void loadDashboardForm() throws IOException {
         URL resource = getClass().getResource("/view/Dashboard.fxml");
         Parent load = FXMLLoader.load(resource);
         playGroundAnchorPane.getChildren().clear();

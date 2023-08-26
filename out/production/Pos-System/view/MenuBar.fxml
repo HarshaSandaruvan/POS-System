@@ -20,7 +20,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <JFXButton fx:id="btnMenuDashboard" layoutX="341.0" layoutY="15.0" onAction="#btnMenuDashboarOnAction" prefHeight="46.0" prefWidth="91.0" stylesheets="@style/MenuBar.css" text="Dashboard" textFill="#fdfbfb">
+            <JFXButton id="menuDashboardBtn" fx:id="btnMenuDashboard" layoutX="340.0" layoutY="15.0" onAction="#btnMenuDashboarOnAction" prefHeight="46.0" prefWidth="91.0" stylesheets="@style/MenuBar.css" text="Dashboard" textFill="#fdfbfb">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -32,7 +32,7 @@
                   <String fx:value="btn" />
                </styleClass>
             </JFXButton>
-            <MenuButton id="menuOrdersBtn" fx:id="menuOrdersBtn" layoutX="434.0" layoutY="15.0" mnemonicParsing="false" prefHeight="45.0" stylesheets="@style/MenuBar.css" text="Orders" textFill="#fbfafa">
+            <MenuButton id="menuOrdersBtn" fx:id="menuOrdersBtn" layoutX="433.0" layoutY="15.0" mnemonicParsing="false" prefHeight="45.0" stylesheets="@style/MenuBar.css" text="Orders" textFill="#fbfafa">
               <items>
                 <MenuItem mnemonicParsing="false" text="Action 1" />
                 <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -48,7 +48,7 @@
                   <String fx:value="btn" />
                </styleClass>
             </MenuButton>
-            <MenuButton id="menuCustomerBtn" fx:id="menuCustomersBtn" layoutX="518.0" layoutY="15.0" mnemonicParsing="false" prefHeight="45.0" stylesheets="@style/MenuBar.css" text="Customers" textFill="#fbfafa">
+            <MenuButton id="menuCustomerBtn" fx:id="menuCustomersBtn" layoutX="520.0" layoutY="15.0" mnemonicParsing="false" prefHeight="45.0" stylesheets="@style/MenuBar.css" text="Customers" textFill="#fbfafa">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#manageCustomerOnAction" text="Manage Customer" />
                </items>
@@ -63,7 +63,7 @@
                   <String fx:value="btn" />
                </styleClass>
             </MenuButton>
-            <MenuButton id="menuItemBtn" fx:id="menuItemsBtn" layoutX="627.0" layoutY="15.0" mnemonicParsing="false" prefHeight="45.0" stylesheets="@style/MenuBar.css" text="Items" textFill="#fbfafa">
+            <MenuButton id="menuItemBtn" fx:id="menuItemsBtn" layoutX="632.0" layoutY="15.0" mnemonicParsing="false" prefHeight="45.0" stylesheets="@style/MenuBar.css" text="Items" textFill="#fbfafa">
                <items>
                   <MenuItem fx:id="BtnItemManager" mnemonicParsing="false" onAction="#itemMangerOnAction" text="Mange Item" />
                </items>

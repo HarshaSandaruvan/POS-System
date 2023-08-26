@@ -3,13 +3,21 @@ package controller;
 import bo.BOFactory;
 import bo.custom.CustomerBO;
 import bo.custom.ItemBo;
+import bo.custom.OrderDetailBO;
 import com.jfoenix.controls.JFXButton;
 import dto.CustomerDTO;
 import dto.ItemDTO;
+import dto.OrderDetailDTO;
+import entity.OrderDetail;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.util.Callback;
 
 public class DashboardController {
 
@@ -52,6 +60,23 @@ public class DashboardController {
 
     CustomerBO customerBO = (CustomerBO) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.CUSTOMER);
     ItemBo itemBo= (ItemBo) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.ITEM);
+    ObservableList<OrderDetail> observableList= FXCollections.observableArrayList();
+    OrderDetailBO orderDetailBO= (OrderDetailBO) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.ORDERDETAIL);
+
+    public void initialize(){
+        generateAndSetOrderID();
+        colItemId.setCellValueFactory(new PropertyValueFactory<>("itemID"));
+        colItemUnitPrice.setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
+        colItemName.setCellValueFactory(new PropertyValueFactory<>("itemName"));
+        colItemQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
+        colItemPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+
+    }
+
+    private void generateAndSetOrderID() {
+        lblOrderId.setText(orderDetailBO.getNextOrderID());
+
+    }
 
     public void btnPayOnAction(MouseEvent mouseEvent) {
     }
@@ -85,9 +110,23 @@ public class DashboardController {
     }
 
     public void btnItemClearOnAction(ActionEvent actionEvent) {
+        clearItemFeilds();
     }
 
     public void btnAddOnAction(ActionEvent actionEvent) {
+
+        observableList.add(new OrderDetail(
+                lblOrderId.getText(),
+                lblItemId.getText(),
+                txtItemName.getText(),
+                Double.parseDouble(txtRequestQty.getText()),
+                Double.parseDouble(lblUnitPrice.getText()),
+                Double.parseDouble(txtRequestQty.getText())* Double.parseDouble(lblUnitPrice.getText())
+        ));
+
+    tblOrder.setItems(observableList);
+
+       clearItemFeilds();
     }
 
     public void btnCustomerClearOnAction(ActionEvent actionEvent) {
@@ -112,4 +151,15 @@ public class DashboardController {
             alert.show();
         }
     }
+
+    private void clearItemFeilds(){
+        txtItemName.clear();
+        lblItemId.setText("");
+        lblBatchNo.setText("");
+        lblQty.setText("");
+        lblUnitPrice.setText("");
+        lblExpDate.setText("");
+        lblSupplier.setText("");
+    }
+
 }

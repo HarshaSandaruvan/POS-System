@@ -9,6 +9,7 @@
 #FindBtn{
     -fx-background-radius: 5 5 5 5;
     -fx-background-color:  #3498db;
+    -fx-text-fill: white;
 }
 #FindBtn:hover{
     -fx-background-color:#2980b9;
@@ -17,6 +18,7 @@
 #AddToCartBtn{
     -fx-background-radius: 5 5 5 5;
     -fx-background-color:  #1abc9c;
+    -fx-text-fill: white;
 }
 #AddToCartBtn:hover{
     -fx-background-color:#16a085;
@@ -25,25 +27,26 @@
 #PayBtn{
     -fx-background-radius: 5 5 5 5;
     -fx-background-color:  #1abc9c;
+    -fx-text-fill: white;
 }
 #PayBtn:hover{
     -fx-background-color:#16a085;
 }
-.TableView{
-    -fx-background-color: #0c2461;
-    -fx-border-color: #0c2461;
-}
-.TableView .tableColumn{
-    -fx-background-color: #0c2461;
-    -fx-border-color: #0c2461;
-}
-.TableView .tableColumn .label{
-    -fx-text-fill: white;
-}
+/*.TableView{*/
+/*    !*-fx-background-color: #071952;*!*/
+/*    -fx-border-color: #0c2461;*/
+/*}*/
+/*.TableView .tableColumn{*/
+/*    -fx-background-color:  #071952;*/
+/*    -fx-border-color: #0c2461;*/
+/*}*/
+/*.TableView .tableColumn .label{*/
+/*    -fx-text-fill: white;*/
+/*}*/
 
-.TableView.label{
-    -fx-text-fill: white;
-}
+/*.TableView.label{*/
+/*    -fx-text-fill: white;*/
+/*}*/
 
 
 

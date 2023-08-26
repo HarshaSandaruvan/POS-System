@@ -39,6 +39,7 @@ CREATE TABLE orders(
 CREATE TABLE orderDetails(
     orderID VARCHAR(255),
     itemID VARCHAR(255),
+    itemName VARCHAR(255),
     qty DOUBLE,
     unitPrice DOUBLE,
     discountedAmount DOUBLE,

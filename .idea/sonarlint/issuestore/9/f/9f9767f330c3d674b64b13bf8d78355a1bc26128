@@ -1,8 +1,10 @@
 
 J
-java:S1121".Extract the assignment out of this expression.(à—ˆy8»Ëõ  1
+java:S1121".Extract the assignment out of this expression.(à—ˆy8»‹øì¢1
 ¶
-java:S6548
-"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(®àÅº8ÁËõ  1
+java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(®àÅº8»‹øì¢1
+X
+java:S1128"6Remove this unused import 'dao.custom.OrderDetailDAO'.(“Êãüÿÿÿÿ8»‹øì¢1
 Y
-java:S1128"7Remove this unused import 'bo.BOFactory.BoTypes.LOGIN'.(‡‚³·øÿÿÿÿ8Ôé®¥ 1
+java:S1128
+"7Remove this unused import 'bo.BOFactory.BoTypes.LOGIN'.(‡‚³·øÿÿÿÿ8»‹øì¢1
