@@ -7,9 +7,7 @@ import bo.custom.OrderDetailBO;
 import com.jfoenix.controls.JFXButton;
 import dto.CustomerDTO;
 import dto.ItemDTO;
-import dto.OrderDetailDTO;
 import entity.OrderDetail;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -17,7 +15,6 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.util.Callback;
 
 public class DashboardController {
 
@@ -60,6 +57,8 @@ public class DashboardController {
 
     private int selectedIndex = -1;
 
+   private  ButtonType YES;
+    private ButtonType NO;
 
     CustomerBO customerBO = (CustomerBO) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.CUSTOMER);
     ItemBo itemBo= (ItemBo) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.ITEM);
@@ -89,20 +88,39 @@ public class DashboardController {
     }
 
     public void btnClearOrderOnAction(ActionEvent actionEvent) {
+        YES=new ButtonType("Yes");
+        NO=new ButtonType("No");
+
+        Alert alert =new Alert(Alert.AlertType.CONFIRMATION,"",YES,NO);
+        alert.setHeaderText("Do you want Delete this Order ?");
+
+        alert.showAndWait().ifPresent(response ->{
+            if (response==YES){
+                tblOrder.getItems().clear();
+
+                Alert alert1=new Alert(Alert.AlertType.INFORMATION);
+                alert1.setHeaderText("Order is Deleted !");
+                alert1.showAndWait();
+            }
+        });
+
+
+
+
     }
 
     public void btnItemRemoveOnAction(ActionEvent actionEvent) {
-        ButtonType YES=new ButtonType("Yes");
-        ButtonType NO=new ButtonType("No");
-
+       YES=new ButtonType("Yes");
+       NO=new ButtonType("No");
 
         Alert alert =new Alert(Alert.AlertType.CONFIRMATION,"",YES,NO);
-        alert.setHeaderText("Do you want Delete this Item ?");
+        alert.setHeaderText("Do you want Remove this Item ?");
+
         alert.showAndWait().ifPresent(response ->{
             if (response==YES){
                 tblOrder.getItems().remove(selectedIndex);
                 Alert alert1=new Alert(Alert.AlertType.INFORMATION);
-                alert1.setHeaderText("Item is Deleted !");
+                alert1.setHeaderText("Item is Remove !");
                 alert1.showAndWait();
             }
                 });
@@ -133,7 +151,7 @@ public class DashboardController {
     }
 
     public void btnItemClearOnAction(ActionEvent actionEvent) {
-        clearItemFeilds();
+        clearItemFields();
     }
 
     public void btnAddOnAction(ActionEvent actionEvent) {
@@ -149,7 +167,7 @@ public class DashboardController {
 
     tblOrder.setItems(observableList);
 
-       clearItemFeilds();
+       clearItemFields();
     }
 
     public void btnCustomerClearOnAction(ActionEvent actionEvent) {
@@ -175,7 +193,7 @@ public class DashboardController {
         }
     }
 
-    private void clearItemFeilds(){
+    private void clearItemFields(){
         txtItemName.clear();
         lblItemId.setText("");
         lblBatchNo.setText("");
