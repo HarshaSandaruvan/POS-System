@@ -63,7 +63,7 @@ public class DashboardController {
     CustomerBO customerBO = (CustomerBO) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.CUSTOMER);
     ItemBo itemBo= (ItemBo) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.ITEM);
     ObservableList<OrderDetail> observableList= FXCollections.observableArrayList();
-    
+
     OrderDetailBO orderDetailBO= (OrderDetailBO) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.ORDERDETAIL);
 
     public void initialize(){
@@ -154,6 +154,7 @@ public class DashboardController {
 
 
    }
+
 
     public void btnFindOnAction(ActionEvent actionEvent) {
         //Load Customer Details to Dashboard

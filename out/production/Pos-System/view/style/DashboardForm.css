@@ -48,5 +48,8 @@
 /*    -fx-text-fill: white;*/
 /*}*/
 
-
+#txtDiscount{
+    -fx-background-color:  #071952;
+    -fx-text-fill: white;
+}
 

@@ -17,13 +17,13 @@
    <children>
       <AnchorPane fx:id="btnPay" onDragDetected="#btnPayOnAction" prefHeight="500.0" prefWidth="400.0" style="-fx-background-color: #071952;">
          <children>
-            <Separator layoutX="26.0" layoutY="45.0" prefHeight="8.0" prefWidth="147.0" />
-            <Label layoutX="26.0" layoutY="22.0" prefHeight="19.0" prefWidth="144.0" text="Order Details" textFill="WHITE">
+            <Separator layoutX="26.0" layoutY="29.0" prefHeight="8.0" prefWidth="147.0" />
+            <Label layoutX="26.0" layoutY="3.0" prefHeight="19.0" prefWidth="144.0" text="Order Details" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <TableView fx:id="tblOrder" layoutX="11.0" layoutY="103.0" prefHeight="228.0" prefWidth="364.0" styleClass="TableView" stylesheets="@style/DashboardForm.css">
+            <TableView fx:id="tblOrder" layoutX="16.0" layoutY="67.0" prefHeight="228.0" prefWidth="364.0" styleClass="TableView" stylesheets="@style/DashboardForm.css">
               <columns>
                 <TableColumn fx:id="colItemId" editable="false" prefWidth="75.0" styleClass="tableColumn" text="Item Id" />
                   <TableColumn fx:id="colItemName" editable="false" prefWidth="105.99998474121094" styleClass="tableColumn" text="Name" />
@@ -32,33 +32,33 @@
                   <TableColumn fx:id="colItemPrice" editable="false" prefWidth="60.666656494140625" styleClass="tableColumn" text="Price" />
               </columns>
             </TableView>
-            <Label layoutX="27.0" layoutY="62.0" text="Order Id :" textFill="WHITE" />
-            <Label fx:id="lblOrderId" layoutX="106.0" layoutY="62.0" textFill="#f2f2f2" />
-            <Label layoutX="40.0" layoutY="379.0" text="Sub Total : (Rs.)" textFill="#fbfbfb">
+            <Label layoutX="27.0" layoutY="39.0" text="Order Id :" textFill="WHITE" />
+            <Label fx:id="lblOrderId" layoutX="106.0" layoutY="39.0" prefHeight="18.0" prefWidth="63.0" textFill="WHITE" />
+            <Label layoutX="39.0" layoutY="371.0" text="Sub Total : (Rs.)" textFill="#fbfbfb">
                <font>
                   <Font size="14.0" />
                </font></Label>
-            <Label fx:id="lblSubTotal" layoutX="187.0" layoutY="379.0" text="00.00" textFill="#fbfbfb">
+            <Label fx:id="lblSubTotal" layoutX="186.0" layoutY="371.0" text="00.00" textFill="#fbfbfb">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="40.0" layoutY="408.0" text="Discounts : - (Rs.)" textFill="#fbfbfb">
+            <Label layoutX="39.0" layoutY="400.0" text="Discounts : - (Rs.)" textFill="#fbfbfb">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="lblDiscount" layoutX="187.0" layoutY="408.0" text="00.00" textFill="#fbfbfb">
+            <Label fx:id="lblDiscount" layoutX="186.0" layoutY="400.0" text="00.00" textFill="#fbfbfb">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="41.0" layoutY="441.0" text="Total : (Rs.)" textFill="#fbfbfb">
+            <Label layoutX="37.0" layoutY="441.0" text="Total : (Rs.)" textFill="#fbfbfb">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label fx:id="LblTotal" layoutX="179.0" layoutY="442.0" prefHeight="30.0" prefWidth="88.0" text="00.00" textFill="#fbfbfb">
+            <Label fx:id="LblTotal" layoutX="175.0" layoutY="442.0" prefHeight="30.0" prefWidth="88.0" text="00.00" textFill="#fbfbfb">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -69,13 +69,24 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton id="ClearBtn" fx:id="btnItemRemove" layoutX="320.0" layoutY="341.0" onAction="#btnItemRemoveOnAction" stylesheets="@style/DashboardForm.css" text="Remove" textFill="#fbfbfb" />
-            <Label layoutX="40.0" layoutY="348.0" text="Number of Items :" textFill="#fbfbfb">
+            <JFXButton id="ClearBtn" fx:id="btnItemRemove" layoutX="320.0" layoutY="304.0" onAction="#btnItemRemoveOnAction" stylesheets="@style/DashboardForm.css" text="Remove" textFill="#fbfbfb" />
+            <Label layoutX="39.0" layoutY="340.0" text="Number of Items :" textFill="#fbfbfb">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="lblNumberOfItem" layoutX="187.0" layoutY="348.0" prefHeight="27.0" prefWidth="40.0" text="00" textFill="#fbfbfb">
+            <Label fx:id="lblNumberOfItem" layoutX="186.0" layoutY="340.0" prefHeight="27.0" prefWidth="40.0" text="00" textFill="#fbfbfb">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField id="txtDiscount" fx:id="txtDiscounts" layoutX="126.0" layoutY="306.0" prefHeight="25.0" prefWidth="50.0" promptText="10" stylesheets="@style/DashboardForm.css" />
+            <Label layoutX="38.0" layoutY="308.0" text="Discounts :" textFill="#fbfbfb">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="204.0" layoutY="308.0" text="\%" textFill="#fbfbfb">
                <font>
                   <Font size="14.0" />
                </font>
@@ -83,7 +94,7 @@
          </children>
       </AnchorPane>
       <TextField fx:id="txtCustomerContactNo" layoutX="674.0" layoutY="17.0" prefHeight="33.0" prefWidth="231.0" promptText="Customer Contact No." />
-      <JFXButton id="FindBtn" fx:id="btnFind" layoutX="914.0" layoutY="19.0" onAction="#btnFindOnAction" stylesheets="@style/DashboardForm.css" text="Find" />
+      <JFXButton id="FindBtn" fx:id="btnFind" layoutX="915.0" layoutY="19.0" onAction="#btnFindOnAction" stylesheets="@style/DashboardForm.css" text="Find" />
       <ImageView fitHeight="31.0" fitWidth="23.0" layoutX="646.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@assets/images/adressImg.png" />
@@ -124,12 +135,12 @@
       <Label fx:id="lblItemId" layoutX="522.0" layoutY="235.0" />
       <Label layoutX="427.0" layoutY="313.0" text="Qty On Hand :" />
       <Label fx:id="lblQty" layoutX="522.0" layoutY="313.0" />
-      <Label layoutX="427.0" layoutY="349.0" text="Unit Price :(Rs.)" />
-      <Label fx:id="lblUnitPrice" layoutX="522.0" layoutY="349.0" />
-      <Label layoutX="427.0" layoutY="384.0" text="Exp. Date :" />
-      <Label fx:id="lblExpDate" layoutX="522.0" layoutY="384.0" />
-      <Label layoutX="427.0" layoutY="419.0" text="Supplier :" />
-      <Label fx:id="lblSupplier" layoutX="522.0" layoutY="419.0" prefHeight="18.0" prefWidth="76.0" />
+      <Label layoutX="722.0" layoutY="234.0" text="Unit Price :(Rs.)" />
+      <Label fx:id="lblUnitPrice" layoutX="817.0" layoutY="234.0" prefHeight="18.0" prefWidth="60.0" />
+      <Label layoutX="722.0" layoutY="269.0" text="Exp. Date :" />
+      <Label fx:id="lblExpDate" layoutX="817.0" layoutY="269.0" prefHeight="18.0" prefWidth="80.0" />
+      <Label layoutX="722.0" layoutY="304.0" text="Supplier :" />
+      <Label fx:id="lblSupplier" layoutX="817.0" layoutY="304.0" prefHeight="18.0" prefWidth="76.0" />
       <Label layoutX="427.0" layoutY="274.0" text="Batch No. :" />
       <Label fx:id="lblBatchNo" layoutX="522.0" layoutY="274.0" />
       <Separator layoutX="423.0" layoutY="52.0" prefHeight="5.0" prefWidth="151.0" />
@@ -138,30 +149,27 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="645.0" layoutY="235.0" text="Request Qty :" />
-      <TextField fx:id="txtRequestQty" layoutX="733.0" layoutY="232.0" prefHeight="25.0" prefWidth="72.0" text="1" />
-      <Label layoutX="645.0" layoutY="280.0" text="Discounts :" />
-      <TextField fx:id="txtDiscounts" layoutX="733.0" layoutY="277.0" prefHeight="25.0" prefWidth="72.0" promptText="10" />
-      <Label layoutX="815.0" layoutY="282.0" text="\%" />
-      <Label layoutX="645.0" layoutY="331.0" text="Description" />
-      <Label layoutX="755.0" layoutY="404.0" text="Item Total : (Rs)">
+      <Label layoutX="440.0" layoutY="372.0" text="Request Qty :" />
+      <TextField fx:id="txtRequestQty" layoutX="528.0" layoutY="369.0" prefHeight="25.0" prefWidth="50.0" text="1" />
+      <Label layoutX="439.0" layoutY="421.0" text="Description" />
+      <Label layoutX="751.0" layoutY="404.0" text="Item Total : (Rs)">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblItemTotal" layoutX="904.0" layoutY="404.0" text="00.00">
+      <Label fx:id="lblItemTotal" layoutX="920.0" layoutY="404.0" text="00.00">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
       <JFXButton id="ClearBtn" fx:id="btnItemClear" layoutX="830.0" layoutY="440.0" onAction="#btnItemClearOnAction" stylesheets="@style/DashboardForm.css" text="Clear" textFill="WHITE" />
-      <JFXButton id="AddToCartBtn" fx:id="btnAdd" layoutX="902.0" layoutY="440.0" onAction="#btnAddOnAction" stylesheets="@style/DashboardForm.css" text="Add" />
-      <TextField fx:id="txtDescription" layoutX="731.0" layoutY="328.0" />
+      <JFXButton id="AddToCartBtn" fx:id="btnAdd" layoutX="915.0" layoutY="440.0" onAction="#btnAddOnAction" stylesheets="@style/DashboardForm.css" text="Add" />
+      <TextField fx:id="txtDescription" layoutX="525.0" layoutY="418.0" prefHeight="25.0" prefWidth="168.0" />
       <JFXButton id="ClearBtn" fx:id="btnCustomerClear" layoutX="862.0" layoutY="137.0" onAction="#btnCustomerClearOnAction" stylesheets="@style/DashboardForm.css" text="Clear Customer" textFill="WHITE" />
-      <TextField fx:id="txtCustomerId" editable="false" layoutX="461.0" layoutY="63.0" promptText="Customer Id" />
-      <TextField fx:id="txtCustomerName" editable="false" layoutX="684.0" layoutY="63.0" prefHeight="25.0" prefWidth="227.0" promptText="Customer Name" />
-      <TextField fx:id="txtCustomerContNo" editable="false" layoutX="461.0" layoutY="99.0" promptText="Customer Contact No." />
-      <TextField fx:id="txtCustomerAddress" editable="false" layoutX="686.0" layoutY="99.0" prefHeight="25.0" prefWidth="227.0" promptText="Customer Address" />
+      <TextField fx:id="txtCustomerId" disable="true" editable="false" layoutX="461.0" layoutY="63.0" promptText="Customer Id" />
+      <TextField fx:id="txtCustomerName" disable="true" editable="false" layoutX="684.0" layoutY="63.0" prefHeight="25.0" prefWidth="227.0" promptText="Customer Name" />
+      <TextField fx:id="txtCustomerContNo" disable="true" editable="false" layoutX="461.0" layoutY="99.0" promptText="Customer Contact No." />
+      <TextField fx:id="txtCustomerAddress" disable="true" editable="false" layoutX="686.0" layoutY="99.0" prefHeight="25.0" prefWidth="227.0" promptText="Customer Address" />
       <TextField fx:id="txtItemName" layoutX="424.0" layoutY="188.0" prefHeight="33.0" prefWidth="160.0" promptText="Item Name" />
       <JFXButton id="FindBtn" fx:id="btnFindItem" layoutX="591.0" layoutY="190.0" onAction="#btnFindItemOnAction" stylesheets="@style/DashboardForm.css" text="Find" />
    </children>
