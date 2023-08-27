@@ -1,4 +1,4 @@
-package entity;
+package dto;
 
 
 import lombok.*;
@@ -11,7 +11,7 @@ import java.sql.Time;
 @Getter
 @Setter
 @ToString
-public class Orders {
+public class OrdersDTO {
     private String orderID;
     private String customerID;
     private Time time;
