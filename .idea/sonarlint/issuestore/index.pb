@@ -41,8 +41,6 @@ E
 src/dao/SuperDAO.java,b\b\bb39ba42a14676c3db6f9d3b913c28a6b55aeef6
 S
 #src/bo/custom/impl/LoginBoImpl.java,f\5\f50bab4271fb658eb0e8e6bc51161ff925d1f705
-E
-src/bo/BOFactory.java,5\8\585c440c7082b46076f342a118f2ad4c9a3024ab
 K
 src/dao/custom/ItemDAO.java,2\8\28948601150bf46a916489c2e915880ee710a9e0
 H
