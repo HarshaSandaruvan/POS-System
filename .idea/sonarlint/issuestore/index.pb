@@ -19,18 +19,12 @@ Q
 !src/view/style/ManageItemFrom.css,d\9\d93411685f9ba4a32161be3f5dc39de4234397c6
 L
 src/view/ManageItemForm.fxml,2\5\2543c845232586f11bedd499ea660011fb16d54c
-J
-src/bo/custom/LoginBo.java,2\e\2e78e6bdafa8d2c3b6f500be73db05b0bf6c59bb
 P
  src/view/ManageCustomerForm.fxml,a\c\ac05c962d9bf4daed70dbfa840a9961b95cbe52b
-E
-src/view/MenuBar.fxml,9\7\97b280b1f6cb19ad5741510c1d911166b4034201
 H
 src/dto/CustomerDTO.java,4\7\47335306aa543fd75295c1dca4058e52b5606dd1
 G
 src/view/LoginForm.fxml,3\6\360d6d8c13934676281e9df5abd975e1337e3719
-U
-%src/controller/MenuBarController.java,f\3\f3533b44741a8c5615e68246cf4f0c69cf2b554f
 J
 src/view/style/MenuBar.css,0\a\0ac77ca3dcdabc7ad567426fa15f3fd5b1680da3
 D
@@ -55,10 +49,6 @@ M
 src/bo/custom/CustomerBO.java,a\2\a2bc389b11084d5cc14579dbd8bccee11fdf2a08
 V
 &src/bo/custom/impl/CustomerBOImpl.java,a\a\aad2c0275da0d2db7f885bf43a5ca1ac93fa0ab5
-I
-src/bo/custom/ItemBo.java,e\9\e9b101d558ce831bb28d89139e94c364e62523b6
-R
-"src/bo/custom/impl/ItemBoImpl.java,4\8\48322e41eed8286f0deb3aaef3091030e35a85bf
 >
 Pos-System.iml,6\e\6e1b31b150228642791544823320705700767a93
 G

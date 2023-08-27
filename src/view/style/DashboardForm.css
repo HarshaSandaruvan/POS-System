@@ -15,23 +15,23 @@
     -fx-background-color:#2980b9;
 }
 
-#AddToCartBtn{
+.AddToCartBtn{
     -fx-background-radius: 5 5 5 5;
     -fx-background-color:  #1abc9c;
     -fx-text-fill: white;
 }
-#AddToCartBtn:hover{
+.AddToCartBtn:hover{
     -fx-background-color:#16a085;
 }
 
-#PayBtn{
+/*#btnPayStyle{
     -fx-background-radius: 5 5 5 5;
     -fx-background-color:  #1abc9c;
     -fx-text-fill: white;
 }
-#PayBtn:hover{
+#btnPayStyle:hover{
     -fx-background-color:#16a085;
-}
+}*/
 /*.TableView{*/
 /*    !*-fx-background-color: #071952;*!*/
 /*    -fx-border-color: #0c2461;*/

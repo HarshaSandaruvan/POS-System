@@ -3,6 +3,7 @@ package controller;
 import bo.BOFactory;
 import bo.custom.CustomerBO;
 import bo.custom.ItemBo;
+import bo.custom.OrderBO;
 import bo.custom.OrderDetailBO;
 import com.jfoenix.controls.JFXButton;
 import dto.CustomerDTO;
@@ -13,15 +14,20 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class DashboardController {
 
-    public AnchorPane btnPay;
+  
+    
     public JFXButton btnClearOrder;
     public JFXButton btnItemRemove;
     public JFXButton btnFind;
+
     public JFXButton btnItemClear;
     public JFXButton btnAdd;
     public TextField txtDescription;
@@ -54,6 +60,9 @@ public class DashboardController {
     public TextField txtCustomerAddress;
     public TextField txtItemName;
     public JFXButton btnFindItem;
+  
+    public JFXButton buttonPay;
+    public JFXButton btnPay;
 
     private int selectedIndex = -1;
 
@@ -62,6 +71,8 @@ public class DashboardController {
 
     CustomerBO customerBO = (CustomerBO) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.CUSTOMER);
     ItemBo itemBo= (ItemBo) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.ITEM);
+
+    OrderBO orderBO= (OrderBO) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.ORDERS);
     ObservableList<OrderDetail> observableList= FXCollections.observableArrayList();
 
     OrderDetailBO orderDetailBO= (OrderDetailBO) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.ORDERDETAIL);
@@ -85,7 +96,8 @@ public class DashboardController {
 
     }
 
-    public void btnPayOnAction(MouseEvent mouseEvent) {
+    public void btnPayOnAction(ActionEvent actionEvent) {
+
     }
 
     public void btnClearOrderOnAction(ActionEvent actionEvent) {

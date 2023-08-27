@@ -15,7 +15,7 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="1000.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardController">
    <children>
-      <AnchorPane fx:id="btnPay" onDragDetected="#btnPayOnAction" prefHeight="500.0" prefWidth="400.0" style="-fx-background-color: #071952;">
+      <AnchorPane prefHeight="500.0" prefWidth="400.0" style="-fx-background-color: #071952;">
          <children>
             <Separator layoutX="26.0" layoutY="29.0" prefHeight="8.0" prefWidth="147.0" />
             <Label layoutX="26.0" layoutY="3.0" prefHeight="19.0" prefWidth="144.0" text="Order Details" textFill="WHITE">
@@ -64,7 +64,7 @@
                </font>
             </Label>
             <JFXButton id="ClearBtn" fx:id="btnClearOrder" layoutX="289.0" layoutY="409.0" onAction="#btnClearOrderOnAction" prefHeight="31.0" prefWidth="94.0" style="-fx-background-color: #e74c3c;" stylesheets="@style/DashboardForm.css" text="Clear Order" textFill="#f2f2f2" />
-            <JFXButton id="PayBtn" layoutX="289.0" layoutY="446.0" prefHeight="31.0" prefWidth="94.0" stylesheets="@style/DashboardForm.css" text="Pay">
+            <JFXButton fx:id="btnPay" layoutX="289.0" layoutY="446.0" onAction="#btnPayOnAction" prefHeight="31.0" prefWidth="94.0" styleClass="AddToCartBtn" stylesheets="@style/DashboardForm.css" text="Pay">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -163,7 +163,7 @@
          </font>
       </Label>
       <JFXButton id="ClearBtn" fx:id="btnItemClear" layoutX="830.0" layoutY="440.0" onAction="#btnItemClearOnAction" stylesheets="@style/DashboardForm.css" text="Clear" textFill="WHITE" />
-      <JFXButton id="AddToCartBtn" fx:id="btnAdd" layoutX="915.0" layoutY="440.0" onAction="#btnAddOnAction" stylesheets="@style/DashboardForm.css" text="Add" />
+      <JFXButton fx:id="btnAdd" layoutX="915.0" layoutY="440.0" onAction="#btnAddOnAction" styleClass="AddToCartBtn" stylesheets="@style/DashboardForm.css" text="Add" />
       <TextField fx:id="txtDescription" layoutX="525.0" layoutY="418.0" prefHeight="25.0" prefWidth="168.0" />
       <JFXButton id="ClearBtn" fx:id="btnCustomerClear" layoutX="862.0" layoutY="137.0" onAction="#btnCustomerClearOnAction" stylesheets="@style/DashboardForm.css" text="Clear Customer" textFill="WHITE" />
       <TextField fx:id="txtCustomerId" disable="true" editable="false" layoutX="461.0" layoutY="63.0" promptText="Customer Id" />

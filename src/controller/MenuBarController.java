@@ -17,6 +17,7 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
@@ -38,6 +39,8 @@ public class MenuBarController {
 
     public void initialize(){
         startClock();
+        LocalDate localDate=LocalDate.now();
+        dateLbl.setText(String.valueOf(localDate));
         try {
             loadDashboardForm();
         } catch (IOException e) {
@@ -55,6 +58,7 @@ public class MenuBarController {
         timeline.play();
 
     }
+
 
     public void itemMangerOnAction(ActionEvent actionEvent) throws IOException {
         URL resource = getClass().getResource("/view/ManageItemForm.fxml");
