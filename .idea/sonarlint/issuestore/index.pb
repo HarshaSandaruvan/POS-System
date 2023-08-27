@@ -17,12 +17,8 @@ Q
 !src/view/style/ManageItemFrom.css,d\9\d93411685f9ba4a32161be3f5dc39de4234397c6
 L
 src/view/ManageItemForm.fxml,2\5\2543c845232586f11bedd499ea660011fb16d54c
-P
- src/view/ManageCustomerForm.fxml,a\c\ac05c962d9bf4daed70dbfa840a9961b95cbe52b
 H
 src/dto/CustomerDTO.java,4\7\47335306aa543fd75295c1dca4058e52b5606dd1
-G
-src/view/LoginForm.fxml,3\6\360d6d8c13934676281e9df5abd975e1337e3719
 J
 src/view/style/MenuBar.css,0\a\0ac77ca3dcdabc7ad567426fa15f3fd5b1680da3
 D

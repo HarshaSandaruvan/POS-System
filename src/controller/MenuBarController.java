@@ -119,4 +119,10 @@ public class MenuBarController {
         playGroundAnchorPane.getChildren().add(load);
     }
 
+    public void btnAllOrdersOnAction(ActionEvent actionEvent) throws IOException {
+        URL resource = getClass().getResource("/view/OrderForm.fxml");
+        Parent load = FXMLLoader.load(resource);
+        playGroundAnchorPane.getChildren().clear();
+        playGroundAnchorPane.getChildren().add(load);
+    }
 }
