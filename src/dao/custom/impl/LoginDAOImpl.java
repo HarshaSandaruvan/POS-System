@@ -8,11 +8,27 @@ import java.sql.SQLException;
 
 public class LoginDAOImpl implements LoginDAO {
     @Override
-    public String getPasswordByUsername(String username) {
+    public String getPasswordByUsername(String userName) {
         try {
-            ResultSet resultSet = CrudUtil.executeQuery("SELECT*FROM users WHERE username=?", username);
+            ResultSet resultSet = CrudUtil.executeQuery("SELECT*FROM users WHERE username=?", userName);
             if(resultSet.next()){
                 return resultSet.getString("password");
+            }
+
+            return null;
+
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public String getFullNameByUserName(String userName) {
+        try {
+            ResultSet resultSet = CrudUtil.executeQuery("SELECT*FROM users WHERE username=?", userName);
+            if(resultSet.next()){
+                return resultSet.getString("fullName");
             }
 
             return null;

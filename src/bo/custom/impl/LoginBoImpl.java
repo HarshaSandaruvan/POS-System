@@ -13,4 +13,9 @@ public class LoginBoImpl implements LoginBo {
             return false;
         }else return passwordByUsername.equals(password);
     }
+
+    @Override
+    public String getFullNameByUserName(String userName) {
+        return loginDAO.getFullNameByUserName(userName);
+    }
 }

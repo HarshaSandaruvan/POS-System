@@ -9,8 +9,6 @@ S
 #.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
 ]
 -.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
-U
-%src/dao/custom/impl/LoginDAOImpl.java,d\8\d8702fe775049e85bc28906a12ab4991c62f970a
 E
 src/dao/CrudUtil.java,5\1\51ef932cd0902cea63ec682bc6851548809628a8
 U
@@ -33,8 +31,6 @@ O
 src/dao/custom/CustomerDAO.java,a\c\ac8d49301e3a6bde784b3048e5c9c8909ea0cb07
 E
 src/dao/SuperDAO.java,b\b\bb39ba42a14676c3db6f9d3b913c28a6b55aeef6
-S
-#src/bo/custom/impl/LoginBoImpl.java,f\5\f50bab4271fb658eb0e8e6bc51161ff925d1f705
 K
 src/dao/custom/ItemDAO.java,2\8\28948601150bf46a916489c2e915880ee710a9e0
 H
@@ -43,16 +39,12 @@ D
 src/entity/Item.java,6\6\661fe644ad70125447825c9142ac99e7d97add7c
 X
 (src/dao/custom/impl/CustomerDAOImpl.java,6\f\6ff667c3a42b5f282f9c13f8fc5f7d30fec2b613
-W
-'src/controller/LoginFormController.java,7\4\7492ebf3259d3f6a1bf20a354fdfc0c0e301185f
 M
 src/bo/custom/CustomerBO.java,a\2\a2bc389b11084d5cc14579dbd8bccee11fdf2a08
 V
 &src/bo/custom/impl/CustomerBOImpl.java,a\a\aad2c0275da0d2db7f885bf43a5ca1ac93fa0ab5
 >
 Pos-System.iml,6\e\6e1b31b150228642791544823320705700767a93
-G
-src/AppInitializer.java,5\8\580cc932433633b711bc392ae543e0f12b1bae87
 >
 src/script.sql,8\f\8fabe3755e1ead5799c15bb382666c6712f45baa
 `
@@ -61,8 +53,6 @@ K
 src/entity/OrderDetail.java,3\e\3ed08ae7a511e91dc782a8fe33ae1149318a438d
 K
 src/dto/OrderDetailDTO.java,9\6\964608e9935b695c31056058e337e45b292585cc
-R
-"src/dao/custom/OrderDetailDAO.java,2\1\212743b23cb468ce55982f4fc0d57e10ff73a0cf
 [
 +src/dao/custom/impl/OrderDetailDAOImpl.java,d\4\d4196942a0223fc7b3d672d5961b4c75038acd9c
 P

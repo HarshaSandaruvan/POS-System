@@ -13,6 +13,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import util.ObjectPasser;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -36,9 +37,10 @@ public class MenuBarController {
     public MenuItem BtnItemManager;
     public JFXButton btnMenuDashboard;
 
-
     public void initialize(){
         startClock();
+        userNameLbl.setText(ObjectPasser.userFullName);
+
         LocalDate localDate=LocalDate.now();
         dateLbl.setText(String.valueOf(localDate));
         try {
@@ -116,4 +118,5 @@ public class MenuBarController {
         playGroundAnchorPane.getChildren().clear();
         playGroundAnchorPane.getChildren().add(load);
     }
+
 }

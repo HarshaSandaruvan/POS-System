@@ -1,9 +1,0 @@
-
-{
-java:S1104"_Make loginFromAnchorPane a static final constant or non-public and provide accessors if needed.(Â¿ùJ8ï˜¢ÌŸ1
-t
-java:S1104"WMake userNameTxt a static final constant or non-public and provide accessors if needed.(ø‡ûð8ï˜¢ÌŸ1
-q
-java:S1104"TMake loginBtn a static final constant or non-public and provide accessors if needed.(šÞâ˜8ï˜¢ÌŸ1
-y
-java:S1104"WMake passwordTxt a static final constant or non-public and provide accessors if needed.(Ö ·ðúÿÿÿÿ8ï˜¢ÌŸ1

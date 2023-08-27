@@ -8,17 +8,20 @@ import bo.custom.OrderDetailBO;
 import com.jfoenix.controls.JFXButton;
 import dto.CustomerDTO;
 import dto.ItemDTO;
+import dto.OrdersDTO;
 import entity.OrderDetail;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import util.ObjectPasser;
 
+import java.sql.Date;
+import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 public class DashboardController {
 
@@ -97,7 +100,26 @@ public class DashboardController {
     }
 
     public void btnPayOnAction(ActionEvent actionEvent) {
+        Time time = Time.valueOf(LocalTime.now().format(DateTimeFormatter.ofPattern("hh:mm:ss")));
+        Date date=Date.valueOf(LocalDate.now());
+        OrdersDTO ordersDTO=new OrdersDTO(
+                lblOrderId.getText(),
+                txtCustomerId.getText(),
+                time,
+                date,
+                ObjectPasser.userFullName,
+                Double.parseDouble(lblTotal.getText())
+        );
+        boolean b = orderBO.saveOrders(ordersDTO);
+        Alert alert=new Alert(Alert.AlertType.INFORMATION);
+        if (b){
 
+            alert.setHeaderText("Order saved");
+            alert.show();
+        }else {
+            alert.setHeaderText("Order not saved");
+            alert.show();
+        }
     }
 
     public void btnClearOrderOnAction(ActionEvent actionEvent) {

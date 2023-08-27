@@ -13,6 +13,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import util.ObjectPasser;
 
 import java.io.IOException;
 
@@ -21,13 +22,17 @@ public class LoginFormController {
     public TextField userNameTxt;
     public JFXButton loginBtn;
     public PasswordField passwordTxt;
+    public MenuBarController menuBarController;
     LoginBo loginBo = (LoginBo) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.LOGIN);
     public void loginOnAction(ActionEvent actionEvent) throws IOException {
         String username=userNameTxt.getText();
         String password= passwordTxt.getText();
+
         if(fieldValidation()){
 
             boolean result = loginBo.checkPassword(username,password);
+
+            ObjectPasser.userFullName=loginBo.getFullNameByUserName(username);
 
             if (Boolean.TRUE.equals(result)){
                 Parent parent = FXMLLoader.load(this.getClass().getResource("../view/MenuBar.fxml"));
@@ -48,6 +53,8 @@ public class LoginFormController {
 
 
             }
+
+
         }
 
     }
