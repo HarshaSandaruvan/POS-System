@@ -1,0 +1,13 @@
+
+{
+java:S1104"_Make loginFromAnchorPane a static final constant or non-public and provide accessors if needed.(Â¿ùJ8İ¹àÀ£1
+t
+java:S1104"WMake userNameTxt a static final constant or non-public and provide accessors if needed.(ø‡ûğ8İ¹àÀ£1
+q
+java:S1104"TMake loginBtn a static final constant or non-public and provide accessors if needed.(šŞâ˜8İ¹àÀ£1
+y
+java:S1104"WMake passwordTxt a static final constant or non-public and provide accessors if needed.(Ö ·ğúÿÿÿÿ8Ş¹àÀ£1
+z
+java:S1104"]Make menuBarController a static final constant or non-public and provide accessors if needed.(ÓÙ¼œ8Ş¹àÀ£1
+S
+java:S2696#"6Make the enclosing method "static" or remove this set.(¬­îÂ8ô¹àÀ£1

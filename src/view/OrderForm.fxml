@@ -12,13 +12,13 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="1000.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrderFormController">
    <children>
-      <Label layoutX="36.0" layoutY="28.0" text="Order Details">
+      <Label layoutX="56.0" layoutY="28.0" text="Order Details">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
       <TextField fx:id="txtSearchText" editable="false" layoutX="55.0" layoutY="90.0" prefHeight="25.0" prefWidth="797.0" promptText="Search" />
-      <Separator layoutX="57.0" layoutY="127.0" prefHeight="0.0" prefWidth="887.0" />
+      <Separator layoutX="56.0" layoutY="64.0" prefHeight="0.0" prefWidth="887.0" />
       <TableView fx:id="tblOrders" layoutX="57.0" layoutY="140.0" prefHeight="338.0" prefWidth="887.0">
          <columns>
             <TableColumn fx:id="colOrdI" prefWidth="122.0" text="Order Id" />
@@ -29,6 +29,7 @@
             <TableColumn fx:id="colTotal" prefWidth="147.0" text="Total" />
          </columns>
       </TableView>
+      <Separator layoutX="56.0" layoutY="129.0" prefHeight="7.0" prefWidth="887.0" />
       <MenuButton fx:id="btnSearchMenu" layoutX="867.0" layoutY="89.0" mnemonicParsing="false" text="Search">
          <items>
             <MenuItem fx:id="btnSearchOrderId" mnemonicParsing="false" onAction="#btnSearchOrderIdOnAction" text="Order Id" />

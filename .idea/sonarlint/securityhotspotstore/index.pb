@@ -27,8 +27,6 @@ O
 src/dao/custom/CustomerDAO.java,a\c\ac8d49301e3a6bde784b3048e5c9c8909ea0cb07
 E
 src/dao/SuperDAO.java,b\b\bb39ba42a14676c3db6f9d3b913c28a6b55aeef6
-K
-src/dao/custom/ItemDAO.java,2\8\28948601150bf46a916489c2e915880ee710a9e0
 H
 src/entity/Customer.java,9\1\9130f402c4adfb75c7304ce743f9a91f05d3715b
 D
@@ -55,3 +53,23 @@ P
  src/bo/custom/OrderDetailBO.java,8\d\8d5fa9c9d2804acf4df917b57ec18b16e7752a3c
 Y
 )src/bo/custom/impl/OrderDetailBOImpl.java,0\5\05c4bd95391af2155d99c1858e37a048d6818f69
+F
+src/entity/Orders.java,9\5\950b8bdc916ad86e72754d4172ea9fbfa8d195f5
+G
+src/dao/DAOFactory.java,9\f\9f9767f330c3d674b64b13bf8d78355a1bc26128
+E
+src/bo/BOFactory.java,5\8\585c440c7082b46076f342a118f2ad4c9a3024ab
+P
+ src/view/style/DashboardForm.css,f\8\f83dbdcab7928a3c48835623efef33273c236d89
+G
+src/view/Dashboard.fxml,e\a\eae2cdc69777a5a9ddd8731353f917f398d5f804
+U
+%src/dao/custom/impl/LoginDAOImpl.java,d\8\d8702fe775049e85bc28906a12ab4991c62f970a
+J
+src/bo/custom/LoginBo.java,2\e\2e78e6bdafa8d2c3b6f500be73db05b0bf6c59bb
+J
+src/util/ObjectPasser.java,f\a\fa2a51cb048929d172d0f41177703b414a64de33
+G
+src/AppInitializer.java,5\8\580cc932433633b711bc392ae543e0f12b1bae87
+W
+'src/controller/LoginFormController.java,7\4\7492ebf3259d3f6a1bf20a354fdfc0c0e301185f
