@@ -1,0 +1,13 @@
+
+’
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¡­Üùÿÿÿÿ8Æ¼±ê£1
+
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(‘¯³8Æ¼±ê£1
+
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(‹Àõü8îÂàê£1
+
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ºƒ¬À8ÓØâê£1
+Œ
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(±À¾8ˆŠ„ë£1
+H
+java:S1128"+Remove this unused import 'dao.DAOFactory'.(£êùÓ8‹Š„ë£1

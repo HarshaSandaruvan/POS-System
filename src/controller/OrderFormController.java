@@ -6,10 +6,17 @@ import bo.custom.OrderBO;
 import dto.OrdersDTO;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
+import java.io.IOException;
+import java.net.URL;
 import java.sql.Date;
 
 public class OrderFormController {
@@ -28,6 +35,7 @@ public class OrderFormController {
     public TableView tblOrders;
     public TextField txtSearchText;
     public MenuItem btnSearchAllOrders;
+
 
     private ObservableList<OrdersDTO> allOrders;
 
@@ -48,11 +56,24 @@ public class OrderFormController {
 
         tblOrders.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
             selectedIndex = (int) newValue;
-
+           showOrderDetails();
         });
     }
 
+    private void showOrderDetails()  {
+        Parent parent = null;
+        try {
+            parent = FXMLLoader.load(this.getClass().getResource("../view/OrderDetailsPane.fxml"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Scene scene=new Scene(parent);
+        Stage stage=new Stage();
+        stage.setScene(scene);
 
+        stage.setTitle("Order Details");
+        stage.show();
+    }
 
     private void setDataToTable() {
        allOrders=orderBO.getAllOrders();

@@ -8,6 +8,7 @@ import bo.custom.OrderDetailBO;
 import com.jfoenix.controls.JFXButton;
 import dto.CustomerDTO;
 import dto.ItemDTO;
+import dto.OrderDetailDTO;
 import dto.OrdersDTO;
 import entity.OrderDetail;
 import javafx.collections.FXCollections;
@@ -102,6 +103,9 @@ public class DashboardController {
     public void btnPayOnAction(ActionEvent actionEvent) {
         Time time = Time.valueOf(LocalTime.now().format(DateTimeFormatter.ofPattern("hh:mm:ss")));
         Date date=Date.valueOf(LocalDate.now());
+
+        //Save Order
+
         OrdersDTO ordersDTO=new OrdersDTO(
                 lblOrderId.getText(),
                 txtCustomerId.getText(),
@@ -111,6 +115,9 @@ public class DashboardController {
                 Double.parseDouble(lblTotal.getText())
         );
         boolean b = orderBO.saveOrders(ordersDTO);
+
+       // System.out.println(colItemId.getCellObservableValue(0));
+
         Alert alert=new Alert(Alert.AlertType.INFORMATION);
         if (b){
 
