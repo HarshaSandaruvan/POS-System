@@ -1,0 +1,9 @@
+.searchBtn{
+    -fx-background-radius: 5 5 5 5;
+    -fx-background-color:  #3498db;
+
+}
+.searchBtn:hover{
+    -fx-background-color:#2980b9;
+    -fx-text-fill: white;
+}

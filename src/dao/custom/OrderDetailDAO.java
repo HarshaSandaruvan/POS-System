@@ -12,4 +12,6 @@ public interface OrderDetailDAO extends SuperDAO {
     public String getLastOrderId();
 
 
+
+
 }

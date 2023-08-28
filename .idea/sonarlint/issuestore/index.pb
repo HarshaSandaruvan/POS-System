@@ -11,28 +11,18 @@ S
 -.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
 E
 src/dao/CrudUtil.java,5\1\51ef932cd0902cea63ec682bc6851548809628a8
-U
-%src/view/style/ManageCustomerFrom.css,a\0\a056faabb566403a85d7f4277c1e74440e85b9b9
-Q
-!src/view/style/ManageItemFrom.css,d\9\d93411685f9ba4a32161be3f5dc39de4234397c6
 L
 src/view/ManageItemForm.fxml,2\5\2543c845232586f11bedd499ea660011fb16d54c
 H
 src/dto/CustomerDTO.java,4\7\47335306aa543fd75295c1dca4058e52b5606dd1
-J
-src/view/style/MenuBar.css,0\a\0ac77ca3dcdabc7ad567426fa15f3fd5b1680da3
 D
 src/dto/ItemDTO.java,3\f\3fffa2e587c320bb54a783e4241cd0f27a3da4fa
-O
-src/dao/custom/CustomerDAO.java,a\c\ac8d49301e3a6bde784b3048e5c9c8909ea0cb07
 E
 src/dao/SuperDAO.java,b\b\bb39ba42a14676c3db6f9d3b913c28a6b55aeef6
 H
 src/entity/Customer.java,9\1\9130f402c4adfb75c7304ce743f9a91f05d3715b
 D
 src/entity/Item.java,6\6\661fe644ad70125447825c9142ac99e7d97add7c
-X
-(src/dao/custom/impl/CustomerDAOImpl.java,6\f\6ff667c3a42b5f282f9c13f8fc5f7d30fec2b613
 M
 src/bo/custom/CustomerBO.java,a\2\a2bc389b11084d5cc14579dbd8bccee11fdf2a08
 V
@@ -41,14 +31,10 @@ V
 Pos-System.iml,6\e\6e1b31b150228642791544823320705700767a93
 >
 src/script.sql,8\f\8fabe3755e1ead5799c15bb382666c6712f45baa
-`
-0src/controller/ManageCustomerFormController.java,d\6\d63beb35408438788e757dfda090c9198e413e5d
 K
 src/entity/OrderDetail.java,3\e\3ed08ae7a511e91dc782a8fe33ae1149318a438d
 K
 src/dto/OrderDetailDTO.java,9\6\964608e9935b695c31056058e337e45b292585cc
-[
-+src/dao/custom/impl/OrderDetailDAOImpl.java,d\4\d4196942a0223fc7b3d672d5961b4c75038acd9c
 P
  src/bo/custom/OrderDetailBO.java,8\d\8d5fa9c9d2804acf4df917b57ec18b16e7752a3c
 Y
@@ -59,16 +45,10 @@ E
 src/bo/BOFactory.java,5\8\585c440c7082b46076f342a118f2ad4c9a3024ab
 G
 src/dao/DAOFactory.java,9\f\9f9767f330c3d674b64b13bf8d78355a1bc26128
-P
- src/view/style/DashboardForm.css,f\8\f83dbdcab7928a3c48835623efef33273c236d89
-G
-src/view/Dashboard.fxml,e\a\eae2cdc69777a5a9ddd8731353f917f398d5f804
 J
 src/bo/custom/LoginBo.java,2\e\2e78e6bdafa8d2c3b6f500be73db05b0bf6c59bb
 U
 %src/dao/custom/impl/LoginDAOImpl.java,d\8\d8702fe775049e85bc28906a12ab4991c62f970a
-G
-src/AppInitializer.java,5\8\580cc932433633b711bc392ae543e0f12b1bae87
 J
 src/util/ObjectPasser.java,f\a\fa2a51cb048929d172d0f41177703b414a64de33
 W

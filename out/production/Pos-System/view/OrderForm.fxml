@@ -17,9 +17,9 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="txtSearchText" editable="false" layoutX="55.0" layoutY="90.0" prefHeight="25.0" prefWidth="797.0" promptText="Search" />
+      <TextField fx:id="txtSearchText" layoutX="55.0" layoutY="90.0" prefHeight="25.0" prefWidth="797.0" promptText="Search" />
       <Separator layoutX="56.0" layoutY="64.0" prefHeight="0.0" prefWidth="887.0" />
-      <TableView fx:id="tblOrders" layoutX="57.0" layoutY="140.0" prefHeight="338.0" prefWidth="887.0">
+      <TableView fx:id="tblOrders" layoutX="57.0" layoutY="140.0" prefHeight="301.0" prefWidth="887.0">
          <columns>
             <TableColumn fx:id="colOrdI" prefWidth="122.0" text="Order Id" />
             <TableColumn fx:id="colCustomerId" prefWidth="150.0" text="Customer Id" />
@@ -30,13 +30,17 @@
          </columns>
       </TableView>
       <Separator layoutX="56.0" layoutY="129.0" prefHeight="7.0" prefWidth="887.0" />
-      <MenuButton fx:id="btnSearchMenu" layoutX="867.0" layoutY="89.0" mnemonicParsing="false" text="Search">
+      <MenuButton fx:id="btnSearchMenu" layoutX="867.0" layoutY="89.0" mnemonicParsing="false" styleClass="searchBtn" stylesheets="@style/OrdersForm.css" text="Search" textFill="#fffefe">
          <items>
-            <MenuItem fx:id="btnSearchOrderId" mnemonicParsing="false" onAction="#btnSearchOrderIdOnAction" text="Order Id" />
-            <MenuItem fx:id="btnSearchCustomerId" mnemonicParsing="false" onAction="#btnSearchCustomerIdOnAction" text="Customer Id" />
-            <MenuItem fx:id="btnSearchItemId" mnemonicParsing="false" onAction="#btnSearchItemIdOnAction" text="Item Id" />
-            <MenuItem fx:id="btnSearchDate" mnemonicParsing="false" onAction="#btnSearchDateOnAction" text="Date" />
+            <MenuItem fx:id="btnSearchAllOrders" mnemonicParsing="false" onAction="#btnSearchAllOrdersOnAction" styleClass="searchBtn" text="All Orders" />
+            <MenuItem fx:id="btnSearchOrderId" mnemonicParsing="false" onAction="#btnSearchOrderIdOnAction" styleClass="searchBtn" text="Order Id" />
+            <MenuItem fx:id="btnSearchCustomerId" mnemonicParsing="false" onAction="#btnSearchCustomerIdOnAction" styleClass="searchBtn" text="Customer Id" />
+            <MenuItem fx:id="btnSearchCashierID" mnemonicParsing="false" onAction="#btnSearchCashierIdOnAction" styleClass="searchBtn" text="Cashier Id" />
+            <MenuItem fx:id="btnSearchDate" mnemonicParsing="false" onAction="#btnSearchDateOnAction" styleClass="searchBtn" text="Date" />
          </items>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
       </MenuButton>
    </children>
 </AnchorPane>

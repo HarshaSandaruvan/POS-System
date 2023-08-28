@@ -6,18 +6,17 @@ import bo.custom.OrderBO;
 import dto.OrdersDTO;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
+
+import java.sql.Date;
 
 public class OrderFormController {
     public TextField txtCustomerID;
     public MenuItem btnSearchCustomerId;
     public MenuItem btnSearchDate;
-    public MenuItem btnSearchItemId;
+    public MenuItem btnSearchCashierID;
     public MenuButton btnSearchMenu;
     public MenuItem btnSearchOrderId;
     public TableColumn<?, ?> colCashierId;
@@ -28,9 +27,12 @@ public class OrderFormController {
     public TableColumn<?, ?> colTotal;
     public TableView tblOrders;
     public TextField txtSearchText;
+    public MenuItem btnSearchAllOrders;
 
     private ObservableList<OrdersDTO> allOrders;
-   
+
+
+    private int selectedIndex = -1;
     OrderBO orderBO= (OrderBO) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.ORDERS);
 
     public void initialize (){
@@ -44,8 +46,13 @@ public class OrderFormController {
 
         setDataToTable();
 
+        tblOrders.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
+            selectedIndex = (int) newValue;
 
+        });
     }
+
+
 
     private void setDataToTable() {
        allOrders=orderBO.getAllOrders();
@@ -54,20 +61,48 @@ public class OrderFormController {
 
     public void btnSearchCustomerIdOnAction(ActionEvent event) {
 
+        btnSearchMenu.setText("Customer Id");
+        txtSearchText.setPromptText("Enter Customer Id");
+        btnSearchMenu.setStyle("-fx-text-fill: white");
+
+        ObservableList<OrdersDTO> foundedOrders=orderBO.findOrdersByCustomerID(txtSearchText.getText());
+        //tblOrders.getItems().clear();
+        tblOrders.setItems(foundedOrders);
+
+
     }
 
     public void btnSearchDateOnAction(ActionEvent event) {
+        btnSearchMenu.setText("Date");
+        txtSearchText.setPromptText("Enter Date");
+        btnSearchMenu.setStyle("-fx-text-fill: white");
+
+        ObservableList<OrdersDTO> foundedOrders=orderBO.findOrdersByDate(Date.valueOf(txtSearchText.getText()));
+        tblOrders.setItems(foundedOrders);
+
 
     }
-    public void btnSearchItemIdOnAction(ActionEvent event) {
+    public void btnSearchCashierIdOnAction(ActionEvent event) {
+        btnSearchMenu.setText("Item Id");
+        txtSearchText.setPromptText("Enter Item Id");
+        btnSearchMenu.setStyle("-fx-text-fill: white");
+
+        ObservableList<OrdersDTO> foundedOrders=orderBO.findOrdersByCashierID(txtSearchText.getText());
+        tblOrders.setItems(foundedOrders);
 
     }
     public void btnSearchOrderIdOnAction(ActionEvent event) {
+        btnSearchMenu.setText("Order Id");
+        txtSearchText.setPromptText("Enter Order Id");
+        btnSearchMenu.setStyle("-fx-text-fill: white");
+
+        ObservableList<OrdersDTO> foundedOrders=orderBO.findOrdersByOrderID(txtSearchText.getText());
+        tblOrders.setItems(foundedOrders);
 
     }
 
 
-
-
-
+    public void btnSearchAllOrdersOnAction(ActionEvent actionEvent) {
+        setDataToTable();
+    }
 }

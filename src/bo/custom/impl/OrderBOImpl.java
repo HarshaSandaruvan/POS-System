@@ -10,6 +10,7 @@ import entity.Orders;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.sql.Date;
 import java.util.ArrayList;
 
 
@@ -44,5 +45,77 @@ public class OrderBOImpl implements OrderBO {
             ));
         }
         return allOrdersForTable;
+    }
+
+    @Override
+    public ObservableList<OrdersDTO> findOrdersByCustomerID(String customerID) {
+        ArrayList<Orders> allOrders = orderDAO.findOrdersByCustomerId(customerID);
+        ObservableList<OrdersDTO> allOrdersByCustomerID = FXCollections.observableArrayList();
+        for (Orders o: allOrders
+        ) {
+            allOrdersByCustomerID.add(new OrdersDTO(
+                    o.getOrderID(),
+                    o.getCustomerID(),
+                    o.getTime(),
+                    o.getDate(),
+                    o.getCashierID(),
+                    o.getTotal()
+            ));
+        }
+        return allOrdersByCustomerID;
+    }
+
+    @Override
+    public ObservableList<OrdersDTO> findOrdersByOrderID(String orderID) {
+        ArrayList<Orders> allOrders = orderDAO.findOrdersByOrderId(orderID);
+        ObservableList<OrdersDTO> allOrdersByOrderID = FXCollections.observableArrayList();
+        for (Orders o: allOrders
+        ) {
+            allOrdersByOrderID.add(new OrdersDTO(
+                    o.getOrderID(),
+                    o.getCustomerID(),
+                    o.getTime(),
+                    o.getDate(),
+                    o.getCashierID(),
+                    o.getTotal()
+            ));
+        }
+        return allOrdersByOrderID;
+    }
+
+    @Override
+    public ObservableList<OrdersDTO> findOrdersByDate(Date date) {
+        ArrayList<Orders> allOrders = orderDAO.findOrdersByDate(date);
+        ObservableList<OrdersDTO> allOrdersByDate = FXCollections.observableArrayList();
+        for (Orders o: allOrders
+        ) {
+            allOrdersByDate.add(new OrdersDTO(
+                    o.getOrderID(),
+                    o.getCustomerID(),
+                    o.getTime(),
+                    o.getDate(),
+                    o.getCashierID(),
+                    o.getTotal()
+            ));
+        }
+        return allOrdersByDate;
+    }
+
+    @Override
+    public ObservableList<OrdersDTO> findOrdersByCashierID(String cashierID) {
+        ArrayList<Orders> allOrders = orderDAO.findOrdersByCashierID(cashierID);
+        ObservableList<OrdersDTO> allOrdersByCashierID = FXCollections.observableArrayList();
+        for (Orders o: allOrders
+        ) {
+            allOrdersByCashierID.add(new OrdersDTO(
+                    o.getOrderID(),
+                    o.getCustomerID(),
+                    o.getTime(),
+                    o.getDate(),
+                    o.getCashierID(),
+                    o.getTotal()
+            ));
+        }
+        return allOrdersByCashierID;
     }
 }
