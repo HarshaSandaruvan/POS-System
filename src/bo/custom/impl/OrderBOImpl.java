@@ -118,4 +118,12 @@ public class OrderBOImpl implements OrderBO {
         }
         return allOrdersByCashierID;
     }
+
+    @Override
+    public String getNextOrderID() {
+        String lastItemId = orderDAO.getLastOrderId();
+        int lastId = Integer.parseInt(lastItemId.substring(1));
+        return String.format("O%04d",++lastId);
+
+    }
 }

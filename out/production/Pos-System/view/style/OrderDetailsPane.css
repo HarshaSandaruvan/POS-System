@@ -1,0 +1,11 @@
+#BtnOrderDelete{
+    -fx-background-radius: 5 5 5 5;
+    -fx-background-color:  #e74c3c;
+}
+#BtnOrderDelete:hover{
+    -fx-background-color:#c0392b;
+}
+
+#OrderDetailPane{
+    -fx-background-color:   #071952;
+}

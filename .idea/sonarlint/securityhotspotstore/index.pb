@@ -33,10 +33,6 @@ V
 Pos-System.iml,6\e\6e1b31b150228642791544823320705700767a93
 K
 src/entity/OrderDetail.java,3\e\3ed08ae7a511e91dc782a8fe33ae1149318a438d
-K
-src/dto/OrderDetailDTO.java,9\6\964608e9935b695c31056058e337e45b292585cc
-P
- src/bo/custom/OrderDetailBO.java,8\d\8d5fa9c9d2804acf4df917b57ec18b16e7752a3c
 F
 src/entity/Orders.java,9\5\950b8bdc916ad86e72754d4172ea9fbfa8d195f5
 G
@@ -57,10 +53,6 @@ P
  src/view/ManageCustomerForm.fxml,a\c\ac05c962d9bf4daed70dbfa840a9961b95cbe52b
 L
 src/dao/custom/LoginDAO.java,f\4\f47bf3b04a5ffbc9523b21eec5261b0577324049
-K
-src/dao/custom/ItemDAO.java,2\8\28948601150bf46a916489c2e915880ee710a9e0
-T
-$src/dao/custom/impl/ItemDAOImpl.java,6\8\68d5d42978325d0a8b8d2a00cad121cc3283f7ff
 I
 src/bo/custom/ItemBo.java,e\9\e9b101d558ce831bb28d89139e94c364e62523b6
 R
@@ -69,49 +61,19 @@ R
 ,src/controller/ManageItemFromController.java,6\9\696aff9d2994a768680dfcdbeb49682cc6120a1d
 F
 src/dto/OrdersDTO.java,7\7\77b376547d335bd4cd829e40cd05ecc03fa3a88c
-Q
-!src/view/style/ManageItemFrom.css,d\9\d93411685f9ba4a32161be3f5dc39de4234397c6
 U
 %src/view/style/ManageCustomerFrom.css,a\0\a056faabb566403a85d7f4277c1e74440e85b9b9
-P
- src/view/style/DashboardForm.css,f\8\f83dbdcab7928a3c48835623efef33273c236d89
 G
 src/view/Dashboard.fxml,e\a\eae2cdc69777a5a9ddd8731353f917f398d5f804
-J
-src/view/style/MenuBar.css,0\a\0ac77ca3dcdabc7ad567426fa15f3fd5b1680da3
-E
-src/view/MenuBar.fxml,9\7\97b280b1f6cb19ad5741510c1d911166b4034201
-`
-0src/controller/ManageCustomerFormController.java,d\6\d63beb35408438788e757dfda090c9198e413e5d
 M
 src/view/style/OrdersForm.css,c\6\c6ba2a71e98aa3da1386f5fa5de28a285f4b4208
 O
 src/dao/custom/CustomerDAO.java,a\c\ac8d49301e3a6bde784b3048e5c9c8909ea0cb07
-X
-(src/dao/custom/impl/CustomerDAOImpl.java,6\f\6ff667c3a42b5f282f9c13f8fc5f7d30fec2b613
-R
-"src/dao/custom/OrderDetailDAO.java,2\1\212743b23cb468ce55982f4fc0d57e10ff73a0cf
-J
-src/bo/custom/OrderBO.java,4\3\430559cefced12a2911b20c981f35d1bb0fc75dd
-S
-#src/bo/custom/impl/OrderBOImpl.java,4\c\4c0cadc346d05af73e227a400a138bb8002d6cc4
-L
-src/dao/custom/OrderDAO.java,7\f\7fa5d1763fe2245f1805b3c58e7bf764d4866b26
 W
 'src/controller/LoginFormController.java,7\4\7492ebf3259d3f6a1bf20a354fdfc0c0e301185f
-N
-src/view/OrderDetailsPane.fxml,f\b\fbfc94b704225a8562c84120e8d92fa428d96840
 U
 %src/controller/MenuBarController.java,f\3\f3533b44741a8c5615e68246cf4f0c69cf2b554f
 G
 src/view/OrderForm.fxml,7\f\7f4c89015f85ffb535bbb47a65d54af7b80f25da
-[
-+src/dao/custom/impl/OrderDetailDAOImpl.java,d\4\d4196942a0223fc7b3d672d5961b4c75038acd9c
-Y
-)src/bo/custom/impl/OrderDetailBOImpl.java,0\5\05c4bd95391af2155d99c1858e37a048d6818f69
-Z
-*src/controller/OrderDetailsController.java,3\f\3f3efc4a14487176099a05ce50300bb2063a6291
-W
-'src/controller/OrderFormController.java,a\4\a49a99a6689e0d02c7a83ef7f74ae2a549d332a7
 G
 src/AppInitializer.java,5\8\580cc932433633b711bc392ae543e0f12b1bae87

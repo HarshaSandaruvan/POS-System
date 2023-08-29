@@ -96,7 +96,7 @@ public class DashboardController {
     }
 
     private void generateAndSetOrderID() {
-        lblOrderId.setText(orderDetailBO.getNextOrderID());
+        lblOrderId.setText(orderBO.getNextOrderID());
 
     }
 
@@ -104,30 +104,57 @@ public class DashboardController {
         Time time = Time.valueOf(LocalTime.now().format(DateTimeFormatter.ofPattern("hh:mm:ss")));
         Date date=Date.valueOf(LocalDate.now());
 
-        //Save Order
+        //confirm Alert
+        YES=new ButtonType("Yes");
+        NO=new ButtonType("No");
 
-        OrdersDTO ordersDTO=new OrdersDTO(
-                lblOrderId.getText(),
-                txtCustomerId.getText(),
-                time,
-                date,
-                ObjectPasser.userFullName,
-                Double.parseDouble(lblTotal.getText())
-        );
-        boolean b = orderBO.saveOrders(ordersDTO);
+        Alert confirmOrder =new Alert(Alert.AlertType.CONFIRMATION,"",YES,NO);
+        confirmOrder.setHeaderText("Please Confirm the Order !");
 
-       // System.out.println(colItemId.getCellObservableValue(0));
+        confirmOrder.showAndWait().ifPresent(response -> {
+            if (response == YES) {
+                //Save Order
 
-        Alert alert=new Alert(Alert.AlertType.INFORMATION);
-        if (b){
+                OrdersDTO ordersDTO = new OrdersDTO(
+                        lblOrderId.getText(),
+                        txtCustomerId.getText(),
+                        time,
+                        date,
+                        ObjectPasser.userFullName,
+                        Double.parseDouble(lblTotal.getText())
+                );
+                boolean isOrderSave = orderBO.saveOrders(ordersDTO);
 
-            alert.setHeaderText("Order saved");
-            alert.show();
-        }else {
-            alert.setHeaderText("Order not saved");
-            alert.show();
+                //Save Order Details
+
+                int noOfItems = tblOrder.getItems().size();
+
+                boolean isSaveOrderDetail = false;
+
+                for (int i = 0; i < noOfItems; i++) {
+                    OrderDetailDTO orderDetailDTO = new OrderDetailDTO(
+                            lblOrderId.getText(),
+                            colItemId.getCellObservableValue(i).getValue().toString(),
+                            colItemName.getCellObservableValue(i).getValue().toString(),
+                            Double.parseDouble(colItemQty.getCellObservableValue(i).getValue().toString()),
+                            Double.parseDouble(colItemUnitPrice.getCellObservableValue(i).getValue().toString()),
+                            Double.parseDouble(colItemPrice.getCellObservableValue(i).getValue().toString())
+                    );
+                    isSaveOrderDetail = orderDetailBO.saveOrderDetail(orderDetailDTO);
+                }
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                if (isOrderSave && isSaveOrderDetail) {
+
+                    alert.setHeaderText("Order saved !");
+                    alert.show();
+                } else {
+                    alert.setHeaderText("Order not saved !");
+                    alert.show();
+                }
+            }
+        });
         }
-    }
 
     public void btnClearOrderOnAction(ActionEvent actionEvent) {
         clearItemTable();

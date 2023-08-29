@@ -3,6 +3,7 @@ package controller;
 
 import bo.BOFactory;
 import bo.custom.OrderBO;
+
 import dto.OrdersDTO;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -11,8 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
+
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -40,7 +40,7 @@ public class OrderFormController {
     private ObservableList<OrdersDTO> allOrders;
 
 
-    private int selectedIndex = -1;
+    public int selectedIndex = -1;
     OrderBO orderBO= (OrderBO) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.ORDERS);
 
     public void initialize (){
@@ -62,7 +62,12 @@ public class OrderFormController {
 
     private void showOrderDetails()  {
         Parent parent = null;
+        String selectedOderId=colOrdI.getCellObservableValue(selectedIndex).getValue().toString();
+
         try {
+
+          OrderDetailsController.setOrderID(selectedOderId);
+
             parent = FXMLLoader.load(this.getClass().getResource("../view/OrderDetailsPane.fxml"));
         } catch (IOException e) {
             throw new RuntimeException(e);

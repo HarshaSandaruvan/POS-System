@@ -1,44 +1,76 @@
 package controller;
 
+import bo.BOFactory;
+import bo.custom.OrderDetailBO;
 import com.jfoenix.controls.JFXButton;
+import dto.OrderDetailDTO;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
+
+import javafx.scene.chart.AxisBuilder;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.control.cell.PropertyValueFactory;
+
 
 public class OrderDetailsController {
 
-    @FXML
-    private JFXButton btnDeleteOrderItem;
 
-    @FXML
-    private TableColumn<?, ?> colItemId;
+    public JFXButton btnDeleteOrderItem;
+    public TableColumn<?, ?> colItemId;
+    public TableColumn<?, ?> colItemName;
+    public TableColumn<?, ?> colPrice;
+    public TableColumn<?, ?> colQty;
+    public TableColumn<?, ?> colUnitPrice;
+    public Label lblOrderId;
+    public TableView<OrderDetailDTO> tblOrderDetails;
+    private ObservableList<OrderDetailDTO> orderDetailsByOrderID;
+    OrderDetailBO orderDetailBO= (OrderDetailBO) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.ORDERDETAIL);
 
-    @FXML
-    private TableColumn<?, ?> colItemName;
+    public int selectedIndex=-1;
+     static String selectedOrderID;
 
-    @FXML
-    private TableColumn<?, ?> colPrice;
+    public void initialize () {
 
-    @FXML
-    private TableColumn<?, ?> colQty;
+        System.out.println("Initialize");
+        System.out.println("selected id"+selectedOrderID);
 
-    @FXML
-    private TableColumn<?, ?> colUnitPrice;
 
-    @FXML
-    private Label lblOrderId;
+        colItemId.setCellValueFactory(new PropertyValueFactory<>("itemID"));
+        colItemName.setCellValueFactory(new PropertyValueFactory<>("itemName"));
+        colQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
+        colUnitPrice.setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
+        colPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
 
-    @FXML
-    private TableView<?> tblOrderDetails;
+        lblOrderId.setText(selectedOrderID);
+        loadDataToTable(selectedOrderID);
 
-    @FXML
-    void btnDeleteOrderItemOnAction(ActionEvent event) {
+        tblOrderDetails.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
+            selectedIndex = (int) newValue;
+        });
+    }
+    public void btnDeleteOrderItemOnAction(ActionEvent event) {
+        String selectedItemId=colItemId.getCellObservableValue(selectedIndex).getValue().toString();
+        boolean isItemDetailDelete = orderDetailBO.deleteOrderDetailByItemId(selectedItemId);
 
+        Alert alert=new Alert(Alert.AlertType.INFORMATION);
+        if (isItemDetailDelete){
+            alert.setHeaderText("Item Detail is Delete Successful.");
+        }else {
+            alert.setHeaderText("Item Detail is Delete Unsuccessful.");
+        }
+        alert.show();
+        loadDataToTable(selectedOrderID);
+    }
+    public  void loadDataToTable(String orderID){
+
+        orderDetailsByOrderID = orderDetailBO.getOrderDetailsByOrderID(orderID);
+        tblOrderDetails.setItems(orderDetailsByOrderID);
     }
 
-
-
+    public static void setOrderID(String orderID){
+        selectedOrderID=orderID;
+    }
 }

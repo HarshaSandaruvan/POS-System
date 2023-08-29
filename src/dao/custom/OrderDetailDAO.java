@@ -9,7 +9,9 @@ import java.util.ArrayList;
 public interface OrderDetailDAO extends SuperDAO {
     public boolean saveOrderDetail(OrderDetail orderDetail);
 
-    public String getLastOrderId();
+    public ArrayList<OrderDetail> getOrderDetailByOrderId (String orderID);
+
+    public boolean deleteOrderDetailByItemId(String itemId);
 
 
 

@@ -144,4 +144,17 @@ public class OrderDAOImpl implements OrderDAO {
         }
         return ordersByCustomerId;
     }
+
+    @Override
+    public String getLastOrderId() {
+        try {
+            ResultSet resultSet = CrudUtil.executeQuery("SELECT*FROM orders ORDER BY orderID DESC LIMIT 1");
+            if(resultSet.next()){
+                return resultSet.getString("orderID");
+            }
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
+        return "O0000";
+    }
 }

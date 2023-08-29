@@ -111,20 +111,12 @@ public class ItemDAOImpl implements ItemDAO {
     @Override
     public boolean deleteItem(String itemId) {
         try {
-            boolean b;
-            if (CrudUtil.executeUpdate("DELETE FROM item WHERE itemId=?", itemId)) {
-                b = true;
-            }else{
-                b = false;
-            }
-            return b;
-
+            return CrudUtil.executeUpdate("DELETE FROM item WHERE itemId=?", itemId);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     @Override
