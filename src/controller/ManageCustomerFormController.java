@@ -75,59 +75,61 @@ public class ManageCustomerFormController {
 
 
     public void saveBtnOnAction(ActionEvent actionEvent) {
-        if(!isEdit){
-            CustomerDTO customerDTO=new CustomerDTO(
-                    txtCustomerId.getText(),
-                    txtFirstName.getText(),
-                    txtLastName.getText(),
-                    txtNicNumber.getText(),
-                    txtAddress.getText(),
-                    txtContactNo.getText()
-            );
-            boolean b = customerBO.saveCustomer(customerDTO);
-            Alert alert;
-            if(b){
-                alert=new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setHeaderText("Customer Saved !");
-                alert.show();
+        if (txtValidation()) {
+            if (!isEdit) {
+                CustomerDTO customerDTO = new CustomerDTO(
+                        txtCustomerId.getText(),
+                        txtFirstName.getText(),
+                        txtLastName.getText(),
+                        txtNicNumber.getText(),
+                        txtAddress.getText(),
+                        txtContactNo.getText()
+                );
+                boolean b = customerBO.saveCustomer(customerDTO);
+                Alert alert;
+                if (b) {
+                    alert = new Alert(Alert.AlertType.CONFIRMATION);
+                    alert.setHeaderText("Customer Saved !");
+                    alert.show();
 
-            }else {
-                alert=new Alert(Alert.AlertType.ERROR);
-                alert.setHeaderText("Customer Not Saved !");
-                alert.show();
+                } else {
+                    alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setHeaderText("Customer Not Saved !");
+                    alert.show();
+                }
+
+                setDataToTable();
+                generateAndSetCustomerId();
+                clear();
+            } else {
+                boolean isUpdate = customerBO.updateCustomer(new CustomerDTO(
+                        txtCustomerId.getText(),
+                        txtFirstName.getText(),
+                        txtLastName.getText(),
+                        txtNicNumber.getText(),
+                        txtAddress.getText(),
+                        txtContactNo.getText()
+
+                ));
+
+                Alert alert;
+                if (isUpdate) {
+                    alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Customer Update !");
+                    alert.setHeaderText("Update SuccessFull !");
+                    alert.show();
+
+                    btnSave.setText("Save");
+                    btnSave.setStyle("-fx-background-color:  #16a085");
+                    isEdit = false;
+                } else {
+                    alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Customer Update !");
+                    alert.setHeaderText("Update Unsuccessful !");
+                    alert.show();
+                }
+
             }
-
-            setDataToTable();
-            generateAndSetCustomerId();
-            clear();
-        }else {
-            boolean isUpdate = customerBO.updateCustomer(new CustomerDTO(
-                    txtCustomerId.getText(),
-                    txtFirstName.getText(),
-                    txtLastName.getText(),
-                    txtNicNumber.getText(),
-                    txtAddress.getText(),
-                    txtContactNo.getText()
-
-            ));
-
-            Alert alert;
-           if (isUpdate){
-               alert=new Alert(Alert.AlertType.INFORMATION);
-               alert.setTitle("Customer Update !");
-               alert.setHeaderText("Update SuccessFull !");
-               alert.show();
-
-               btnSave.setText("Save");
-               btnSave.setStyle("-fx-background-color:  #16a085");
-               isEdit = false;
-           }else {
-               alert=new Alert(Alert.AlertType.ERROR);
-               alert.setTitle("Customer Update !");
-               alert.setHeaderText("Update Unsuccessful !");
-               alert.show();
-           }
-
         }
         setDataToTable();
         clear();
@@ -213,6 +215,14 @@ public class ManageCustomerFormController {
         txtLastName.setText(customerById.getLastName());
         txtNicNumber.setText(customerById.getNic());
         txtAddress.setText(customerById.getAddress());
+    }
+
+    public boolean txtValidation(){
+       return !txtContactNo.getText().isEmpty() &&
+               !txtFirstName.getText().isEmpty() &&
+               !txtLastName.getText().isEmpty() &&
+               !txtNicNumber.getText().isEmpty() &&
+               !txtAddress.getText().isEmpty();
     }
 
 }

@@ -12,8 +12,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
 
+import java.lang.reflect.Array;
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class ManageItemFromController {
     public AnchorPane addItemAnchorPane;
@@ -141,67 +143,72 @@ public class ManageItemFromController {
     }
 
     public void saveBtnOnAction(ActionEvent actionEvent) {
+        if(txtValidation()) {
+            if (!isEdit) {
+                ItemDTO itemDTO = new ItemDTO(
+                        txtItemId.getText(),
+                        txtItemName.getText(),
+                        txtBatchNumber.getText(),
+                        Double.parseDouble(txtItemPrice.getText()),
+                        Double.parseDouble(txtQtyOnHand.getText()),
+                        txtSupplier.getText(),
+                        Date.valueOf(LocalDate.now())
+                );
 
-        if(!isEdit){
-            ItemDTO itemDTO = new ItemDTO(
-                    txtItemId.getText(),
-                    txtItemName.getText(),
-                    txtBatchNumber.getText(),
-                    Double.parseDouble(txtItemPrice.getText()),
-                    Double.parseDouble(txtQtyOnHand.getText()),
-                    txtSupplier.getText(),
-                    Date.valueOf(LocalDate.now())
-            );
+                boolean b = itemBO.saveItem(itemDTO);
 
-            boolean b = itemBO.saveItem(itemDTO);
+                if (b) {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Save Item ");
+                    alert.setHeaderText("Item Saved !");
+                    alert.show();
 
-            if(b){
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Save Item ");
-                alert.setHeaderText("Item Saved !");
-                alert.show();
+                    // Clear Fields
+                    clearFields();
 
-                // Clear Fields
-                clearFields();
+                    // Generate Next ItemID
+                    generateAndSetItemId();
 
-                // Generate Next ItemID
-                generateAndSetItemId();
+                    //Reload the table
+                    setDataToTable();
+                }
+            } else {
+                // Item Update method
+                boolean updateResult = itemBO.updateItem(new ItemDTO(
+                        txtItemId.getText(),
+                        txtItemName.getText(),
+                        txtBatchNumber.getText(),
+                        Double.parseDouble(txtItemPrice.getText()),
+                        Double.parseDouble(txtQtyOnHand.getText()),
+                        txtSupplier.getText(),
+                        Date.valueOf(LocalDate.now())
+                ));
 
-                //Reload the table
-                setDataToTable();
+                if (updateResult) {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Item Update");
+                    alert.setHeaderText("Item Successfully Updated !");
+                    alert.show();
+
+                    clearFields();
+
+                    initialize();
+
+                    // Restoring ADD button
+                    btnSave.setText("Save");
+                    btnSave.setStyle("-fx-background-color:  #1abc9c");
+                    isEdit = false;
+                } else {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Item Update");
+                    alert.setHeaderText("Item Not Updated !");
+                    alert.show();
+                }
             }
         }else {
-            // Item Update method
-            boolean updateResult = itemBO.updateItem(new ItemDTO(
-                    txtItemId.getText(),
-                    txtItemName.getText(),
-                    txtBatchNumber.getText(),
-                    Double.parseDouble(txtItemPrice.getText()),
-                    Double.parseDouble(txtQtyOnHand.getText()),
-                    txtSupplier.getText(),
-                    Date.valueOf(LocalDate.now())
-            ));
-
-            if(updateResult){
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Item Update");
-                alert.setHeaderText("Item Successfully Updated !");
-                alert.show();
-
-                clearFields();
-
-                initialize();
-
-                // Restoring ADD button
-                btnSave.setText("Save");
-                btnSave.setStyle("-fx-background-color:  #1abc9c");
-                isEdit = false;
-            }else{
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Item Update");
-                alert.setHeaderText("Item Not Updated !");
-                alert.show();
-            }
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Please Enter Values !");
+            alert.show();
         }
     }
 
@@ -219,6 +226,13 @@ public class ManageItemFromController {
         itemsTbl.setItems(allItems);
     }
 
+    private boolean txtValidation(){
+        return !txtItemName.getText().isEmpty() &&
+                !txtSupplier.getText().isEmpty() &&
+                !txtBatchNumber.getText().isEmpty() &&
+                !txtItemPrice.getText().isEmpty() &&
+                !txtQtyOnHand.getText().isEmpty();
 
+    }
 
 }

@@ -55,16 +55,12 @@ L
 src/dao/custom/LoginDAO.java,f\4\f47bf3b04a5ffbc9523b21eec5261b0577324049
 F
 src/dto/OrdersDTO.java,7\7\77b376547d335bd4cd829e40cd05ecc03fa3a88c
-\
-,src/controller/ManageItemFromController.java,6\9\696aff9d2994a768680dfcdbeb49682cc6120a1d
 U
 %src/view/style/ManageCustomerFrom.css,a\0\a056faabb566403a85d7f4277c1e74440e85b9b9
 G
 src/view/Dashboard.fxml,e\a\eae2cdc69777a5a9ddd8731353f917f398d5f804
 O
 src/dao/custom/CustomerDAO.java,a\c\ac8d49301e3a6bde784b3048e5c9c8909ea0cb07
-W
-'src/controller/LoginFormController.java,7\4\7492ebf3259d3f6a1bf20a354fdfc0c0e301185f
 U
 %src/controller/MenuBarController.java,f\3\f3533b44741a8c5615e68246cf4f0c69cf2b554f
 G
