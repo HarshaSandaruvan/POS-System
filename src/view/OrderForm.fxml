@@ -21,7 +21,7 @@
       <Separator layoutX="56.0" layoutY="64.0" prefHeight="0.0" prefWidth="887.0" />
       <TableView fx:id="tblOrders" layoutX="57.0" layoutY="140.0" prefHeight="301.0" prefWidth="887.0">
          <columns>
-            <TableColumn fx:id="colOrdI" prefWidth="122.0" text="Order Id" />
+            <TableColumn fx:id="colOrderID" prefWidth="122.0" text="Order Id" />
             <TableColumn fx:id="colCustomerId" prefWidth="150.0" text="Customer Id" />
             <TableColumn fx:id="colTime" prefWidth="170.0" text="Time" />
             <TableColumn fx:id="colDate" prefWidth="130.0" text="Date" />

@@ -17,4 +17,5 @@ public interface OrderBO extends SuperBO {
     public ObservableList<OrdersDTO> findOrdersByDate(Date date);
     public ObservableList<OrdersDTO> findOrdersByCashierID(String cashierID);
 
+
 }

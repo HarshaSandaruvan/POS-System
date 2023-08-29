@@ -146,4 +146,27 @@ public class ItemDAOImpl implements ItemDAO {
 
         return null;
     }
+
+    @Override
+    public boolean updateQtyByItemId(String itemId, double qty) {
+        try {
+            return CrudUtil.executeUpdate("UPDATE item SET qty=? WHERE itemID=?", qty, itemId);
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public double getQtyByItemId(String itemId) {
+        try {
+            ResultSet resultSet = CrudUtil.executeQuery("SELECT * FROM item WHERE itemID=?", itemId);
+            if(resultSet.next()){
+              return resultSet.getDouble("qty");
+            }
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
+        return 0.0;
+    }
 }

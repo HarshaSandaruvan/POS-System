@@ -53,10 +53,6 @@ P
  src/view/ManageCustomerForm.fxml,a\c\ac05c962d9bf4daed70dbfa840a9961b95cbe52b
 L
 src/dao/custom/LoginDAO.java,f\4\f47bf3b04a5ffbc9523b21eec5261b0577324049
-I
-src/bo/custom/ItemBo.java,e\9\e9b101d558ce831bb28d89139e94c364e62523b6
-R
-"src/bo/custom/impl/ItemBoImpl.java,4\8\48322e41eed8286f0deb3aaef3091030e35a85bf
 \
 ,src/controller/ManageItemFromController.java,6\9\696aff9d2994a768680dfcdbeb49682cc6120a1d
 F
@@ -65,15 +61,11 @@ U
 %src/view/style/ManageCustomerFrom.css,a\0\a056faabb566403a85d7f4277c1e74440e85b9b9
 G
 src/view/Dashboard.fxml,e\a\eae2cdc69777a5a9ddd8731353f917f398d5f804
-M
-src/view/style/OrdersForm.css,c\6\c6ba2a71e98aa3da1386f5fa5de28a285f4b4208
 O
 src/dao/custom/CustomerDAO.java,a\c\ac8d49301e3a6bde784b3048e5c9c8909ea0cb07
 W
 'src/controller/LoginFormController.java,7\4\7492ebf3259d3f6a1bf20a354fdfc0c0e301185f
 U
 %src/controller/MenuBarController.java,f\3\f3533b44741a8c5615e68246cf4f0c69cf2b554f
-G
-src/view/OrderForm.fxml,7\f\7f4c89015f85ffb535bbb47a65d54af7b80f25da
 G
 src/AppInitializer.java,5\8\580cc932433633b711bc392ae543e0f12b1bae87

@@ -4,6 +4,8 @@ package controller;
 import bo.BOFactory;
 import bo.custom.OrderBO;
 
+import bo.custom.OrderDetailBO;
+import com.jfoenix.controls.JFXButton;
 import dto.OrdersDTO;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -16,7 +18,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL;
+
 import java.sql.Date;
 
 public class OrderFormController {
@@ -29,12 +31,14 @@ public class OrderFormController {
     public TableColumn<?, ?> colCashierId;
     public TableColumn<?, ?> colCustomerId;
     public TableColumn<?, ?> colDate;
-    public TableColumn<?, ?> colOrdI;
+    public TableColumn<?, ?> colOrderID;
     public TableColumn<?, ?> colTime;
     public TableColumn<?, ?> colTotal;
     public TableView tblOrders;
     public TextField txtSearchText;
     public MenuItem btnSearchAllOrders;
+    public JFXButton btnOderDelete;
+    public JFXButton btnShowDetails;
 
 
     private ObservableList<OrdersDTO> allOrders;
@@ -42,10 +46,12 @@ public class OrderFormController {
 
     public int selectedIndex = -1;
     OrderBO orderBO= (OrderBO) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.ORDERS);
+    OrderDetailBO orderDetailBO= (OrderDetailBO) BOFactory.getBoFactory().getBo(BOFactory.BoTypes.ORDERDETAIL);
 
+    public String selectedOrderID;
     public void initialize (){
 
-        colOrdI.setCellValueFactory(new PropertyValueFactory<>("orderID"));
+        colOrderID.setCellValueFactory(new PropertyValueFactory<>("orderID"));
         colCustomerId.setCellValueFactory(new PropertyValueFactory<>("customerID"));
         colTime.setCellValueFactory(new PropertyValueFactory<>("time"));
         colDate.setCellValueFactory(new PropertyValueFactory<>("date"));
@@ -56,28 +62,37 @@ public class OrderFormController {
 
         tblOrders.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
             selectedIndex = (int) newValue;
-           showOrderDetails();
+            showOrderDetails();
         });
+
     }
 
     private void showOrderDetails()  {
         Parent parent = null;
-        String selectedOderId=colOrdI.getCellObservableValue(selectedIndex).getValue().toString();
+        if(selectedIndex>-1){
+            selectedOrderID=colOrderID.getCellObservableValue(selectedIndex).getValue().toString();
+            try {
 
-        try {
+                OrderDetailsController.setOrderID(selectedOrderID);
 
-          OrderDetailsController.setOrderID(selectedOderId);
+                parent = FXMLLoader.load(this.getClass().getResource("../view/OrderDetailsPane.fxml"));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            Scene scene=new Scene(parent);
+            Stage stage=new Stage();
+            stage.setScene(scene);
 
-            parent = FXMLLoader.load(this.getClass().getResource("../view/OrderDetailsPane.fxml"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            stage.setTitle("Order Details");
+            stage.show();
+        }else {
+            Alert alert=new Alert(Alert.AlertType.WARNING);
+            alert.setHeaderText("Please Select Order !");
+            alert.show();
         }
-        Scene scene=new Scene(parent);
-        Stage stage=new Stage();
-        stage.setScene(scene);
 
-        stage.setTitle("Order Details");
-        stage.show();
+
+
     }
 
     private void setDataToTable() {
@@ -131,4 +146,6 @@ public class OrderFormController {
     public void btnSearchAllOrdersOnAction(ActionEvent actionEvent) {
         setDataToTable();
     }
+
+
 }

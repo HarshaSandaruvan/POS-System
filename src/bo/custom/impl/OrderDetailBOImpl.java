@@ -53,5 +53,13 @@ public class OrderDetailBOImpl implements OrderDetailBO {
 
     }
 
+    @Override
+    public boolean deleteOrderDetailByOrderId(String orderID) {
+        boolean b = orderDetailDAO.deleteOrderDetailByOrderId(orderID);
+        System.out.println(b);
+        return b;
+
+    }
+
 
 }

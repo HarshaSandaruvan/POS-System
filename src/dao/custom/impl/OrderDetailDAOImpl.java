@@ -62,5 +62,16 @@ public class OrderDetailDAOImpl implements OrderDetailDAO {
 
     }
 
+    @Override
+    public boolean deleteOrderDetailByOrderId(String orderID) {
+        try {
+            return CrudUtil.executeUpdate("DELETE FROM orderdetails WHERE orderID=?", orderID);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
 }

@@ -20,4 +20,7 @@ public interface ItemBo extends SuperBO {
     public boolean deleteItem(String itemId);
     public ItemDTO getItemByItemName(String itemName);
 
+    public boolean updateQtyByItemId(String itemId, double qty);
+
+    public double getQtyByItemId(String itemId);
 }

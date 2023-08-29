@@ -129,7 +129,10 @@ public class DashboardController {
 
                 int noOfItems = tblOrder.getItems().size();
 
+
                 boolean isSaveOrderDetail = false;
+                boolean isAllItemQtyUpdate=false;
+
 
                 for (int i = 0; i < noOfItems; i++) {
                     OrderDetailDTO orderDetailDTO = new OrderDetailDTO(
@@ -141,17 +144,35 @@ public class DashboardController {
                             Double.parseDouble(colItemPrice.getCellObservableValue(i).getValue().toString())
                     );
                     isSaveOrderDetail = orderDetailBO.saveOrderDetail(orderDetailDTO);
+
+                    String itemId=colItemId.getCellObservableValue(i).getValue().toString();
+                    boolean isQtyUpdate=updateQtyByItemId(itemId, Double.parseDouble(colItemQty.getCellObservableValue(i).getValue().toString()));
+                    if (!isQtyUpdate){
+                        Alert alert=new Alert(Alert.AlertType.WARNING);
+                        alert.setHeaderText("Please check the Request Quantity of item "+itemId);
+                        alert.show();
+                        isAllItemQtyUpdate=false;
+                    }else {
+                        isAllItemQtyUpdate=true;
+                    }
                 }
 
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                if (isOrderSave && isSaveOrderDetail) {
 
+                //
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                if (isOrderSave && isSaveOrderDetail && isAllItemQtyUpdate) {
+
+                    tblOrder.getItems().clear();
+
+                    generateAndSetOrderID();
                     alert.setHeaderText("Order saved !");
                     alert.show();
                 } else {
                     alert.setHeaderText("Order not saved !");
                     alert.show();
                 }
+
             }
         });
         }
@@ -274,8 +295,7 @@ public class DashboardController {
 
     updateNumberOfItems();
     updateSumOfTotal();
-
-    //clearItemFields();
+    clearItemFields();
 
     }
 
@@ -310,6 +330,18 @@ public class DashboardController {
         lblUnitPrice.setText("");
         lblExpDate.setText("");
         lblSupplier.setText("");
+        txtRequestQty.clear();
     }
 
+    public boolean updateQtyByItemId(String itemId, double requestQty) {
+        double qtyOnHand = itemBo.getQtyByItemId(itemId);
+        if (qtyOnHand >= requestQty) {
+            double qty = qtyOnHand - requestQty;
+            return itemBo.updateQtyByItemId(itemId, qty);
+        }else {
+            Alert alert=new Alert(Alert.AlertType.WARNING);
+            alert.setHeaderText("Please check the Request Quantity of Item "+itemId);
+        }
+        return false;
+    }
 }

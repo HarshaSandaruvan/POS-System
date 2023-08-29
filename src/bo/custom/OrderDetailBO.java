@@ -12,4 +12,6 @@ public interface OrderDetailBO extends SuperBO {
     public ObservableList<OrderDetailDTO> getOrderDetailsByOrderID(String orderID);
 
     public boolean deleteOrderDetailByItemId(String itemID);
+    public boolean deleteOrderDetailByOrderId(String orderID);
+
 }

@@ -152,18 +152,8 @@
       <Label layoutX="440.0" layoutY="372.0" text="Request Qty :" />
       <TextField fx:id="txtRequestQty" layoutX="528.0" layoutY="369.0" prefHeight="25.0" prefWidth="50.0" text="1" />
       <Label layoutX="439.0" layoutY="421.0" text="Description" />
-      <Label layoutX="751.0" layoutY="404.0" text="Item Total : (Rs)">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="lblItemTotal" layoutX="920.0" layoutY="404.0" text="00.00">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <JFXButton id="ClearBtn" fx:id="btnItemClear" layoutX="830.0" layoutY="440.0" onAction="#btnItemClearOnAction" stylesheets="@style/DashboardForm.css" text="Clear" textFill="WHITE" />
-      <JFXButton fx:id="btnAdd" layoutX="915.0" layoutY="440.0" onAction="#btnAddOnAction" styleClass="AddToCartBtn" stylesheets="@style/DashboardForm.css" text="Add" />
+      <JFXButton id="ClearBtn" fx:id="btnItemClear" layoutX="829.0" layoutY="432.0" onAction="#btnItemClearOnAction" stylesheets="@style/DashboardForm.css" text="Clear" textFill="WHITE" />
+      <JFXButton fx:id="btnAdd" layoutX="914.0" layoutY="432.0" onAction="#btnAddOnAction" styleClass="AddToCartBtn" stylesheets="@style/DashboardForm.css" text="Add" />
       <TextField fx:id="txtDescription" layoutX="525.0" layoutY="418.0" prefHeight="25.0" prefWidth="168.0" />
       <JFXButton id="ClearBtn" fx:id="btnCustomerClear" layoutX="862.0" layoutY="137.0" onAction="#btnCustomerClearOnAction" stylesheets="@style/DashboardForm.css" text="Clear Customer" textFill="WHITE" />
       <TextField fx:id="txtCustomerId" disable="true" editable="false" layoutX="461.0" layoutY="63.0" promptText="Customer Id" />

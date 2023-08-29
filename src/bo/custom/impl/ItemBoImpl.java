@@ -106,4 +106,15 @@ public class ItemBoImpl implements ItemBo {
         }
         return null;
     }
+
+    @Override
+    public boolean updateQtyByItemId(String itemId, double qty) {
+        return itemDAO.updateQtyByItemId(itemId,qty);
+    }
+
+    @Override
+    public double getQtyByItemId(String itemId) {
+       return itemDAO.getQtyByItemId(itemId);
+
+    }
 }

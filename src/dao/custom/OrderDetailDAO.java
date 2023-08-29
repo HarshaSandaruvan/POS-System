@@ -12,6 +12,8 @@ public interface OrderDetailDAO extends SuperDAO {
     public ArrayList<OrderDetail> getOrderDetailByOrderId (String orderID);
 
     public boolean deleteOrderDetailByItemId(String itemId);
+    public boolean deleteOrderDetailByOrderId(String orderID);
+
 
 
 
